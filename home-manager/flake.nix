@@ -42,7 +42,7 @@
       update = "sudo nixos-rebuild switch --upgrade";
       apply = "sudo nixos-rebuild switch --flake /etc/nixos#RadioAddition";
       apply-home = "home-manager switch --flake /etc/nixos/home-manager && source ~/.zshrc";
-      vinix = "sudo nvim /etc/nixos/flake.nix";
+      vinix = "nvim /etc/nixos/flake.nix";
       vihm = "nvim /etc/nixos/home-manager/flake.nix";
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d";
