@@ -87,12 +87,12 @@ let
 
 in {
   services = {
-    nginx.virtualHosts."TheEllisAgency" = {
+    nginx.virtualHosts."localhost" = {
     #  root = lib.mkForce "/data/wordpress/";
     };
     wordpress = {
       webserver = "nginx";
-      sites."TheEllisAgency" = {
+      sites."localhost" = {
         package = pkgs.wordpress6_4;
         plugins = { 
 	  inherit aios;
