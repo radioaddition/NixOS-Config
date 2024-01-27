@@ -7,9 +7,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-#      ./sourceBuilds
-#      ./wordpress.nix
+      ./aspirem-hardware.nix
+#      ../sourceBuilds
+#      ../wordpress.nix
     ];
 
   # Additional system config
