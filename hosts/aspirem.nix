@@ -5,15 +5,8 @@
 { config, pkgs, inputs, lib, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./aspirem-hardware.nix
-#      ../sourceBuilds
-#      ../wordpress.nix
-    ];
-
   # Additional system config
-  #hardware.enableAllFirmware = true;
+  hardware.enableAllFirmware = true;
   boot.extraModprobeConfig = ''
   options snd-intel-dspcfg dsp_driver=1
 '';
