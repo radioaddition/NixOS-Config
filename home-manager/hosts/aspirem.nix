@@ -26,7 +26,7 @@
       update = "sudo nixos-rebuild switch --upgrade";
       apply = "sudo nixos-rebuild switch --flake /etc/nixos#aspirem";
       apply-home = "home-manager switch --flake /etc/nixos/home-manager#aspirem && source ~/.zshrc";
-      viflake = "nvim /etc/nixos/flake.nix"
+      viflake = "nvim /etc/nixos/flake.nix";
       vinix = "nvim /etc/nixos/hosts/aspirem.nix";
       vihm = "nvim /etc/nixos/home-manager/hosts/aspirem.nix";
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
