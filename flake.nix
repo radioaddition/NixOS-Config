@@ -41,7 +41,7 @@
 
   # Make sure to copy luks configuration from your current file if applicable
 
-  networking.hostName = "ASUS-GALITH"; # Define your hostname.
+  networking.hostName = "aspirem"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -107,6 +107,9 @@
 
   # Enable flake support
   nix = {
+    settings = {
+      auto-optimise-store = true;
+    };
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -213,9 +216,9 @@
     nixosConfigurations = {
       RadioAddition = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = {inherit inputs;};
+	    specialArgs = {inherit inputs;};
         modules = [
-	  configuration
+	      configuration
         ];
       };
     };

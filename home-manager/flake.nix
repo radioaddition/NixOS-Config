@@ -61,6 +61,8 @@
 . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 '';
   };
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.package = pkgs.nix;
   home.packages = with pkgs; [
     git
     github-desktop
