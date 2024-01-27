@@ -25,14 +25,18 @@
     ];
 
   # Additional system config
-  system.autoUpgrade.enable = true;
-  hardware.enableAllFirmware = true;
+  #hardware.enableAllFirmware = true;
   boot.extraModprobeConfig = ''
   options snd-intel-dspcfg dsp_driver=1
 '';
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub = {
+    useOSProber = true;
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Make sure to copy luks configuration from your current file if applicable
