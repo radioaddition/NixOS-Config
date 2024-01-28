@@ -3,9 +3,10 @@
 {
   
   # Temporarily disable manapge downloading due to sr.ht outage
-  manual.html.enable = false;
-  manual.manpages.enable = false;
-  manual.json.enable = false;
+  # Commented because I believe they're back up but I haven't tested
+  #manual.html.enable = false;
+  #manual.manpages.enable = false;
+  #manual.json.enable = false;
 
 
   imports = [
@@ -34,6 +35,7 @@
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d";
       cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
+      commit = "git commit -a";
       push = "git push origin main";
       pushl = "git push local main";
     };
