@@ -30,7 +30,6 @@
       homeConfigurations = {
       "aspirem" = home-manager.lib.homeManagerConfiguration {
 	    extraSpecialArgs = {inherit inputs;};
-        system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./home-manager/hosts/aspirem.nix
@@ -38,7 +37,6 @@
       };
       "galith" = home-manager.lib.homeManagerConfiguration {
 	    extraSpecialArgs = {inherit inputs;};
-        system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./home-manager/hosts/galith.nix
