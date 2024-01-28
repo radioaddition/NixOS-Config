@@ -2,8 +2,7 @@
 
 {
   
-  # Temporarily disable manapge downloading due to sr.ht outage
-  # Commented because I believe they're back up but I haven't tested
+  # in case of git.sr.ht outage
   #manual.html.enable = false;
   #manual.manpages.enable = false;
   #manual.json.enable = false;
@@ -11,6 +10,7 @@
 
   imports = [
   ];
+  news.display = "silent";
   home.username = "radioaddition";
   home.homeDirectory = "/home/radioaddition";
   nixpkgs.config.allowUnfree = true;
