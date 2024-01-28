@@ -33,8 +33,8 @@
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d";
       cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
-      push = "git push /etc/nixos origin main";
-      pushl = "git push /etc/nixos local main";
+      push = "git push origin main";
+      pushl = "git push local main";
     };
     zplug = {
       enable = true;
