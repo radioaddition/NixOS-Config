@@ -12,13 +12,15 @@
 '';
 
   # Bootloader.
-  boot.loader.grub = {
-    useOSProber = true;
-    enable = true;
-    efiSupport = true;
-    device = "nodev";
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      useOSProber = true;
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+    };
   };
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Make sure to copy luks configuration from your current file if applicable
 
@@ -56,6 +58,9 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  # Enable and configure KDE Plasma
+
 
   # Configure keymap in X11
   services.xserver = {
