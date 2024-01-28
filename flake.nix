@@ -14,6 +14,8 @@
         system = "x86_64-linux";
 	    specialArgs = {inherit inputs;};
         modules = [
+          ./hosts/galith.nix
+          ./hosts/galith-hardware.nix
         ];
       };
       aspirem = nixpkgs.lib.nixosSystem {
