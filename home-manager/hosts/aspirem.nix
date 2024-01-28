@@ -21,7 +21,6 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      nix-gui = "nix run github:nix-gui/nix-gui";
       clearls = "clear && ls -A";
       clearn = "clear && neofetch";
       cdnix = "cd /etc/nixos";
