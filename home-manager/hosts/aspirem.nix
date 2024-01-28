@@ -22,8 +22,9 @@
     shellAliases = {
       clearls = "clear && ls -A";
       clearn = "clear && neofetch";
-      full_update = "sudo nixos-rebuild boot --upgrade --repair --install-bootloader";
-      update = "sudo nixos-rebuild switch --upgrade";
+      cdnix = "cd /etc/nixos";
+      full_upgrade = "sudo nixos-rebuild boot --upgrade --repair --install-bootloader";
+      upgrade = "sudo nixos-rebuild switch --upgrade";
       apply = "sudo nixos-rebuild switch --flake /etc/nixos#aspirem";
       apply-home = "home-manager switch --flake /etc/nixos/home-manager#aspirem && source ~/.zshrc";
       viflake = "nvim /etc/nixos/flake.nix";
@@ -32,8 +33,8 @@
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d";
       cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
-      nix = "nix --extra-experimental-features nix-command --extra-experimental-features flakes";
-      sync = "rsync -a --delete --no-links --progress /etc/nixos /run/media/radioaddition/Ventoy/storage/dotfiles && rsync -a --delete --no-links --progress /home/radioaddition/.config /run/media/radioaddition/Ventoy/Storage/dotfiles && rsync -a --delete --no-links --progress /home/radioaddition/Music /run/media/radioaddition/Ventoy/Storage && rsync -a --delete --no-links --progress /home/radioaddition/.librewolf /run/media/radioaddition/Ventoy/Storage/dotfiles && rsync -a --delete --no-links --progress /home/radioaddition/.local /run/media/radioaddition/Ventoy/storage/dotfiles";
+      push = "git push /etc/nixos origin main";
+      pushl = "git push /etc/nixos local main";
     };
     zplug = {
       enable = true;
