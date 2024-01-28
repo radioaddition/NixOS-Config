@@ -25,8 +25,8 @@
       clearls = "clear && ls -A";
       clearn = "clear && neofetch";
       cdnix = "cd /etc/nixos";
-      full_upgrade = "sudo nixos-rebuild boot --upgrade --repair --install-bootloader";
-      upgrade = "sudo nixos-rebuild switch --upgrade";
+      full_upgrade = "sudo nixos-rebuild boot --flake /etc/nixos#aspirem --upgrade --repair --install-bootloader";
+      upgrade = "nix flake update";
       apply = "sudo nixos-rebuild switch --flake /etc/nixos#aspirem";
       apply-home = "home-manager switch --flake /etc/nixos/home-manager#aspirem && source ~/.zshrc";
       viflake = "nvim /etc/nixos/flake.nix";
