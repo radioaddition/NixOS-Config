@@ -26,6 +26,13 @@
           ./hosts/aspirem-hardware.nix
         ];
       };
+      wordpress = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+	specialArgs = {inherit inputs;};
+	modules = [
+	  ./containers/wordpress.nix
+	];
+      };
     };
       homeConfigurations = {
       "aspirem" = home-manager.lib.homeManagerConfiguration {
