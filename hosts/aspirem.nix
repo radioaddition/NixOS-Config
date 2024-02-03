@@ -156,6 +156,7 @@
     podman
     podman-tui
     apx
+    cryfs
  ];
 
   # enable zsh
