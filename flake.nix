@@ -42,7 +42,6 @@
     nixOnDroidConfigurations = {
       "pixel6" = nix-on-droid.lib.nixOnDroidConfiguration {
         extraSpecialArgs = { inherit inputs; };
-        pkgs = nixpkgs.legacyPackages."arm64-linux";
         modules = [ ./hosts/pixel6.nix ];
       };
     };
@@ -61,6 +60,10 @@
           ./home-manager/hosts/galith.nix
         ];
       };
+      "pixel6" = nix-on-droid.lib.nixOnDroidConfiguration {
+        extraSpecialArgs = { inherit inputs; };
+        pkgs = nixpkgs.legacyPackages."arm64-linux";
+        modules = [ ./hosts/pixel6.nix ];
     };
   };
 }
