@@ -40,21 +40,22 @@
       };
     };
     nixOnDroidConfigurations = {
-      pixel6 = nix-on-droid.lib.nixOnDroidConfiguration {
+      "pixel6" = nix-on-droid.lib.nixOnDroidConfiguration {
         extraSpecialArgs = { inherit inputs; };
+        pkgs = nixpkgs.legacyPackages."arm64-linux";
         modules = [ ./hosts/pixel6.nix ];
       };
     };
       homeConfigurations = {
       "aspirem" = home-manager.lib.homeManagerConfiguration {
-	    extraSpecialArgs = {inherit inputs;};
+        extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./home-manager/hosts/aspirem.nix
         ];
       };
       "galith" = home-manager.lib.homeManagerConfiguration {
-	    extraSpecialArgs = {inherit inputs;};
+	extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./home-manager/hosts/galith.nix
