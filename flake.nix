@@ -62,8 +62,9 @@
       };
       "pixel6" = nix-on-droid.lib.nixOnDroidConfiguration {
         extraSpecialArgs = { inherit inputs; };
-        pkgs = nixpkgs.legacyPackages."arm64-linux";
+        pkgs = nixpkgs.legacyPackages."aarch64-linux";
         modules = [ ./hosts/pixel6.nix ];
+      };
     };
   };
 }
