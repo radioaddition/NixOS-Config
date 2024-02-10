@@ -117,6 +117,7 @@
       "uninstallpkg"
       "sf-symbols"
       "font-hack-nerd-font"
+      "homebrew/cask-fonts/font-udev-gothic-nf"
       "font-jetbrains-mono"
       "font-fira-code"
     ];
