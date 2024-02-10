@@ -15,7 +15,7 @@
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
-      useOSProber = true;
+      useOSProber = true;#
       enable = true;
       efiSupport = true;
       device = "nodev";
@@ -158,6 +158,7 @@
     apx
     cryfs
     rpi-imager
+    obs-studio
  ];
 
   # enable zsh
