@@ -34,27 +34,27 @@
   };
 
   # Configure yabai
-  services.yabai = {
-    enable = true;
-    config = {
-      focus_follows_mouse         = "autoraise";
-      mouse_modifier              = "cmd";
-      layout                      = "bsp";
-      window_placement            = "second_child";
-      window_opacity              = "on";
-      window_opacity_duration     = 0.2;
-      active_window_opacity       = 1.0;
-      normal_window_opacity       = 0.5;
-      top_padding                 = 36;
-      bottom_padding              = 10;
-      left_padding                = 10;
-      right_padding               = 10;
-      window_gap                  = 10;
-      auto_padding                = "on";
-      window_shadow               = "float";
-    };
+  # services.yabai = {
+    # enable = true;
+    # config = {
+      # focus_follows_mouse         = "autoraise";
+      # mouse_modifier              = "cmd";
+      # layout                      = "bsp";
+      # window_placement            = "second_child";
+      # window_opacity              = "on";
+      # window_opacity_duration     = 0.2;
+      # active_window_opacity       = 1.0;
+      # normal_window_opacity       = 0.5;
+      # top_padding                 = 36;
+      # bottom_padding              = 10;
+      # left_padding                = 10;
+      # right_padding               = 10;
+      # window_gap                  = 10;
+      # auto_padding                = "on";
+      # window_shadow               = "float";
+    # };
 
-  };
+  # };
 
   # Configure skhd
   services.skhd = {
