@@ -157,6 +157,7 @@
     podman-tui
     apx
     cryfs
+    rpi-imager
  ];
 
   # enable zsh
