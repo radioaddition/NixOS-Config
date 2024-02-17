@@ -23,6 +23,7 @@
     shellAliases = {
       clearls = "clear && ls -A";
       clearn = "clear && neofetch";
+      claer = "clear";
       lsa = "ls -A";
       cdnix = "cd /etc/nixos";
       full_upgrade = "sudo nixos-rebuild boot --flake /etc/nixos#aspirem --upgrade --repair --install-bootloader";
