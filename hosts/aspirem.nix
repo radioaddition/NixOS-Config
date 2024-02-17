@@ -153,8 +153,9 @@
     qemu_kvm
     libvirt
     virt-manager
-    podman
-    podman-tui
+    docker
+    docker-client
+    docker-compose
     apx
     cryfs
     rpi-imager
