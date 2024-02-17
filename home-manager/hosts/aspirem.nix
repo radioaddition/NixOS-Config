@@ -27,6 +27,7 @@
       lsa = "ls -A";
       cdnix = "cd /etc/nixos";
       archive = "tar -czvf tarball.tar.gz ";
+      extract = "tar -xzvf ";
       full_upgrade = "sudo nixos-rebuild boot --flake /etc/nixos#aspirem --upgrade --repair --install-bootloader";
       update = "nix flake update";
       upgrade = "sudo nixos-rebuild switch --flake /etc/nixos#aspirem --upgrade";
