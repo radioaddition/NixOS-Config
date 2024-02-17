@@ -34,6 +34,7 @@
       vinix = "nvim /etc/nixos/hosts/aspirem.nix";
       vihm = "nvim /etc/nixos/home-manager/hosts/aspirem.nix";
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
+      themeconf = "p10k configure && mv ~/.p10k.zsh /etc/nixos/home-manager/";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d";
       cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
       commit = "git commit -a";
