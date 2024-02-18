@@ -110,7 +110,7 @@
   users.users.radioaddition = {
     isNormalUser = true;
     description = "RadioAddition";
-    extraGroups = [ "adbusers" "networkmanager" "wheel" "lxd" "libvirt" "libvirtd" "kvm" ];
+    extraGroups = [ "adbusers" "networkmanager" "wheel" "lxd" "libvirt" "libvirtd" "kvm" "docker" ];
     hashedPassword = "$y$j9T$gMRIRcus7uO1X6zrPTfVn/$0iOFINi8HZPH5b0QpXXCQbanUwYe9lpzjD17NbitD39";
   };
   services.vsftpd.localUsers = true;
@@ -121,6 +121,7 @@
   # Enable virtualisation
   virtualisation.kvmgt.enable = true;
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
   
   # Enable syncthing
   services.syncthing = {
@@ -157,6 +158,7 @@
     docker-client
     docker-compose
     apx
+    guix
     cryfs
     rpi-imager
     obs-studio
