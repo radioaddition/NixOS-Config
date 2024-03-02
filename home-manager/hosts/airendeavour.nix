@@ -23,13 +23,14 @@
     shellAliases = {
       clearls = "clear && ls -A";
       clearn = "clear && neofetch";
-      claer = "clear";
       lsa = "ls -A";
       cdnix = "cd /home/radioaddition/nixos";
       archive = "tar -czvf tarball.tar.gz ";
       extract = "tar -xzvf ";
       update = "nix flake update";
       apply = "home-manager switch --flake /etc/nixos#aspirem && source ~/.zshrc";
+      yay = "paru";
+      yeet = "paru -Rs";
       viflake = "nvim /home/radioaddition/nixos/flake.nix";
       vinix = "nvim /home/radioaddition/nixos/home-manager/hosts/airendeavour.nix";
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
