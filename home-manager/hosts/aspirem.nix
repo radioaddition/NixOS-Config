@@ -106,6 +106,7 @@
     noisetorch
     cinny-desktop
     bookworm
+    libreoffice-fresh
 
     # GNOME extensions
     gnomeExtensions.another-window-session-manager
