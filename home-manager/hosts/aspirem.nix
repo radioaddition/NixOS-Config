@@ -105,6 +105,7 @@
     pavucontrol
     noisetorch
     cinny-desktop
+    bookworm
 
     # GNOME extensions
     gnomeExtensions.another-window-session-manager
