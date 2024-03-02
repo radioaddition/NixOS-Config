@@ -48,6 +48,14 @@
         modules = [ ./hosts/pixel6.nix ];
       };
     };
+    darwinConfigurations = {
+      "air2020" = nix-darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        modules = [
+          ./hosts/air2020.nix
+        ];
+      };
+    };
       homeConfigurations = {
       "aspirem" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {inherit inputs;};
@@ -67,6 +75,13 @@
         extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
         modules = [ ./hosts/pixel6.nix ];
+      };
+      "air2020" = home-manager.lib.homeManagerConfiguration {
+        extraSpecialArgs = {inherit inputs;};
+        pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+        modules = [
+          ./home-manager/hosts/air2020.nix
+        ];
       };
     };
   };
