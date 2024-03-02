@@ -162,6 +162,7 @@
     cryfs
     rpi-imager
     obs-studio
+    bookworm
  ];
 
   # enable zsh
