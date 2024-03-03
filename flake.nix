@@ -60,6 +60,13 @@
           ./home-manager/hosts/galith.nix
         ];
       };
+      "airendeavour" = home-manager.lib.homeManagerConfiguration {
+	extraSpecialArgs = {inherit inputs;};
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        modules = [
+          ./home-manager/hosts/airendeavour.nix
+        ];
+      };
       "pixel6" = nix-on-droid.lib.nixOnDroidConfiguration {
         extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
