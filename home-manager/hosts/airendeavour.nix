@@ -18,53 +18,53 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      clearls = "clear && ls -A";
-      clearn = "clear && neofetch";
-      lsa = "ls -A";
-      cdnix = "cd /home/radioaddition/nixos";
-      archive = "tar -czvf tarball.tar.gz ";
-      extract = "tar -xzvf ";
-      update = "nix flake update";
-      apply = "home-manager switch --flake /etc/nixos#aspirem && source ~/.zshrc";
-      yay = "paru";
-      yeet = "paru -Rs";
-      viflake = "nvim /home/radioaddition/nixos/flake.nix";
-      vinix = "nvim /home/radioaddition/nixos/home-manager/hosts/airendeavour.nix";
-      vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
-      themeconf = "p10k configure && mv ~/.p10k.zsh /etc/nixos/home-manager/";
-      clean = "nix-env --delete-generations old && nix-collect-garbage -d";
-      cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
-      commit = "git commit -a";
-      push = "git push origin main";
-      pushl = "git push local main";
-    };
-    zplug = {
-      enable = true;
-      plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
-        { name = "zsh-users/zsh-syntax-highlighting"; } # Simple plugin installation
-	    { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
-      ];
-    };
-    initExtraFirst = ''
-      # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-      # Initialization code that may require console input (password prompts, [y/n]
-      # confirmations, etc.) must go above this block; everything else may go below.
-      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-      fi
-      clear
-    '';
-    initExtra = ''
-. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-
-. ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source /etc/nixos/home-manager/.p10k.zsh
-'';
-  };
+#  programs.zsh = {
+#    enable = true;
+#    shellAliases = {
+#      clearls = "clear && ls -A";
+#      clearn = "clear && neofetch";
+#      lsa = "ls -A";
+#      cdnix = "cd /home/radioaddition/nixos";
+#      archive = "tar -czvf tarball.tar.gz ";
+#      extract = "tar -xzvf ";
+#      update = "nix flake update";
+#      apply = "nix run home-manager/master -- switch --flake /etc/nixos#aspirem && source ~/.zshrc";
+#      yay = "paru";
+#      yeet = "paru -Rs";
+#      viflake = "nvim /home/radioaddition/nixos/flake.nix";
+#      vinix = "nvim /home/radioaddition/nixos/home-manager/hosts/airendeavour.nix";
+#      vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
+#      themeconf = "p10k configure && mv ~/.p10k.zsh /etc/nixos/home-manager/";
+#      clean = "nix-env --delete-generations old && nix-collect-garbage -d";
+#      cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
+#      commit = "git commit -a";
+#      push = "git push origin main";
+#      pushl = "git push local main";
+#    };
+#    zplug = {
+#      enable = true;
+#      plugins = [
+#        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
+#        { name = "zsh-users/zsh-syntax-highlighting"; } # Simple plugin installation
+#        { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
+#      ];
+#    };
+#    initExtraFirst = ''
+#      # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+#      # Initialization code that may require console input (password prompts, [y/n]
+#      # confirmations, etc.) must go above this block; everything else may go below.
+#      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+#        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+#      fi
+#      clear
+#    '';
+#    initExtra = ''
+#. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+#
+#. ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+#      source /home/radioaddition/nixos/home-manager/.p10k.zsh
+#'';
+#  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.package = pkgs.nix;
   home.packages = with pkgs; [
