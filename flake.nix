@@ -17,7 +17,7 @@
     nixosConfigurations = {
       galith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = {inherit inputs;};
+	    specialArgs = {inherit inputs;};
         modules = [
           ./hosts/galith.nix
           ./hosts/galith-hardware.nix
@@ -33,10 +33,18 @@
       };
       wordpress = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = {inherit inputs;};
-	modules = [
-	  ./containers/wordpress.nix
-	];
+    	specialArgs = {inherit inputs;};
+    	modules = [
+    	  ./containers/wordpress.nix
+    	];
+      };
+    };
+    darwinConfigurations = {
+      "air2020" = nix-darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        modules = [
+          ./hosts/air2020.nix
+        ];
       };
     };
     nixOnDroidConfigurations = {
@@ -45,7 +53,7 @@
         modules = [ ./hosts/pixel6.nix ];
       };
     };
-      homeConfigurations = {
+    homeConfigurations = {
       "aspirem" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
@@ -54,23 +62,25 @@
         ];
       };
       "galith" = home-manager.lib.homeManagerConfiguration {
-	extraSpecialArgs = {inherit inputs;};
+  	extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./home-manager/hosts/galith.nix
         ];
       };
       "airendeavour" = home-manager.lib.homeManagerConfiguration {
-	extraSpecialArgs = {inherit inputs;};
+  	extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./home-manager/hosts/airendeavour.nix
         ];
       };
-      "pixel6" = nix-on-droid.lib.nixOnDroidConfiguration {
-        extraSpecialArgs = { inherit inputs; };
-        pkgs = nixpkgs.legacyPackages."aarch64-linux";
-        modules = [ ./hosts/pixel6.nix ];
+      "air2020" = home-manager.lib.homeManagerConfiguration {
+        extraSpecialArgs = {inherit inputs;};
+        pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+        modules = [
+          ./home-manager/hosts/air2020.nix
+        ];
       };
     };
   };
