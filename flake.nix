@@ -39,14 +39,6 @@
     	];
       };
     };
-    darwinConfigurations = {
-      "air2020" = nix-darwin.lib.darwinSystem {
-        system = "x86_64-darwin";
-        modules = [
-          ./hosts/air2020.nix
-        ];
-      };
-    };
     nixOnDroidConfigurations = {
       "pixel6" = nix-on-droid.lib.nixOnDroidConfiguration {
         extraSpecialArgs = { inherit inputs; };
