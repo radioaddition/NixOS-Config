@@ -26,7 +26,7 @@
       full_upgrade = "sudo nixos-rebuild boot --upgrade --repair --install-bootloader --flake /etc/nixos#galith";
       upgrade = "sudo nixos-rebuild switch --upgrade";
       apply = "sudo nixos-rebuild switch --flake /etc/nixos#galith";
-      apply-home = "home-manager switch --flake /etc/nixos/home-manager#galith && source ~/.zshrc";
+      apply-home = "home-manager switch --flake /etc/nixos#galith && source ~/.zshrc";
       viflake = "nvim /etc/nixos/flake.nix";
       vinix = "nvim /etc/nixos/hosts/galith.nix";
       vihm = "nvim /etc/nixos/home-manager/flake.nix";
