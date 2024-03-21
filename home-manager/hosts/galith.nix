@@ -63,6 +63,7 @@
   home.packages = with pkgs; [
     git
     github-desktop
+    ungoogled-chromium
     vscodium
     gettext
     glib
