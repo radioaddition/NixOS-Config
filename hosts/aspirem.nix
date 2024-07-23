@@ -61,6 +61,8 @@
 
   # Enable Hyprland
   programs.hyprland.enable = true;
+  programs.hyprlock.enable = true;
+  services.hypridle.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -165,31 +167,6 @@
     obs-studio
     distrobox
     boxbuddy
-
-    # Hyprland
-    hyprdim
-    hyprshot
-    hyprnome
-    hyprlock
-    hyprlang
-    hyprkeys
-    hypridle
-    hyprutils
-    hyprshade
-    hyprpaper
-    hyprpicker
-    hyprcursor
-
-    # nwg-shell
-    nwg-bar
-    nwg-menu
-    nwg-look
-    nwg-dock-hyprland
-    nwg-panel
-    nwg-hello
-    nwg-drawer
-    nwg-displays
-    nwg-launchers
  ];
 
   # enable zsh

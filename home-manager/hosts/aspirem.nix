@@ -113,6 +113,29 @@
     gnomeExtensions.appindicator
     gnomeExtensions.quick-settings-audio-devices-renamer
     gnomeExtensions.gsconnect
+
+    # Hyprland apps
+    hyprdim
+    hyprshot
+    hyprnome
+    hyprlang
+    hyprkeys
+    hyprutils
+    hyprshade
+    hyprpaper
+    hyprpicker
+    hyprcursor
+    
+    # nwg-shell
+    nwg-bar
+    nwg-menu
+    nwg-look
+    nwg-dock-hyprland
+    nwg-panel
+    nwg-hello
+    nwg-drawer
+    nwg-displays
+    nwg-launchers
   ];
   home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "24.05";
