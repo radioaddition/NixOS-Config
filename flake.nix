@@ -36,14 +36,6 @@
         extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
-	  # Hyprland
-	  hyprland.homeManagerModules.default
-	  {
-            wayland.windowManager.hyprland.enable = true;
-          }
-	  ./home-manager/hyprland.nix
-
-	  # Config file
           ./home-manager/hosts/aspirem.nix
         ];
       };
