@@ -157,11 +157,38 @@
     docker
     docker-client
     docker-compose
-    apx
     guix
     cryfs
     rpi-imager
     obs-studio
+    distrobox
+    boxbuddy
+
+    # Hyprland
+    hyprland
+    hyprdim
+    hyprshot
+    hyprnome
+    hyprlock
+    hyprlang
+    hyprkeys
+    hypridle
+    hyprutils
+    hyprshade
+    hyprpaper
+    hyprpicker
+    hyprcursor
+
+    # nwg-shell
+    nwg-bar
+    nwg-menu
+    nwg-look
+    nwg-dock-hyprland
+    nwg-panel
+    nwg-hello
+    nwg-drawer
+    nwg-displays
+    nwg-launchers
  ];
 
   # enable zsh
