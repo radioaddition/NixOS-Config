@@ -44,17 +44,12 @@
       push = "git push origin main";
       pushl = "git push local main";
     };
-    antidote = {
+    zplug = {
       enable = true;
       plugins = [
-        "zsh-users/zsh-autosuggestions kind:defer"
-	"zdharma-continuum/fast-syntax-highlighting kind:defer"
-	"zsh-users/zsh-history-substring-search kind:defer"
-	"getantidote/use-omz"
-	"ohmyzsh/ohmyzsh path:lib"
-	"ohmyzsh/ohmyzsh path:plugins/extract"
-	"rupa/z"
-	"sindresorhus/pure"
+        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
+        { name = "zsh-users/zsh-syntax-highlighting"; } # Simple plugin installation
+	    { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
       ];
     };
     initExtraFirst = ''
