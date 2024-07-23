@@ -18,6 +18,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+  programs.gpg.scdaemonSettings.disable-ccid = true;
   programs.zsh = {
     enable = true;
     shellAliases = {
