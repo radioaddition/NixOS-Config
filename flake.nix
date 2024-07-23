@@ -37,6 +37,7 @@
 	  {
             wayland.windowManager.hyprland.enable = true;
           }
+	  ./home-manager/hyprland.nix
 
 	  # Config file
           ./home-manager/hosts/aspirem.nix
