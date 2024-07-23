@@ -65,7 +65,7 @@
 . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
 . ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source /etc/nixos/home-manager/.p10k.zsh
+      source $HOME/NixOS-Config/home-manager/.p10k.zsh
 '';
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
