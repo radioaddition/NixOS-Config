@@ -51,8 +51,8 @@
 	"zdharma-continuum/fast-syntax-highlighting kind:defer"
 	"zsh-users/zsh-history-substring-search kind:defer"
 	"getantidote/use-omz"
-	"ohmyzsh/ohmyzsh path:lib"
-	"ohmyzsh/ohmyzsh path:plugins/extract"
+	# "ohmyzsh/ohmyzsh path:lib"
+	# "ohmyzsh/ohmyzsh path:plugins/extract"
 	"rupa/z"
 	"sindresorhus/pure"
       ];
