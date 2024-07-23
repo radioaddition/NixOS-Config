@@ -2,13 +2,11 @@
   description = "NixOS Config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-    oldpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-on-droid = {
-      url = "github:t184256/nix-on-droid/release-23.05";
-      inputs.nixpkgs.follows = "oldpkgs";
+      url = "github:t184256/nix-on-droid/release-24.05";
     };
   };
 
