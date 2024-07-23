@@ -44,7 +44,7 @@
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MEASUREMENT = "rn_US.UTF-8";
     LC_MONETARY = "en_US.UTF-8";
     LC_NAME = "en_US.UTF-8";
     LC_NUMERIC = "en_US.UTF-8";
@@ -142,14 +142,14 @@
    id = [ "27725426" ];
   };
   # Lock device upon removal
-  services.udev.extraRules = ''
-      ACTION=="remove",\
-       ENV{ID_BUS}=="usb",\
-       ENV{ID_MODEL_ID}=="0407",\
-       ENV{ID_VENDOR_ID}=="1050",\
-       ENV{ID_VENDOR}=="Yubico",\
-       RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
-  '';
+  #services.udev.extraRules = ''
+      #ACTION=="remove",\
+       #ENV{ID_BUS}=="usb",\
+       #ENV{ID_MODEL_ID}=="0407",\
+       #ENV{ID_VENDOR_ID}=="1050",\
+       #ENV{ID_VENDOR}=="Yubico",\
+       #RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
+  #'';
   services.pcscd.enable = true;
 
   environment.systemPackages = with pkgs; [
