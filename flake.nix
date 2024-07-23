@@ -6,16 +6,20 @@
     home-manager.url = "github:nix-community/home-manager";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-on-droid.url = "github:t184256/nix-on-droid/release-24.05";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, hyprland, home-manager, unstable, nix-on-droid, ... }@inputs:
+  outputs = { self, nixpkgs, lanzaboote, home-manager, unstable, nix-on-droid, ... }@inputs:
   {
     nixosConfigurations = {
       aspirem = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
+	  lanzaboote.nixosModules.lanzaboote
           ./hosts/aspirem.nix
           ./hosts/aspirem-hardware.nix
         ];
