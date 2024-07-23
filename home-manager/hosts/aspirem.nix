@@ -71,7 +71,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.package = pkgs.nix;
   home.packages = with pkgs; [
-    git
     github-desktop
     home-manager
     vscodium
@@ -80,13 +79,10 @@
     python311Packages.pygobject3
     python3
     librewolf
-    browsh
     strawberry
     picard
-    armcord
+    goofcord
     lutris
-    protontricks
-    wineWowPackages.waylandFull
     gnome.gnome-tweaks
     mindustry-wayland
     shattered-pixel-dungeon
@@ -99,7 +95,6 @@
     ventoy-full
     onionshare-gui
     tor-browser
-    inputs.unstable.legacyPackages.${pkgs.system}.valent
     fragments
     gimp-with-plugins
     helvum
@@ -110,20 +105,15 @@
     libreoffice-fresh
 
     # GNOME extensions
-    gnomeExtensions.another-window-session-manager
     gnomeExtensions.caffeine
     gnomeExtensions.dash2dock-lite
-    gnomeExtensions.fullscreen-to-empty-workspace
     gnomeExtensions.search-light
-    gnomeExtensions.firefox-pip-always-on-top
     gnomeExtensions.user-themes
     gnomeExtensions.alphabetical-app-grid
-    gnome-browser-connector
-    gnomeExtensions.paperwm
     gnomeExtensions.appindicator
-    inputs.unstable.legacyPackages.${pkgs.system}.gnomeExtensions.valent
     gnomeExtensions.quick-settings-audio-devices-renamer
+    gnomeExtensions.gsconnect
   ];
   home.enableNixpkgsReleaseCheck = false;
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }
