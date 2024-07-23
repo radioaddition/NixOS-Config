@@ -120,7 +120,6 @@
     gnomeExtensions.alphabetical-app-grid
     gnome-browser-connector
     gnomeExtensions.paperwm
-    gnomeExtensions.suppress-startup-animation
     gnomeExtensions.appindicator
     inputs.unstable.legacyPackages.${pkgs.system}.gnomeExtensions.valent
     gnomeExtensions.quick-settings-audio-devices-renamer
