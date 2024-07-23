@@ -12,15 +12,9 @@
 '';
 
   # Bootloader.
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      useOSProber = true;#
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-    };
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.luks.devices."luks-15e14bac-b357-4e9b-9102-723bff682c67".device = "/dev/disk/by-uuid/15e14bac-b357-4e9b-9102-723bff682c67";
 
   # Make sure to copy luks configuration from your current file if applicable
 
