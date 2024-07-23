@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, unstable, oldpkgs, nix-on-droid, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, unstable, nix-on-droid, ... }@inputs:
   {
     nixosConfigurations = {
       galith = nixpkgs.lib.nixosSystem {
