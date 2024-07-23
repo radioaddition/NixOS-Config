@@ -3,7 +3,7 @@
     "$mod" = "SUPER";
     bind =
       [
-        "$mod, F, exec, firefox"
+        "$mod, F, exec, firejail librewolf"
         ", Print, exec, grimblast copy area"
       ]
       ++ (
