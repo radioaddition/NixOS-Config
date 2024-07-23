@@ -73,6 +73,7 @@
   home.packages = with pkgs; [
     git
     github-desktop
+    home-manager
     vscodium
     gettext
     glib
