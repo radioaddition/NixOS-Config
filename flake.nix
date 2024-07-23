@@ -5,22 +5,13 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nix-on-droid = {
-      url = "github:t184256/nix-on-droid/release-24.05";
-    };
+    nix-on-droid.url = "github:t184256/nix-on-droid/release-24.05";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
-  outputs = { self, nixpkgs, home-manager, unstable, nix-on-droid, ... }@inputs:
+  outputs = { self, nixpkgs, hyprland, home-manager, unstable, nix-on-droid, ... }@inputs:
   {
     nixosConfigurations = {
-      galith = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	    specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/galith.nix
-          ./hosts/galith-hardware.nix
-        ];
-      };
       aspirem = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
@@ -28,13 +19,6 @@
           ./hosts/aspirem.nix
           ./hosts/aspirem-hardware.nix
         ];
-      };
-      wordpress = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-    	specialArgs = {inherit inputs;};
-    	modules = [
-    	  ./containers/wordpress.nix
-    	];
       };
     };
     nixOnDroidConfigurations = {
@@ -48,6 +32,13 @@
         extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
+	  # Hyprland
+	  hyprland.homeManagerModules.default
+	  {
+            wayland.windowManager.hyprland.enable = true;
+          }
+
+	  # Config file
           ./home-manager/hosts/aspirem.nix
         ];
       };
