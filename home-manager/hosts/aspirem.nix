@@ -76,7 +76,6 @@
     vscodium
     gettext
     glib
-    niv
     python311Packages.pygobject3
     python3
     librewolf
