@@ -133,6 +133,15 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+
+  # Yubikey Support
+  security.pam.yubico = {
+   enable = true;
+   debug = true;
+   mode = "challenge-response";
+   id = [ "27725426" ];
+  };
+
   environment.systemPackages = with pkgs; [
 
     sbctl

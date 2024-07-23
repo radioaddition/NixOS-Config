@@ -68,6 +68,7 @@
       source $HOME/NixOS-Config/home-manager/.p10k.zsh
 '';
   };
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.package = pkgs.nix;
   home.packages = with pkgs; [
