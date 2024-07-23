@@ -134,7 +134,6 @@
   environment.systemPackages = with pkgs; [
 
     sbctl
-    niv
     jamesdsp
     wprecon
     wp-cli
