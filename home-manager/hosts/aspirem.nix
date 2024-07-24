@@ -18,7 +18,20 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-  programs.gpg.scdaemonSettings.disable-ccid = true;
+  # GPG
+  #programs.gpg = {
+    #enable = true;
+    #scdaemonSettings.disable-ccid = true;
+  #};
+  services.gpg-agent = {
+    enable = true;
+    pinentryPackage = [ pkgs.pinentry-gnome3 ];
+    extraConfig = ''
+    disable-ccid
+    '';
+  };
+
+  # ZSH
   programs.zsh = {
     enable = true;
     shellAliases = {
