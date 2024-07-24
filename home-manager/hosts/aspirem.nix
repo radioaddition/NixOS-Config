@@ -48,6 +48,7 @@
       commit = "git commit -a";
       push = "git push origin main";
       pushl = "git push local main";
+      ipfetch = "ipfetch -ip \"$(wget -qO - icanhazip.com)\""
     };
     zplug = {
       enable = true;
