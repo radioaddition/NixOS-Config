@@ -18,6 +18,9 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+  pam.sessionVariables = {
+    EDITOR = "nvim";
+  };
   # GPG
   #programs.gpg = {
     #enable = true;
@@ -34,6 +37,9 @@
   # ZSH
   programs.zsh = {
     enable = true;
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
     shellAliases = {
       clearls = "clear && ls -A";
       clearn = "clear && neofetch";
@@ -63,7 +69,7 @@
       plugins = [
         { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
         { name = "zsh-users/zsh-syntax-highlighting"; } # Simple plugin installation
-	    { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
+        { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
       ];
     };
     initExtraFirst = ''
