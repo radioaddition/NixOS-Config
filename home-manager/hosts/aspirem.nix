@@ -25,7 +25,7 @@
   #};
   services.gpg-agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry-gnome3;
+    pinentryPackage = pkgs.pinentry-curses;
     extraConfig = ''
     disable-ccid
     '';
@@ -87,7 +87,7 @@
   nix.package = pkgs.nix;
   home.packages = with pkgs; [
     github-desktop
-    pinentry-gnome3
+    pinentry-curses
     home-manager
     vscodium
     gettext
