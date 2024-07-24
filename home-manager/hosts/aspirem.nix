@@ -18,11 +18,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-  # GPG
-  #programs.gpg.enable = true;
   programs.gpg.scdaemonSettings.disable-ccid = true;
-
-  # ZSH
   programs.zsh = {
     enable = true;
     shellAliases = {
