@@ -163,7 +163,6 @@
     git
     freshfetch
     hyfetch
-    ipfetch
     home-manager
     rsync
     firejail
