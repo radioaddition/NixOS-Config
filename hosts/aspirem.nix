@@ -167,6 +167,7 @@
     curl
     gnome.dconf-editor
     git
+    pinentry-gnome3
     freshfetch
     hyfetch
     home-manager
