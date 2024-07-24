@@ -158,7 +158,6 @@
        #ENV{ID_VENDOR}=="Yubico",\
        #RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
   #'';
-  services.pcscd.enable = true;
 
   environment.systemPackages = with pkgs; [
 
