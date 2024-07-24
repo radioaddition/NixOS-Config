@@ -25,6 +25,14 @@
 
   # Make sure to copy luks configuration from your current file if applicable
 
+  # AppArmor
+  services.dbus.apparmor = "enabled";
+  security.apparmor = {
+    enable = true;
+    killUnconfinedConfinables = true;
+    enableCache = true;
+  };
+
   networking.hostName = "aspirem"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

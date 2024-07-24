@@ -61,9 +61,10 @@
     zplug = {
       enable = true;
       plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
-        { name = "zsh-users/zsh-syntax-highlighting"; } # Simple plugin installation
-        { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
+        { name = "zsh-users/zsh-autosuggestions"; }
+        { name = "zsh-users/zsh-syntax-highlighting"; }
+        { name = "jeffreytse/zsh-vi-mode"; }
+        { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
       ];
     };
     initExtraFirst = ''
@@ -91,9 +92,20 @@
     gnome.polari
     gpu-screen-recorder
     gpu-screen-recorder-gtk
+
+    # Discord clients im trying
+    armcord
+    dissent
+
+    # misc packages resume
     pinentry-gnome3
     simplex-chat-desktop
     zed-editor
+    monophony
+    impression
+    collision
+    gradience
+    fragments
     gnome.gnome-boxes
     bottles
     gleam
@@ -133,12 +145,20 @@
     # GNOME extensions
     gnomeExtensions.caffeine
     gnomeExtensions.dash2dock-lite
-    gnomeExtensions.search-light
     gnomeExtensions.user-themes
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.appindicator
     gnomeExtensions.quick-settings-audio-devices-renamer
     gnomeExtensions.gsconnect
+    gnomeExtensions.search-light
+    gnomeExtensions.zen
+    gnomeExtensions.xwayland-indicator
+    gnomeExtensions.workspace-isolated-dash
+    gnomeExtensions.window-title-is-back
+    gnomeExtensions.window-on-top
+    gnomeExtensions.wiggle
+    gnomeExtensions.wifi-qrcode
+    gnomeExtensions.logo-menu
 
   ];
   home.enableNixpkgsReleaseCheck = false;
