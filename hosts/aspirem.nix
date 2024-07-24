@@ -154,17 +154,17 @@
 
   environment.systemPackages = with pkgs; [
 
+    pinentry-gnome3
     sbctl
     jamesdsp
-    wprecon
-    wp-cli
     neovim
     wget
     curl
     gnome.dconf-editor
     git
-    gittyup
-    neofetch
+    freshfetch
+    hyfetch
+    ipfetch
     home-manager
     rsync
     firejail
@@ -178,10 +178,8 @@
     docker
     docker-client
     docker-compose
-    guix
     cryfs
     rpi-imager
-    obs-studio
     distrobox
     boxbuddy
  ];
