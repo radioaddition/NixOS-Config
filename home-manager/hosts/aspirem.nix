@@ -87,7 +87,7 @@
   nix.package = pkgs.nix;
   home.packages = with pkgs; [
     github-desktop
-    seahorse
+    gnome.seahorse
     pinentry-gnome3
     home-manager
     vscodium
