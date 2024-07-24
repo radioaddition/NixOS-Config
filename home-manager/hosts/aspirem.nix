@@ -78,6 +78,7 @@
   nix.package = pkgs.nix;
   home.packages = with pkgs; [
     github-desktop
+    pinentry-gnome3
     home-manager
     vscodium
     gettext

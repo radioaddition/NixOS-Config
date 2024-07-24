@@ -153,7 +153,6 @@
 
   environment.systemPackages = with pkgs; [
 
-    pinentry-gnome3
     sbctl
     jamesdsp
     neovim
