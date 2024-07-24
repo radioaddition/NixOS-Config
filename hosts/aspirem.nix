@@ -137,7 +137,6 @@
   # Yubikey Support
   security.pam.yubico = {
    enable = true;
-   debug = true;
    mode = "challenge-response";
    id = [ "27725426" ];
   };
