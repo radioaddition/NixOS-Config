@@ -15,10 +15,7 @@
   home.homeDirectory = "/home/radioaddition";
   nixpkgs.config.allowUnfree = true;
   home.sessionPath = [ "$HOME/.local/bin" "/usr/local/bin" ];
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-  pam.sessionVariables = {
+  systemd.user.sessionVariables = {
     EDITOR = "nvim";
   };
   # GPG
@@ -37,9 +34,6 @@
   # ZSH
   programs.zsh = {
     enable = true;
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
     shellAliases = {
       clearls = "clear && ls -A";
       clearn = "clear && neofetch";
@@ -94,7 +88,16 @@
   home.packages = with pkgs; [
     github-desktop
     gnome.seahorse
+    gnome.polari
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
     pinentry-gnome3
+    simplex-chat-desktop
+    zed-editor
+    gnome.gnome-boxes
+    bottles
+    gleam
+    glas
     home-manager
     vscodium
     gettext
