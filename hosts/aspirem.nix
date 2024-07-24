@@ -72,8 +72,7 @@
   services.pcscd.enable = true;
   programs.gnupg.agent = {
    enable = true;
-   pinentryPackage = "pinentry-gnome3";
-   pinentryFlavor = "gnome3";
+   pinentryPackage = "pkgs.pinentry-gnome3";
    enableSSHSupport = true;
   };
 
