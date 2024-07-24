@@ -68,6 +68,15 @@
     };
   };
 
+  # Enable GnuPG
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+   enable = true;
+   pinentryPackage = "pinentry-gnome3";
+   pinentryFlavor = "gnome3";
+   enableSSHSupport = true;
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
