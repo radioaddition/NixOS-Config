@@ -41,7 +41,15 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi = {
+      macAddress = "random";
+      powersave = true;
+      scanRandMacAddress = true;
+      # backend = "iwd"; # Enable when no longer experimental
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -84,8 +92,26 @@
    enableSSHSupport = true;
   };
 
+  # Set up firejail
+  programs.firejail = {
+    enable = true;
+    wrappedBinaries = {
+    librewolf = {
+      executable = "${pkgs.librewolf}/bin/librewolf";
+      profile = "${pkgs.firejail}/etc/firejail/librewolf.profile";
+      extraArgs = [
+        # Required for U2F USB stick
+        "--ignore=private-dev"
+        # Enforce dark mode
+        "--env=GTK_THEME=Adwaita:dark"
+        # Enable system notifications
+        "--dbus-user.talk=org.freedesktop.Notifications"
+      ];
+      };
+    };
+  };
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing.enable = false;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -173,6 +199,9 @@
     neovim
     wget
     curl
+    tor
+    torctl
+    torsocks
     gnome.dconf-editor
     git
     pinentry-gnome3
@@ -180,7 +209,6 @@
     hyfetch
     home-manager
     rsync
-    firejail
     gparted
     syncthing
     mcron
@@ -216,8 +244,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [];
-  networking.firewall.allowedUDPPorts = [ 65530 ];
+  networking.firewall.allowedTCPPorts = [ 51413 9052 9053 9080 ];
+  networking.firewall.allowedUDPPorts = [ 65530 51413 9052 9053 9080 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   networking.firewall.allowedTCPPortRanges = [ 

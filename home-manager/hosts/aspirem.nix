@@ -110,6 +110,10 @@
     bottles
     gleam
     glas
+    riseup-vpn
+    calyx-vpn
+    mozillavpn
+    protonvpn-gui
     home-manager
     vscodium
     gettext
@@ -160,6 +164,7 @@
     gnomeExtensions.wifi-qrcode
     gnomeExtensions.logo-menu
     gnomeExtensions.pano
+    gnomeExtensions.proton-vpn-button
 
   ];
   home.enableNixpkgsReleaseCheck = false;
