@@ -15,14 +15,10 @@
   home.homeDirectory = "/home/radioaddition";
   nixpkgs.config.allowUnfree = true;
   home.sessionPath = [ "$HOME/.local/bin" "/usr/local/bin" ];
-  systemd.user.sessionVariables = {
+  home.sessionVariables = {
     EDITOR = "nvim";
   };
   # GPG
-  #programs.gpg = {
-    #enable = true;
-    #scdaemonSettings.disable-ccid = true;
-  #};
   services.gpg-agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-gnome3;
@@ -36,22 +32,14 @@
     enable = true;
     shellAliases = {
       clearls = "clear && ls -A";
-      clearn = "clear && neofetch";
-      claer = "clear";
-      lsa = "ls -A";
-      cdnix = "cd /etc/nixos";
-      archive = "tar -czvf tarball.tar.gz ";
+      ls = "ls -A";
+      archive = "tar -czvf archive.tar.gz ";
       extract = "tar -xzvf ";
-      full_upgrade = "sudo nixos-rebuild boot --flake /etc/nixos#aspirem --upgrade --repair --install-bootloader";
       update = "nix flake update";
-      upgrade = "sudo nixos-rebuild switch --flake /etc/nixos#aspirem --upgrade";
-      apply = "sudo nixos-rebuild switch --flake /etc/nixos#aspirem";
-      apply-home = "home-manager switch --flake /etc/nixos#aspirem && source ~/.zshrc";
-      viflake = "nvim /etc/nixos/flake.nix";
-      vinix = "nvim /etc/nixos/hosts/aspirem.nix";
-      vihm = "nvim /etc/nixos/home-manager/hosts/aspirem.nix";
+      upgrade = "sudo nixos-rebuild switch --flake ./#aspirem --upgrade";
+      apply = "sudo nixos-rebuild switch --flake ./#aspirem";
+      apply-home = "home-manager switch --flake ./#aspirem && source ~/.zshrc";
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
-      themeconf = "p10k configure && mv ~/.p10k.zsh /etc/nixos/home-manager/";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d";
       cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
       commit = "git commit -a";
