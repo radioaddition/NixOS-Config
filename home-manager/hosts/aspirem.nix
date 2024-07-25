@@ -159,6 +159,7 @@
     gnomeExtensions.wiggle
     gnomeExtensions.wifi-qrcode
     gnomeExtensions.logo-menu
+    gnomeExtensions.pano
 
   ];
   home.enableNixpkgsReleaseCheck = false;
