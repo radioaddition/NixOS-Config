@@ -96,6 +96,8 @@
     bat
     riseup-vpn
     wl-clipboard-rs
+    lua
+    luajitPackages.luarocks-nix
     calyx-vpn
     mozillavpn
     protonvpn-gui
