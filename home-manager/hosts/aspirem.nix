@@ -86,6 +86,7 @@
     impression
     collision
     gradience
+    yubikey-touch-detector
     fragments
     gnome.gnome-boxes
     bottles
