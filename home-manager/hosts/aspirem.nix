@@ -91,7 +91,7 @@
     fragments
     gnome.gnome-boxes
     bottles
-    nodejs-slim_22
+    nodejs_22
     gleam
     glas
     bat
