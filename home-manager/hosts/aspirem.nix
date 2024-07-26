@@ -22,9 +22,6 @@
   services.gpg-agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-gnome3;
-    extraConfig = ''
-    disable-ccid
-    '';
   };
 
   # ZSH
