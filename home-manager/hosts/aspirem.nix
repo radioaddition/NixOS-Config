@@ -76,6 +76,7 @@
   nix.package = pkgs.nix;
   home.packages = with pkgs; [
     github-desktop
+    git-repo
     gnome.seahorse
     gnome.polari
     gpu-screen-recorder
