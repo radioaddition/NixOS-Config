@@ -164,6 +164,7 @@
   virtualisation.kvmgt.enable = true;
   virtualisation.libvirtd.enable = true;
   virtualisation.docker.enable = true;
+  virtualisation.waydroid.enable = true;
   
   # Enable syncthing
   services.syncthing = {
