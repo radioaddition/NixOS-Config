@@ -112,7 +112,6 @@
     librewolf
     strawberry
     picard
-    goofcord
     lutris
     gnome.gnome-tweaks
     mindustry-wayland
