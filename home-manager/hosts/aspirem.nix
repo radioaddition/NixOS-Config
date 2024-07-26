@@ -91,16 +91,16 @@
     fragments
     gnome.gnome-boxes
     bottles
+    nodejs-slim_22
     gleam
     glas
     bat
     riseup-vpn
     wl-clipboard-rs
-    lua
-    luajitPackages.luarocks-nix
     calyx-vpn
     mozillavpn
     protonvpn-gui
+    neovim-gtk
     home-manager
     vscodium
     gettext
