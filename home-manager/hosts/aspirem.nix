@@ -80,12 +80,7 @@
     gnome.polari
     gpu-screen-recorder
     gpu-screen-recorder-gtk
-
-    # Discord clients im trying
-    armcord
-    dissent
-
-    # misc packages resume
+    goofcord
     pinentry-gnome3
     simplex-chat-desktop
     zed-editor
@@ -107,32 +102,23 @@
     vscodium
     gettext
     glib
-    python311Packages.pygobject3
+    gcc
+    gnumake
     python3
     librewolf
-    strawberry
     picard
     lutris
     gnome.gnome-tweaks
     mindustry-wayland
     shattered-pixel-dungeon
-    rat-king-adventure
-    rkpd2
-    summoning-pixel-dungeon
-    shorter-pixel-dungeon
-    experienced-pixel-dungeon
     keepassxc
     ventoy-full
     onionshare-gui
     tor-browser
     fragments
-    gimp-with-plugins
     helvum
     pavucontrol
-    noisetorch
     cinny-desktop
-    bookworm
-    libreoffice-fresh
 
     # GNOME extensions
     gnomeExtensions.caffeine
