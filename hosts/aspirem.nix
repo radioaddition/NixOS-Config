@@ -224,6 +224,7 @@
     rpi-imager
     distrobox
     boxbuddy
+    busybox
  ];
 
   # enable zsh
