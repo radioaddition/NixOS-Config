@@ -85,6 +85,7 @@
     monophony
     impression
     collision
+    gpa
     gradience
     yubikey-touch-detector
     fragments
