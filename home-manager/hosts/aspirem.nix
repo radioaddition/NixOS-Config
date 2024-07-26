@@ -98,6 +98,7 @@
     bottles
     gleam
     glas
+    bat
     riseup-vpn
     calyx-vpn
     mozillavpn
