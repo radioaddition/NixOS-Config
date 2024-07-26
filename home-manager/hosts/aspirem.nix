@@ -95,6 +95,7 @@
     glas
     bat
     riseup-vpn
+    wl-clipboard-rs
     calyx-vpn
     mozillavpn
     protonvpn-gui
