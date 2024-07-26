@@ -85,7 +85,8 @@
     monophony
     impression
     collision
-    gpa
+    kleopatra
+    mpv
     gradience
     yubikey-touch-detector
     fragments
