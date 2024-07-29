@@ -13,15 +13,47 @@
 
   # Bootloader.
 
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/etc/secureboot";
+  boot = {
+
+    # Secure boot configuration
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
+    };
+
+    # Boot animation
+    plymouth = {
+      enable = true;
+      theme = "cuts_alt";
+      themePackages = with pkgs; [
+        # By default we would install all themes
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [ "cuts_alt" ];
+        })
+      ];
+    };
+
+    # Enable silent boot
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "loglevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
+
+    # Misc bootloader config
+    loader = {
+      timeout = 0;
+      systemd-boot.enable = lib.mkForce false;
+      efi.canTouchEfiVariables = true;
+    };
+    initrd.luks.devices."luks-15e14bac-b357-4e9b-9102-723bff682c67".device = "/dev/disk/by-uuid/15e14bac-b357-4e9b-9102-723bff682c67";
   };
-
-
-  boot.loader.systemd-boot.enable = lib.mkForce false;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."luks-15e14bac-b357-4e9b-9102-723bff682c67".device = "/dev/disk/by-uuid/15e14bac-b357-4e9b-9102-723bff682c67";
 
   # Make sure to copy luks configuration from your current file if applicable
 
