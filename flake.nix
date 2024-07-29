@@ -6,13 +6,14 @@
     home-manager.url = "github:nix-community/home-manager";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-on-droid.url = "github:t184256/nix-on-droid/release-24.05";
+    ragenix.url = "github:yaxitech/ragenix";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, lanzaboote, home-manager, unstable, nix-on-droid, ... }@inputs:
+  outputs = { self, nixpkgs, lanzaboote, home-manager, unstable, ragenix, nix-on-droid, ... }@inputs:
   {
     nixosConfigurations = {
       aspirem = nixpkgs.lib.nixosSystem {
@@ -37,6 +38,7 @@
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./home-manager/hosts/aspirem.nix
+	  ragenix.nixosModules.default
         ];
       };
       "galith" = home-manager.lib.homeManagerConfiguration {
