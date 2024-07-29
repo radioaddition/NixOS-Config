@@ -212,7 +212,7 @@
   # Enable i2pd
   services.i2pd = {
     enable = true;
-    dataDir = "/home/radioaddition/i2pd";
+    #dataDir = "/home/radioaddition/i2pd";
     #upnp.enable = true;
     websocket.enable = true;
     yggdrasil.enable = true;
