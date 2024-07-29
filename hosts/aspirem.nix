@@ -213,7 +213,7 @@
   services.i2pd = {
     enable = true;
     dataDir = "/home/radioaddition/i2pd";
-    upnp.enable = true;
+    #upnp.enable = true;
   };
 
   # Yubikey Support
