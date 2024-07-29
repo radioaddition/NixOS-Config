@@ -209,21 +209,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-  # Enable i2pd
-  services.i2pd = {
-    enable = true;
-    #dataDir = "/home/radioaddition/i2pd";
-    #upnp.enable = true;
-    websocket.enable = true;
-    yggdrasil.enable = true;
-    proto = {
-      i2pControl.enable = true;
-      sam.enable = true;
-      socksProxy.enable = true;
-      socksProxy.outproxyEnable = true;
-    };
-  };
-
   # Yubikey Support
   security.pam.yubico = {
    enable = true;
