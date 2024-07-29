@@ -87,7 +87,6 @@
     collision
     kleopatra
     mpv
-    i2pd
     gradience
     yubikey-touch-detector
     fragments
