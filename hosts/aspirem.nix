@@ -244,6 +244,7 @@
     hyfetch
     home-manager
     rsync
+    ragenix
     gparted
     syncthing
     mcron
