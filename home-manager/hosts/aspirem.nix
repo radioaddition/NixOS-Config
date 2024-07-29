@@ -87,7 +87,6 @@
     collision
     kleopatra
     mpv
-    github:yaxitech/ragenix
     gradience
     yubikey-touch-detector
     fragments
