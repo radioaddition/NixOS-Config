@@ -244,7 +244,7 @@
     hyfetch
     home-manager
     rsync
-    ragenix
+    github:yaxitech/ragenix
     gparted
     syncthing
     mcron
