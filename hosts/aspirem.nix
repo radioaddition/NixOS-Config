@@ -193,11 +193,9 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable virtualisation
-  #virtualisation.kvmgt.enable = true;
-  #virtualisation.libvirtd.enable = true;
   virtualisation = {
     kvmgt.enable = true;
-    libvirtd.enable = true
+    libvirtd.enable = true;
     docker.enable = true;
     waydroid.enable = true;
   };
