@@ -74,10 +74,13 @@
   home.packages = with pkgs; [
     github-desktop
     git-repo
+    redis
     gnome.seahorse
     gnome.polari
     gpu-screen-recorder
     gpu-screen-recorder-gtk
+    nodePackages_latest.pnpm
+    pnpm-shell-completion
     goofcord
     pinentry-gnome3
     simplex-chat-desktop
@@ -96,11 +99,7 @@
     gleam
     glas
     bat
-    riseup-vpn
     wl-clipboard-rs
-    calyx-vpn
-    mozillavpn
-    protonvpn-gui
     neovim-gtk
     home-manager
     vscodium

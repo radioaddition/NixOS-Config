@@ -246,6 +246,8 @@
     rsync
     gparted
     syncthing
+    riseup-vpn
+    calyx-vpn
     mcron
     qemu
     qemu_kvm
