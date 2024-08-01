@@ -67,12 +67,14 @@
 
 . ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       source $HOME/NixOS-Config/home-manager/.p10k.zsh
+eval "$(atuin init zsh)"
 '';
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.package = pkgs.nix;
   home.packages = with pkgs; [
+    atuin
     bat
     bottles
     boxbuddy
