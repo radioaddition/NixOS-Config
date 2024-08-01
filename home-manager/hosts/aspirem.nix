@@ -60,6 +60,7 @@
         source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
       fi
       clear
+      hyfetch
     '';
     initExtra = ''
 . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
