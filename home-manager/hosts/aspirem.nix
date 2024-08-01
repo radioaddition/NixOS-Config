@@ -73,76 +73,77 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.package = pkgs.nix;
   home.packages = with pkgs; [
-    github-desktop
-    git-repo
-    redis
-    gnome.seahorse
-    gnome.polari
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-    nodePackages_latest.pnpm
-    pnpm-shell-completion
-    goofcord
-    pinentry-gnome3
-    simplex-chat-desktop
-    zed-editor
-    monophony
-    impression
-    collision
-    kleopatra
-    mpv
-    gradience
-    yubikey-touch-detector
-    fragments
+    bat
     bottles
     boxbuddy
-    nodejs-slim
-    gleam
-    glas
-    bat
-    wl-clipboard-rs
-    neovim-gtk
-    home-manager
-    vscodium
-    gettext
-    glib
-    gcc
-    gnumake
-    python3
-    librewolf
-    picard
-    lutris
-    gnome.gnome-tweaks
-    mindustry-wayland
-    shattered-pixel-dungeon
-    keepassxc
-    ventoy-full
-    onionshare-gui
-    tor-browser
-    fragments
-    helvum
-    pavucontrol
     cinny-desktop
+    collision
+    fragments
+    fragments
+    gcc
+    gettext
+    git-repo
+    github-desktop
+    glas
+    gleam
+    glib
+    gnome.gnome-tweaks
+    gnome.polari
+    gnome.seahorse
+    gnumake
+    goofcord
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
+    gradience
+    helvum
+    home-manager
+    impression
+    keepassxc
+    kleopatra
+    librewolf
+    lutris
+    mindustry-wayland
+    monophony
+    mpv
+    neovim-gtk
+    nodePackages_latest.pnpm
+    nodejs-slim
+    onionshare-gui
+    pavucontrol
+    picard
+    pinentry-gnome3
+    pnpm-shell-completion
+    python3
+    redis
+    shattered-pixel-dungeon
+    simplex-chat-desktop
+    tor-browser
+    tuckr
+    ventoy-full
+    vscodium
+    wl-clipboard-rs
+    yubikey-touch-detector
+    zed-editor
 
     # GNOME extensions
-    gnomeExtensions.caffeine
-    gnomeExtensions.dash2dock-lite
-    gnomeExtensions.user-themes
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.appindicator
-    gnomeExtensions.quick-settings-audio-devices-renamer
+    gnomeExtensions.caffeine
+    gnomeExtensions.dash2dock-lite
     gnomeExtensions.gsconnect
-    gnomeExtensions.search-light
-    gnomeExtensions.zen
-    gnomeExtensions.xwayland-indicator
-    gnomeExtensions.workspace-isolated-dash
-    gnomeExtensions.window-title-is-back
-    gnomeExtensions.window-on-top
-    gnomeExtensions.wiggle
-    gnomeExtensions.wifi-qrcode
     gnomeExtensions.logo-menu
     gnomeExtensions.pano
     gnomeExtensions.proton-vpn-button
+    gnomeExtensions.quick-settings-audio-devices-renamer
+    gnomeExtensions.search-light
+    gnomeExtensions.user-themes
+    gnomeExtensions.wifi-qrcode
+    gnomeExtensions.wiggle
+    gnomeExtensions.window-on-top
+    gnomeExtensions.window-title-is-back
+    gnomeExtensions.workspace-isolated-dash
+    gnomeExtensions.xwayland-indicator
+    gnomeExtensions.zen
 
   ];
   home.enableNixpkgsReleaseCheck = false;
