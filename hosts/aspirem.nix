@@ -9,17 +9,6 @@
 
   ## Security
 
-  ### Doas
-  security = {
-  doas.enable = true;
-  sudo.enable = false;
-  doas.extraRules = [{
-    users = ["radioaddition"];
-    keepEnv = true;
-    persist = true;
-  }];
-  };
-
   ### AppArmor
   services.dbus.apparmor = "enabled";
   security.apparmor = {
