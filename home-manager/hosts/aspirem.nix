@@ -30,7 +30,6 @@
     shellAliases = {
       clearls = "clear && ls -A";
       ls = "lsd -A";
-      sudo = "doas";
       archive = "tar -czvf archive.tar.gz ";
       extract = "tar -xzvf ";
       update = "nix flake update";
