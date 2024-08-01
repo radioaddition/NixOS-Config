@@ -101,6 +101,7 @@
     keepassxc
     kleopatra
     librewolf
+    lsd
     lutris
     mindustry-wayland
     monophony
