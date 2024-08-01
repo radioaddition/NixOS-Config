@@ -29,7 +29,7 @@
     enable = true;
     shellAliases = {
       clearls = "clear && ls -A";
-      ls = "ls -A";
+      ls = "lsd -A";
       archive = "tar -czvf archive.tar.gz ";
       extract = "tar -xzvf ";
       update = "nix flake update";
