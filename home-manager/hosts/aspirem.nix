@@ -94,8 +94,8 @@
     gradience
     yubikey-touch-detector
     fragments
-    gnome.gnome-boxes
     bottles
+    boxbuddy
     nodejs-slim
     gleam
     glas

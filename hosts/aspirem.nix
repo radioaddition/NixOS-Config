@@ -257,7 +257,7 @@
     cryfs
     rpi-imager
     distrobox
-    boxbuddy
+    gnome.gnome-boxes
     busybox
  ];
 
