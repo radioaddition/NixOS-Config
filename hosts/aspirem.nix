@@ -7,16 +7,6 @@
 {
   # System
 
-  ## Compatability
-
-  ### /bin/bash symlink
-  system.activationScripts.binbash = {
-    text = ''
-         ln -s /bin/bash ${pkgs.bash}
-    '';
-  };
-
-
   ## Security
 
   ### Auto Updates
