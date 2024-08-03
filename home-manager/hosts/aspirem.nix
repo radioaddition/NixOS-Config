@@ -101,6 +101,7 @@ eval "$(atuin init zsh)"
     home-manager
     impression
     keepassxc
+    kitty
     kleopatra
     librewolf
     lsd
@@ -117,7 +118,6 @@ eval "$(atuin init zsh)"
     pinentry-gnome3
     pipx
     pnpm-shell-completion
-    ptyxis
     python3
     redis
     shattered-pixel-dungeon
