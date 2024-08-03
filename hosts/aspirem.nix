@@ -7,6 +7,14 @@
 {
   # System
 
+  ## Compatability
+  system.activationScripts.binbash = {
+    text = ''
+         ln -s /bin/bash ${pkgs.bash}/bash
+    '';
+  };
+
+
   ## Security
 
   ### Auto Updates
