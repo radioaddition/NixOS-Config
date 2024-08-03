@@ -76,6 +76,7 @@ eval "$(atuin init zsh)"
     bat
     bottles
     boxbuddy
+    btop
     cinny-desktop
     collision
     feather
@@ -114,8 +115,8 @@ eval "$(atuin init zsh)"
     pavucontrol
     picard
     pinentry-gnome3
-    pnpm-shell-completion
     pipx
+    pnpm-shell-completion
     ptyxis
     python3
     redis
@@ -123,6 +124,7 @@ eval "$(atuin init zsh)"
     simplex-chat-desktop
     tor-browser
     tuckr
+    usbtop
     ventoy-full
     vscodium
     wl-clipboard-rs
