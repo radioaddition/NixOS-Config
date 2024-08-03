@@ -311,7 +311,7 @@
 
     # Gnome Extensions
 
-    )] ++ with pkgs.gnomeExtensions; [
+    ]) ++ with pkgs.gnomeExtensions; [
       alphabetical-app-grid
       appindicator
       blur-my-shell
