@@ -78,7 +78,7 @@ eval "$(atuin init zsh)"
     boxbuddy
     cinny-desktop
     collision
-    fragments
+    firefox
     fragments
     gcc
     gettext
