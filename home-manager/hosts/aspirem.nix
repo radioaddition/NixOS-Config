@@ -78,6 +78,7 @@ eval "$(atuin init zsh)"
     boxbuddy
     cinny-desktop
     collision
+    feather
     firefox
     fragments
     gcc
