@@ -284,6 +284,7 @@
     docker-client
     docker-compose
     freshfetch
+    gcc
     git
     gnome.dconf-editor
     gnome.gnome-boxes
