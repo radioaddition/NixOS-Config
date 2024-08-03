@@ -274,7 +274,7 @@
   #' $ nix search wget
 
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
 
     busybox
     cryfs
@@ -307,7 +307,32 @@
     torsocks
     virt-manager
     wget
- ];
+
+
+    # Gnome Extensions
+
+    )] ++ with pkgs.gnomeExtensions; [
+      alphabetical-app-grid
+      appindicator
+      blur-my-shell
+      caffeine
+      dash2dock-lite
+      gsconnect
+      logo-menu
+      pano
+      pop-shell
+      proton-vpn-button
+      quick-settings-audio-devices-renamer
+      search-light
+      user-themes
+      wifi-qrcode
+      wiggle
+      window-on-top
+      window-title-is-back
+      workspace-isolated-dash
+      xwayland-indicator
+      zen
+    ]);
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

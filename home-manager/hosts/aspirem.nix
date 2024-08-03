@@ -127,27 +127,6 @@ eval "$(atuin init zsh)"
     wl-clipboard-rs
     yubikey-touch-detector
     zed-editor
-
-    # GNOME extensions
-    gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.appindicator
-    gnomeExtensions.caffeine
-    gnomeExtensions.dash2dock-lite
-    gnomeExtensions.gsconnect
-    gnomeExtensions.logo-menu
-    gnomeExtensions.pano
-    gnomeExtensions.proton-vpn-button
-    gnomeExtensions.quick-settings-audio-devices-renamer
-    gnomeExtensions.search-light
-    gnomeExtensions.user-themes
-    gnomeExtensions.wifi-qrcode
-    gnomeExtensions.wiggle
-    gnomeExtensions.window-on-top
-    gnomeExtensions.window-title-is-back
-    gnomeExtensions.workspace-isolated-dash
-    gnomeExtensions.xwayland-indicator
-    gnomeExtensions.zen
-
   ];
   home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "24.05";
