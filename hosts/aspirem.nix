@@ -8,9 +8,11 @@
   # System
 
   ## Compatability
+
+  ### /bin/bash symlink
   system.activationScripts.binbash = {
     text = ''
-         ln -s /bin/bash ${pkgs.bash}/bash
+         ln -s /bin/bash ${pkgs.bash}
     '';
   };
 

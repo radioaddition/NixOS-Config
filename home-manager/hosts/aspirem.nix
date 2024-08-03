@@ -114,6 +114,7 @@ eval "$(atuin init zsh)"
     picard
     pinentry-gnome3
     pnpm-shell-completion
+    pipx
     ptyxis
     python3
     redis
