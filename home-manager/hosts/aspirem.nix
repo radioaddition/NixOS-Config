@@ -125,6 +125,7 @@ eval "$(atuin init zsh)"
     ventoy-full
     vscodium
     wl-clipboard-rs
+    xmrig-mo
     yubikey-touch-detector
     zed-editor
   ];
