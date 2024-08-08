@@ -122,7 +122,6 @@ eval "$(atuin init zsh)"
     impression
     jamesdsp
     keepassxc
-    kitty
     kleopatra
     librewolf
     lsd
