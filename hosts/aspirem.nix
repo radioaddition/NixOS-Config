@@ -238,6 +238,9 @@
 
   ## Enable ADB/Fastboot
   programs.adb.enable = true;
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
 
   # User
   ## Define a user account. Don't forget to set a password with ‘passwd’.
