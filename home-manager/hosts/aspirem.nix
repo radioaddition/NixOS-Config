@@ -163,17 +163,13 @@ eval "$(atuin init zsh)"
       dash2dock-lite
       gsconnect
       logo-menu
-      pano
       pop-shell
-      proton-vpn-button
       quick-settings-audio-devices-renamer
       search-light
       user-themes
       wifi-qrcode
       wiggle
-      window-on-top
       window-title-is-back
-      workspace-isolated-dash
       xwayland-indicator
       zen
       ]);
