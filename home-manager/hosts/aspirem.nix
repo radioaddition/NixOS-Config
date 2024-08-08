@@ -36,7 +36,6 @@
     enable = true;
     shellAliases = {
       clearls = "clear && ls -A";
-      ls = "lsd -A";
       archive = "tar -czvf archive.tar.gz ";
       extract = "tar -xzvf ";
       update = "nix flake update";
@@ -93,6 +92,7 @@ eval "$(atuin init zsh)"
     direnv
     distrobox
     docker-compose
+    eza
     feather
     firefox
     fragments
@@ -125,7 +125,6 @@ eval "$(atuin init zsh)"
     keepassxc
     kleopatra
     librewolf
-    lsd
     lutris
     mindustry-wayland
     monophony
