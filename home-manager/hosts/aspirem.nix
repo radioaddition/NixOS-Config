@@ -139,6 +139,7 @@ eval "$(atuin init zsh)"
     pinentry-gnome3
     pipx
     pnpm-shell-completion
+    ptyxis
     python3
     redis
     shattered-pixel-dungeon
