@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-on-droid.url = "github:t184256/nix-on-droid/release-24.05";
     lanzaboote = {
@@ -12,8 +13,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, lanzaboote, home-manager, unstable, nix-on-droid, ... }@inputs:
-  {
+  outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, nix-on-droid, ... }: {
     nixosConfigurations = {
       aspirem = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

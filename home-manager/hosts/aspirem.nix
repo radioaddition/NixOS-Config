@@ -17,11 +17,18 @@
   home.sessionPath = [ "$HOME/.local/bin" "/usr/local/bin" ];
   home.sessionVariables = {
     EDITOR = "nvim";
+    DBX_CONTAINER_MANAGER = "podman";
   };
   # GPG
   services.gpg-agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-gnome3;
+  };
+
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+    tray.enable = true;
   };
 
   # ZSH
@@ -71,7 +78,10 @@ eval "$(atuin init zsh)"
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.package = pkgs.nix;
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
+
+  # Packages
+
     atuin
     bat
     bottles
@@ -79,27 +89,37 @@ eval "$(atuin init zsh)"
     btop
     cinny-desktop
     collision
+    curl
+    distrobox
+    docker-compose
     feather
     firefox
     fragments
+    freshfetch
     gcc
     gettext
+    git
     git-repo
     github-desktop
     glas
     gleam
     glib
+    gnome.dconf-editor
+    gnome.gnome-boxes
     gnome.gnome-tweaks
     gnome.polari
     gnome.seahorse
     gnumake
     goofcord
+    gparted
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     gradience
     helvum
     home-manager
+    hyfetch
     impression
+    jamesdsp
     keepassxc
     kitty
     kleopatra
@@ -127,11 +147,35 @@ eval "$(atuin init zsh)"
     usbtop
     ventoy-full
     vscodium
-    wl-clipboard-rs
+    wget
+    wl-clipboard
     xmrig-mo
     yubikey-touch-detector
     zed-editor
-  ];
-  home.enableNixpkgsReleaseCheck = false;
+
+  # Gnome Extensions
+  ]) ++ (with pkgs.gnomeExtensions; [
+      alphabetical-app-grid
+      appindicator
+      blur-my-shell
+      caffeine
+      dash2dock-lite
+      gsconnect
+      logo-menu
+      pano
+      pop-shell
+      proton-vpn-button
+      quick-settings-audio-devices-renamer
+      search-light
+      user-themes
+      wifi-qrcode
+      wiggle
+      window-on-top
+      window-title-is-back
+      workspace-isolated-dash
+      xwayland-indicator
+      zen
+      ]);
+  #home.enableNixpkgsReleaseCheck = false; # If using a package from the unstable branch uncomment this
   home.stateVersion = "24.05";
 }

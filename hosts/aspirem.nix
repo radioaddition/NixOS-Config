@@ -142,7 +142,7 @@
       macAddress = "random";
       powersave = true;
       scanRandMacAddress = true;
-      #- backend = "iwd"; # Enable when no longer experimental
+      backend = "iwd"; # Enable when no longer experimental
     };
   };
 
@@ -234,18 +234,10 @@
     '';
   };
   ## Enable flatpak
-  services.flatpak.enable = true;
+  #-services.flatpak.enable = true;
 
   ## Enable ADB/Fastboot
   programs.adb.enable = true;
-
-  # Enable syncthing
-  services.syncthing = {
-        enable = true;
-        user = "radioaddition";
-        dataDir = "/home/radioaddition/Syncthing";    # Default folder for new synced folders
-        configDir = "/home/radioaddition/.config/syncthing";   # Folder for Syncthing's settings and keys
-    };
 
   # User
   ## Define a user account. Don't forget to set a password with ‘passwd’.
@@ -268,71 +260,26 @@
     libvirtd.enable = true;
     docker.enable = true;
     waydroid.enable = true;
+    podman.enable = true;
   };
   
   #' List packages installed in system profile. To search, run:
   #' $ nix search wget
 
 
-  environment.systemPackages = (with pkgs; [
-
+  environment.systemPackages = with pkgs; [
     busybox
-    cryfs
-    curl
-    distrobox
-    docker
-    docker-client
-    docker-compose
-    freshfetch
-    gcc
+    #gcc
     git
-    gnome.dconf-editor
-    gnome.gnome-boxes
-    gparted
-    home-manager
-    hyfetch
-    jamesdsp
     libvirt
     mcron
     neovim
     pinentry-gnome3
     qemu
     qemu_kvm
-    rpi-imager
     rsync
     sbctl
-    syncthing
-    tor
-    torctl
-    torsocks
-    virt-manager
-    wget
-
-
-    # Gnome Extensions
-
-    ]) ++ (with pkgs.gnomeExtensions; [
-      alphabetical-app-grid
-      appindicator
-      blur-my-shell
-      caffeine
-      dash2dock-lite
-      gsconnect
-      logo-menu
-      pano
-      pop-shell
-      proton-vpn-button
-      quick-settings-audio-devices-renamer
-      search-light
-      user-themes
-      wifi-qrcode
-      wiggle
-      window-on-top
-      window-title-is-back
-      workspace-isolated-dash
-      xwayland-indicator
-      zen
-    ]);
+    ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
