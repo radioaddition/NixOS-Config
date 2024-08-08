@@ -90,6 +90,7 @@ eval "$(atuin init zsh)"
     cinny-desktop
     collision
     curl
+    direnv
     distrobox
     docker-compose
     feather
