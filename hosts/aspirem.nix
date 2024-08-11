@@ -177,6 +177,16 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  ## Steam
+  programs.steam = {
+    extraCompatPackages = with pkgs; [ proton-ge-bin ];
+    extest.enable = true;
+    enable = true;
+    extraPackages = with pkgs; [
+      gamescope
+    ];
+  };
+  programs.gamescope.enable = true;
   ## Display
 
   ### Enable the X11 windowing system.
