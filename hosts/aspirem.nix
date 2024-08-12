@@ -180,13 +180,21 @@
   ## Steam
   programs.steam = {
     extraCompatPackages = with pkgs; [ proton-ge-bin ];
+    localNetworkGameTransfers.openFirewall = true;
+    dedicatedServer.openFirewall = true;
     extest.enable = true;
     enable = true;
-    extraPackages = with pkgs; [
-      gamescope
-    ];
+    #-package = pkgs.steam.override {
+      #-withPrimus = true;
+      #-extraPackages = pkgs: [ bumblebee glxinfo ];
+      #-withJava = true;
+    #-};
   };
   programs.gamescope.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+  programs.java.enable = true; 
+  hardware.openrazer.enable = true;
+
   ## Display
 
   ### Enable the X11 windowing system.
@@ -257,7 +265,7 @@
   users.users.radioaddition = {
     isNormalUser = true;
     description = "RadioAddition";
-    extraGroups = [ "adbusers" "networkmanager" "wheel" "lxd" "libvirt" "libvirtd" "kvm" "docker" ];
+    extraGroups = [ "adbusers" "docker" "kvm" "libvirt" "libvirtd" "lxd" "networkmanager" "openrazer" "wheel" ];
     hashedPassword = "$y$j9T$gMRIRcus7uO1X6zrPTfVn/$0iOFINi8HZPH5b0QpXXCQbanUwYe9lpzjD17NbitD39";
   };
   services.vsftpd.localUsers = true;
@@ -282,7 +290,7 @@
 
   environment.systemPackages = with pkgs; [
     busybox
-    #gcc
+    gcc
     git
     libvirt
     mcron
@@ -292,6 +300,8 @@
     qemu_kvm
     rsync
     sbctl
+    steamcmd
+    steam-tui
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
