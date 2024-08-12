@@ -81,11 +81,13 @@ eval "$(atuin init zsh)"
 
   # Packages
 
+    adwsteamgtk
     atuin
     bat
     bottles
     boxbuddy
     btop
+    cartridges
     cinny-desktop
     collision
     curl
