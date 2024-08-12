@@ -133,11 +133,14 @@ eval "$(atuin init zsh)"
     nodePackages_latest.pnpm
     nodejs-slim
     onionshare-gui
+    openrazer-daemon
     pavucontrol
     picard
     pinentry-gnome3
     pipx
     pnpm-shell-completion
+    polychromatic
+    protonup-qt
     ptyxis
     python3
     redis
