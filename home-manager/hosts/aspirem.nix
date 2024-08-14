@@ -160,6 +160,7 @@ eval "$(atuin init zsh)"
     wl-clipboard
     xmrig-mo
     yubikey-touch-detector
+    yubioath-flutter
     zed-editor
 
   # Gnome Extensions
