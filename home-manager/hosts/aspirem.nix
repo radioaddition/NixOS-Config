@@ -142,7 +142,9 @@ eval "$(atuin init zsh)"
     pipx
     pnpm-shell-completion
     polychromatic
-    protonup-qt
+    protonmail-bridge
+    protonmail-bridge-gui
+    protonplus
     protonvpn-gui
     ptyxis
     python3
