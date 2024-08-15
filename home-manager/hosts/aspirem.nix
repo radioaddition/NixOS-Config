@@ -108,6 +108,7 @@ eval "$(atuin init zsh)"
     gleam
     glib
     gnome.dconf-editor
+    gnome-extension-manager
     gnome.gnome-boxes
     gnome.gnome-tweaks
     gnome.polari
