@@ -169,10 +169,12 @@ eval "$(atuin init zsh)"
       alphabetical-app-grid
       appindicator
       blur-my-shell
+      burn-my-windows
       caffeine
       dash2dock-lite
       gsconnect
       logo-menu
+      pip-on-top
       pop-shell
       quick-settings-audio-devices-renamer
       search-light
