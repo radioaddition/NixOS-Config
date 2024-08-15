@@ -158,7 +158,7 @@ eval "$(atuin init zsh)"
     vscodium
     wget
     wl-clipboard
-    wmctrl
+    wlrctl
     xmrig-mo
     yubikey-touch-detector
     yubioath-flutter
