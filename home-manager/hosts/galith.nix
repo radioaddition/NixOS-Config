@@ -130,6 +130,7 @@ eval "$(atuin init zsh)"
     mindustry-wayland
     monophony
     mpv
+    neovim
     neovim-gtk
     nodePackages_latest.pnpm
     nodejs-slim
