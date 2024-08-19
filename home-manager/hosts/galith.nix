@@ -101,6 +101,7 @@ eval "$(atuin init zsh)"
     gajim
     gcc
     gettext
+    gpg-tui
     git
     git-repo
     github-desktop
