@@ -259,7 +259,7 @@
     '';
   };
   ## Enable flatpak
-  #-services.flatpak.enable = true;
+  services.flatpak.enable = true;
 
   ## Enable ADB/Fastboot
   programs.adb.enable = true;
