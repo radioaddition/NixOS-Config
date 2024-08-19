@@ -151,6 +151,8 @@ eval "$(atuin init zsh)"
     python3
     redis
     shattered-pixel-dungeon
+    signald
+    signal-desktop
     simplex-chat-desktop
     tor-browser
     tuckr
