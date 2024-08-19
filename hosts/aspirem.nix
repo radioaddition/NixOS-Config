@@ -205,7 +205,6 @@
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = with pkgs.gnome; [
     yelp
-    gnome-software
     cheese
     simple-scan
     totem
