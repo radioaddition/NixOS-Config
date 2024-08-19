@@ -175,6 +175,7 @@ eval "$(atuin init zsh)"
       dash2dock-lite
       gsconnect
       logo-menu
+      night-theme-switcher
       pop-shell
       quick-settings-audio-devices-renamer
       search-light
