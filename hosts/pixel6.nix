@@ -16,6 +16,7 @@
     gnupg
     gnused
     gnutar
+    jdk17
     bzip2
     gzip
     xz
