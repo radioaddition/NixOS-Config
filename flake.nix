@@ -27,6 +27,7 @@
     };
     nixOnDroidConfigurations = {
       "pixel6" = nix-on-droid.lib.nixOnDroidConfiguration {
+        pkgs = import nixpkgs { system = "aarch64-linux"; };
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./hosts/pixel6.nix ];
       };
