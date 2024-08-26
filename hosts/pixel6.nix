@@ -2,6 +2,7 @@
 
 {
   # Simply install just the packages
+  user.shell = "/data/data/com.termux.nix/files/home/.nix-profile/bin/zsh";
   environment.packages = with pkgs; [
     # User-facing stuff that you really really want to have
     neovim
@@ -15,6 +16,7 @@
     gnupg
     gnused
     gnutar
+    jdk17
     bzip2
     gzip
     xz
@@ -22,6 +24,8 @@
     unzip
     openssh
     git
+    zsh
+    home-manager
     #gitea
   ];
 
@@ -29,7 +33,7 @@
   environment.etcBackupExtension = ".bak";
 
   # Read the changelog before changing this value
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 
   # Set up nix for flakes
   nix.extraOptions = ''

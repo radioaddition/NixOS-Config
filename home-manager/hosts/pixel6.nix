@@ -11,10 +11,10 @@
   imports = [
   ];
   news.display = "silent";
-  home.username = "radioaddition";
-  home.homeDirectory = "/home/radioaddition";
+  home.username = "nix-on-droid";
+  home.homeDirectory = "/data/data/com.termux.nix/files/home";
   nixpkgs.config.allowUnfree = true;
-  home.sessionPath = [ "$HOME/.local/bin" "/usr/local/bin" ];
+  home.sessionPath = [ "$HOME/.local/bin" "/data/data/com.termux.nix/files/usr/bin" ];
   home.sessionVariables = {
     EDITOR = "nvim";
   };
@@ -55,9 +55,7 @@
     git
     gettext
     glib
-    python311Packages.pygobject3
-    python3
-    browsh
+    home-manager
   ];
   home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "23.11";

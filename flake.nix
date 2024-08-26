@@ -27,6 +27,7 @@
     };
     nixOnDroidConfigurations = {
       "pixel6" = nix-on-droid.lib.nixOnDroidConfiguration {
+        pkgs = import nixpkgs { system = "aarch64-linux"; };
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./hosts/pixel6.nix ];
       };
@@ -37,6 +38,13 @@
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./home-manager/hosts/aspirem.nix
+        ];
+      };
+      "pixel6" = home-manager.lib.homeManagerConfiguration {
+        extraSpecialArgs = {inherit inputs;};
+        pkgs = nixpkgs.legacyPackages."aarch64-linux";
+        modules = [
+          ./home-manager/hosts/pixel6.nix
         ];
       };
       "galith" = home-manager.lib.homeManagerConfiguration {

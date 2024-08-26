@@ -89,6 +89,7 @@ eval "$(atuin init zsh)"
     cinny-desktop
     collision
     curl
+    dino
     direnv
     distrobox
     docker-compose
@@ -97,8 +98,10 @@ eval "$(atuin init zsh)"
     firefox
     fragments
     freshfetch
+    gajim
     gcc
     gettext
+    gpg-tui
     git
     git-repo
     github-desktop
