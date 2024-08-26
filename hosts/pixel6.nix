@@ -25,6 +25,7 @@
     openssh
     git
     zsh
+    home-manager
     #gitea
   ];
 

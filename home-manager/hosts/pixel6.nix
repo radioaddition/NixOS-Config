@@ -55,9 +55,7 @@
     git
     gettext
     glib
-    python311Packages.pygobject3
-    python3
-    browsh
+    home-manager
   ];
   home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "23.11";
