@@ -12,9 +12,9 @@
   ];
   news.display = "silent";
   home.username = "nix-on-droid";
-  home.homeDirectory = "/home/nix-on-droid";
+  home.homeDirectory = "/data/data/com.termux.nix/files/home";
   nixpkgs.config.allowUnfree = true;
-  home.sessionPath = [ "$HOME/.local/bin" "/usr/local/bin" ];
+  home.sessionPath = [ "$HOME/.local/bin" "/data/data/com.termux.nix/files/usr/bin" ];
   home.sessionVariables = {
     EDITOR = "nvim";
   };
