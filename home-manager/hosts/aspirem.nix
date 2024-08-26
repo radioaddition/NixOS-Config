@@ -76,7 +76,7 @@ eval "$(atuin init zsh)"
   };
 
   nix.settings = {
-    autos optimized store = true;
+    auto-optimise-store = true;
     experimental-features = [ "nix-command" "flakes" ];
   };
   nix.package = pkgs.nix;
