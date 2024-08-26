@@ -139,6 +139,7 @@ eval "$(atuin init zsh)"
     openrazer-daemon
     pavucontrol
     picard
+    pika-backup
     pinentry-gnome3
     pipx
     pnpm-shell-completion
