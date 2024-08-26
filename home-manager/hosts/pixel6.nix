@@ -11,8 +11,8 @@
   imports = [
   ];
   news.display = "silent";
-  home.username = "radioaddition";
-  home.homeDirectory = "/home/radioaddition";
+  home.username = "nix-on-droid";
+  home.homeDirectory = "/home/nix-on-droid";
   nixpkgs.config.allowUnfree = true;
   home.sessionPath = [ "$HOME/.local/bin" "/usr/local/bin" ];
   home.sessionVariables = {
