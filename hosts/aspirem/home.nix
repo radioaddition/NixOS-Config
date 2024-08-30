@@ -71,7 +71,7 @@
 
 . ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       source $HOME/NixOS-Config/.p10k.zsh
-eval "$(atuin init zsh)"
+      eval "$(atuin init zsh)"
 '';
   };
 
