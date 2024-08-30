@@ -20,16 +20,16 @@
         specialArgs = {inherit inputs;};
         modules = [
 	  lanzaboote.nixosModules.lanzaboote
-          ./hosts/aspirem.nix
-          ./hosts/aspirem-hardware.nix
+          ./hosts/aspirem/configuration.nix
+          ./hosts/aspirem/hardware-configuration.nix
         ];
       };
     };
     nixOnDroidConfigurations = {
-      "pixel6" = nix-on-droid.lib.nixOnDroidConfiguration {
+      "oriole" = nix-on-droid.lib.nixOnDroidConfiguration {
         pkgs = import nixpkgs { system = "aarch64-linux"; };
         extraSpecialArgs = { inherit inputs; };
-        modules = [ ./hosts/pixel6.nix ];
+        modules = [ ./hosts/oriole/configuration.nix ];
       };
     };
     homeConfigurations = {
@@ -37,35 +37,28 @@
         extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
-          ./home-manager/hosts/aspirem.nix
+          ./hosts/aspirem/home.nix
         ];
       };
-      "pixel6" = home-manager.lib.homeManagerConfiguration {
+      "oriole" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
         modules = [
-          ./home-manager/hosts/pixel6.nix
+          ./hosts/oriole/home.nix
         ];
       };
       "galith" = home-manager.lib.homeManagerConfiguration {
   	extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
-          ./home-manager/hosts/galith.nix
-        ];
-      };
-      "airendeavour" = home-manager.lib.homeManagerConfiguration {
-  	extraSpecialArgs = {inherit inputs;};
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        modules = [
-          ./home-manager/hosts/airendeavour.nix
+          ./hosts/galith/home.nix
         ];
       };
       "air2020" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-darwin";
         modules = [
-          ./home-manager/hosts/air2020.nix
+          ./hosts/air2020/home.nix
         ];
       };
     };
