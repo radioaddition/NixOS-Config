@@ -45,7 +45,7 @@
 . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
 . ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source /Users/radioaddition/.p10k.zsh
+      source $HOME/NixOS-Config/.p10k.zsh
 '';
   };
   home.packages = with pkgs; [
