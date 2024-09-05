@@ -140,6 +140,7 @@ eval "$(atuin init zsh)"
     onionshare-gui
     openrazer-daemon
     pavucontrol
+    perl
     picard
     pinentry-gnome3
     pipx
