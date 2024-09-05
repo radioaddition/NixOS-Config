@@ -166,7 +166,6 @@ eval "$(atuin init zsh)"
     xmrig-mo
     yubikey-touch-detector
     yubioath-flutter
-    zed-editor
 
   # Gnome Extensions
   ]) ++ (with pkgs.gnomeExtensions; [
