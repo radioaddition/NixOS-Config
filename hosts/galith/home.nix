@@ -86,7 +86,6 @@ eval "$(atuin init zsh)"
     boxbuddy
     btop
     cartridges
-    cinny-desktop
     collision
     curl
     dino
