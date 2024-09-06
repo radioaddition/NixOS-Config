@@ -40,6 +40,13 @@
           ./hosts/aspirem/home.nix
         ];
       };
+      "aspirem-secureblue" = home-manager.lib.homeManagerConfiguration {
+        extraSpecialArgs = {inherit inputs;};
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        modules = [
+          ./hosts/aspirem-secureblue/home.nix
+        ];
+      };
       "oriole" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."aarch64-linux";

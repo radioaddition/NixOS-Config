@@ -135,14 +135,12 @@
     mindustry-wayland
     monophony
     mpv
-    neovim
     neovim-gtk
     nodePackages_latest.pnpm
     nodejs-slim
     onionshare-gui
     openrazer-daemon
     pavucontrol
-    perl
     picard
     pika-backup
     pinentry-gnome3
