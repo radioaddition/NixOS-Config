@@ -38,16 +38,9 @@
       clearls = "clear && ls -A";
       archive = "tar -czvf archive.tar.gz ";
       extract = "tar -xzvf ";
-      update = "nix flake update";
-      upgrade = "sudo nixos-rebuild switch --flake ./#aspirem --upgrade";
-      apply = "sudo nixos-rebuild switch --flake ./#aspirem";
-      apply-home = "home-manager switch --flake ./#aspirem && source ~/.zshrc";
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d";
       cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
-      commit = "git commit -a";
-      push = "git push origin main";
-      pushl = "git push local main";
     };
     zplug = {
       enable = true;
@@ -125,7 +118,6 @@
     impression
     jamesdsp
     keepassxc
-    kleopatra
     librewolf
     lutris
     mindustry-wayland
@@ -153,20 +145,15 @@
     python3
     redis
     shattered-pixel-dungeon
-    signald
-    signal-desktop
     simplex-chat-desktop
     tor-browser
     tuckr
     usbtop
     ventoy-full
-    vscodium
     wget
     wl-clipboard
     wlrctl
     xmrig-mo
-    yubikey-touch-detector
-    yubioath-flutter
 
   # Gnome Extensions
   ]) ++ (with pkgs.gnomeExtensions; [
