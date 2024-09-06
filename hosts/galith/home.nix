@@ -172,7 +172,6 @@
       pop-shell
       quick-settings-audio-devices-renamer
       search-light
-      user-themes
       wifi-qrcode
       wiggle
       window-title-is-back
