@@ -165,8 +165,6 @@
     wl-clipboard
     wlrctl
     xmrig-mo
-    yubikey-touch-detector
-    yubioath-flutter
 
   # Gnome Extensions
   ]) ++ (with pkgs.gnomeExtensions; [
@@ -178,7 +176,6 @@
       dash2dock-lite
       gsconnect
       logo-menu
-      night-theme-switcher
       pop-shell
       quick-settings-audio-devices-renamer
       search-light
