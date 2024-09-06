@@ -39,9 +39,9 @@
       archive = "tar -czvf archive.tar.gz ";
       extract = "tar -xzvf ";
       update = "nix flake update";
-      upgrade = "sudo nixos-rebuild switch --flake ./#galith --upgrade";
-      apply = "sudo nixos-rebuild switch --flake ./#galith";
-      apply-home = "home-manager switch --flake ./#galith && source ~/.zshrc";
+      upgrade = "sudo nixos-rebuild switch --flake ./#aspirem --upgrade";
+      apply = "sudo nixos-rebuild switch --flake ./#aspirem";
+      apply-home = "home-manager switch --flake ./#aspirem && source ~/.zshrc";
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d";
       cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
@@ -70,15 +70,20 @@
 . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
 . ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source $HOME/NixOS-Config.p10k.zsh
-eval "$(atuin init zsh)"
+      source "$HOME/NixOS-Config/.p10k.zsh"
+      eval "$(atuin init zsh)"
 '';
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    auto-optimise-store = true;
+    experimental-features = [ "nix-command" "flakes" ];
+  };
   nix.package = pkgs.nix;
   home.packages = (with pkgs; [
-    # Packages
+
+  # Packages
+
     adwsteamgtk
     atuin
     bat
@@ -88,7 +93,6 @@ eval "$(atuin init zsh)"
     cartridges
     collision
     curl
-    dino
     direnv
     distrobox
     docker-compose
@@ -97,10 +101,8 @@ eval "$(atuin init zsh)"
     firefox
     fragments
     freshfetch
-    gajim
     gcc
     gettext
-    gpg-tui
     git
     git-repo
     github-desktop
@@ -116,9 +118,6 @@ eval "$(atuin init zsh)"
     gnumake
     goofcord
     gparted
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-    gradience
     guake
     helvum
     home-manager
@@ -141,6 +140,7 @@ eval "$(atuin init zsh)"
     pavucontrol
     perl
     picard
+    pika-backup
     pinentry-gnome3
     pipx
     pnpm-shell-completion
@@ -153,6 +153,8 @@ eval "$(atuin init zsh)"
     python3
     redis
     shattered-pixel-dungeon
+    signald
+    signal-desktop
     simplex-chat-desktop
     tor-browser
     tuckr
@@ -176,6 +178,7 @@ eval "$(atuin init zsh)"
       dash2dock-lite
       gsconnect
       logo-menu
+      night-theme-switcher
       pop-shell
       quick-settings-audio-devices-renamer
       search-light
@@ -186,7 +189,6 @@ eval "$(atuin init zsh)"
       xwayland-indicator
       zen
       ]);
-
   #home.enableNixpkgsReleaseCheck = false; # If using a package from the unstable branch uncomment this
   home.stateVersion = "24.05";
 }
