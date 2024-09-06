@@ -116,6 +116,7 @@
     home-manager
     hyfetch
     impression
+    iosevka
     jamesdsp
     keepassxc
     librewolf
