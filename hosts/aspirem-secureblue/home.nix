@@ -141,6 +141,7 @@
     onionshare-gui
     openrazer-daemon
     pavucontrol
+    perl
     picard
     pika-backup
     pinentry-gnome3
