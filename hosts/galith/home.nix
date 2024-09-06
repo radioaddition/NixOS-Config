@@ -11,8 +11,8 @@
   imports = [
   ];
   news.display = "silent";
-  home.username = "chaseunc0";
-  home.homeDirectory = "/home/chaseunc0";
+  home.username = "radioaddition";
+  home.homeDirectory = "/home/radioaddition";
   nixpkgs.config.allowUnfree = true;
   home.sessionPath = [ "$HOME/.local/bin" "/usr/local/bin" ];
   home.sessionVariables = {
@@ -42,7 +42,7 @@
       upgrade = "sudo nixos-rebuild switch --flake ./#galith --upgrade";
       apply = "sudo nixos-rebuild switch --flake ./#galith";
       apply-home = "home-manager switch --flake ./#galith && source ~/.zshrc";
-      vivi = "nvim /home/chaseunc0/.config/nvim/init.vim";
+      vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d";
       cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
       commit = "git commit -a";
@@ -86,7 +86,6 @@ eval "$(atuin init zsh)"
     boxbuddy
     btop
     cartridges
-    cinny-desktop
     collision
     curl
     dino
@@ -140,6 +139,7 @@ eval "$(atuin init zsh)"
     onionshare-gui
     openrazer-daemon
     pavucontrol
+    perl
     picard
     pinentry-gnome3
     pipx
@@ -165,7 +165,6 @@ eval "$(atuin init zsh)"
     xmrig-mo
     yubikey-touch-detector
     yubioath-flutter
-    zed-editor
 
   # Gnome Extensions
   ]) ++ (with pkgs.gnomeExtensions; [
