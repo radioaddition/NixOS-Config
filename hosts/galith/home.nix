@@ -121,6 +121,7 @@
     keepassxc
     librewolf
     lutris
+    meslo-lgs-nf
     mindustry-wayland
     monophony
     mpv
