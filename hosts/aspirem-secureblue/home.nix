@@ -118,9 +118,6 @@
     gnumake
     goofcord
     gparted
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-    gradience
     guake
     helvum
     home-manager
