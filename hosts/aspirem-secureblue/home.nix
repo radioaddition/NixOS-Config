@@ -125,7 +125,6 @@
     impression
     jamesdsp
     keepassxc
-    kleopatra
     librewolf
     lutris
     mindustry-wayland
