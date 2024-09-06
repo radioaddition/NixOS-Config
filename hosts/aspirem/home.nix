@@ -91,7 +91,6 @@
     boxbuddy
     btop
     cartridges
-    cinny-desktop
     collision
     curl
     direnv
@@ -171,7 +170,6 @@
     xmrig-mo
     yubikey-touch-detector
     yubioath-flutter
-    zed-editor
 
   # Gnome Extensions
   ]) ++ (with pkgs.gnomeExtensions; [

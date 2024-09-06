@@ -91,7 +91,6 @@
     boxbuddy
     btop
     cartridges
-    cinny-desktop
     collision
     curl
     direnv
@@ -135,6 +134,7 @@
     mindustry-wayland
     monophony
     mpv
+    neovim
     neovim-gtk
     nodePackages_latest.pnpm
     nodejs-slim
@@ -169,7 +169,6 @@
     xmrig-mo
     yubikey-touch-detector
     yubioath-flutter
-    zed-editor
 
   # Gnome Extensions
   ]) ++ (with pkgs.gnomeExtensions; [
