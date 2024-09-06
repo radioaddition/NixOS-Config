@@ -146,6 +146,7 @@
     ptyxis
     python3
     redis
+    sassc
     shattered-pixel-dungeon
     simplex-chat-desktop
     tor-browser
