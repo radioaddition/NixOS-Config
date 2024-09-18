@@ -149,6 +149,7 @@
     sassc
     shattered-pixel-dungeon
     simplex-chat-desktop
+    topgrade
     tor-browser
     tuckr
     usbtop
