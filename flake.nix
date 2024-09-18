@@ -61,6 +61,13 @@
           ./hosts/galith/home.nix
         ];
       };
+      "deck" = home-manager.lib.homeManagerConfiguration {
+  	extraSpecialArgs = {inherit inputs;};
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        modules = [
+          ./hosts/deck/home.nix
+        ];
+      };
       "air2020" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-darwin";
