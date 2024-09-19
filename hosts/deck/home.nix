@@ -112,6 +112,7 @@
     monophony
     mpv
     neovim
+    ollama
     onionshare-gui
     openrazer-daemon
     pavucontrol

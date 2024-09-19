@@ -126,6 +126,7 @@
     neovim-gtk
     nodePackages_latest.pnpm
     nodejs-slim
+    ollama
     onionshare-gui
     openrazer-daemon
     pavucontrol
