@@ -68,11 +68,8 @@
 '';
   };
 
-  nix.settings = {
-    auto-optimise-store = true;
-    experimental-features = [ "nix-command" "flakes" ];
-  };
-  nix.package = pkgs.nix;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.package = pkgs.nixFlakes;
   home.packages = (with pkgs; [
 
   # Packages
