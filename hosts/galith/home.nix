@@ -132,7 +132,7 @@
     pavucontrol
     perl
     picard
-    #pika-backup
+    pika-backup
     pinentry-gnome3
     pipx
     pnpm-shell-completion
