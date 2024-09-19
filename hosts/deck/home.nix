@@ -106,13 +106,13 @@
     iosevka
     jamesdsp
     librewolf
+    llama-cpp
     lutris
     meslo-lgs-nf
     mindustry-wayland
     monophony
     mpv
     neovim
-    ollama
     onionshare-gui
     openrazer-daemon
     pavucontrol

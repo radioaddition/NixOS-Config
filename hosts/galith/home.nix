@@ -117,6 +117,7 @@
     jamesdsp
     keepassxc
     librewolf
+    llama-cpp
     lutris
     meslo-lgs-nf
     mindustry-wayland
@@ -126,7 +127,6 @@
     neovim-gtk
     nodePackages_latest.pnpm
     nodejs-slim
-    ollama
     onionshare-gui
     openrazer-daemon
     pavucontrol
