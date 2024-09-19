@@ -291,6 +291,7 @@
 
 
   environment.systemPackages = with pkgs; [
+    btrfs-progs
     busybox
     ecryptfs
     gcc
