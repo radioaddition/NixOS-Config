@@ -83,12 +83,6 @@
 
   boot = {
 
-  ### Secure boot configuration
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/etc/secureboot";
-    };
-
   ### Boot animation
     plymouth = {
       enable = true;
@@ -127,7 +121,7 @@
 
   ## Networking
 
-  networking.hostName = "aspirem"; # Define your hostname.
+  networking.hostName = "galith"; # Define your hostname.
   #- networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   #' Configure network proxy if necessary
@@ -142,7 +136,7 @@
       macAddress = "random";
       powersave = true;
       scanRandMacAddress = true;
-      backend = "iwd"; # Enable when no longer experimental
+      backend = "iwd";
     };
   };
 
