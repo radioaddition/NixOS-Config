@@ -24,6 +24,15 @@
           ./hosts/aspirem/hardware-configuration.nix
         ];
       };
+      galith = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+	  lanzaboote.nixosModules.lanzaboote
+          ./hosts/aspirem/configuration.nix
+          ./hosts/aspirem/hardware-configuration.nix
+        ];
+      };
     };
     nixOnDroidConfigurations = {
       "oriole" = nix-on-droid.lib.nixOnDroidConfiguration {
