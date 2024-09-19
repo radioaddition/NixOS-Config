@@ -53,6 +53,8 @@
        #ENV{ID_VENDOR}=="Yubico",\
        #RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
   #'';
+  ### Filesystem Encryption
+  security.pam.enableEcryptfs = true;
 
   ### Firejail
   programs.firejail = {
@@ -114,7 +116,7 @@
       systemd-boot.enable = lib.mkForce false;
       efi.canTouchEfiVariables = true;
     };
-    initrd.luks.devices."luks-15e14bac-b357-4e9b-9102-723bff682c67".device = "/dev/disk/by-uuid/15e14bac-b357-4e9b-9102-723bff682c67";
+    kernelModules = [ "ecryptfs" ];
   };
 
   #' Make sure to copy luks configuration from your current file if applicable
@@ -290,6 +292,7 @@
 
   environment.systemPackages = with pkgs; [
     busybox
+    ecryptfs
     gcc
     git
     libvirt
@@ -300,8 +303,8 @@
     qemu_kvm
     rsync
     sbctl
-    steamcmd
     steam-tui
+    steamcmd
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
