@@ -10,7 +10,7 @@
 
   imports = [
   ];
-  news.display = "silent";
+  #news.display = "silent";
   home.username = "radioaddition";
   home.homeDirectory = "/home/radioaddition";
   nixpkgs.config.allowUnfree = true;
