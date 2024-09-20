@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-on-droid.url = "github:t184256/nix-on-droid/release-24.05";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
@@ -26,9 +26,8 @@
       };
       galith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = { inherit unstable; };
         modules = [
-	  lanzaboote.nixosModules.lanzaboote
           ./hosts/galith/configuration.nix
           ./hosts/galith/hardware-configuration.nix
         ];

@@ -297,6 +297,19 @@
   #' $ nix search wget
 
 
+  # Ollama
+  unstable = {
+    services.ollama = {
+      enable = true;
+      loadModels = [
+        "llama3.1:8b"
+	"gemma2:2b"
+	"qwen2.5:1.5b"
+	"codegemma:2b"
+      ];
+    };
+    services.nextjs-ollama-llm-ui.enable = true;
+  };
   environment.systemPackages = with pkgs; [
     btrfs-progs
     busybox
