@@ -22,6 +22,10 @@
 	  lanzaboote.nixosModules.lanzaboote
           ./hosts/aspirem/configuration.nix
           ./hosts/aspirem/hardware-configuration.nix
+	  home-manager.nixosModules.home-manager {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.radioaddition = import ./hosts/aspirem/home.nix;
         ];
       };
       galith = nixpkgs.lib.nixosSystem {
@@ -30,6 +34,11 @@
         modules = [
           ./hosts/galith/configuration.nix
           ./hosts/galith/hardware-configuration.nix
+	  home-manager.nixosModules.home-manager {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.radioaddition = import ./hosts/galith/home.nix;
+	  };
         ];
       };
     };
