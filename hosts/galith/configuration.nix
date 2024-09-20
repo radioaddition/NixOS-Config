@@ -113,7 +113,14 @@
   ### Misc bootloader config
     loader = {
       timeout = 0;
-      systemd-boot.enable = lib.mkForce false;
+      #systemd-boot.enable = true;
+      grub = {
+	enable = true;
+        efiSupport = true;
+        device = "nodev";
+        useOSProber = true;
+        timeoutStyle = "hidden";
+      };
       efi.canTouchEfiVariables = true;
     };
     kernelModules = [ "ecryptfs" ];

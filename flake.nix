@@ -29,8 +29,8 @@
         specialArgs = {inherit inputs;};
         modules = [
 	  lanzaboote.nixosModules.lanzaboote
-          ./hosts/aspirem/configuration.nix
-          ./hosts/aspirem/hardware-configuration.nix
+          ./hosts/galith/configuration.nix
+          ./hosts/galith/hardware-configuration.nix
         ];
       };
     };
