@@ -25,7 +25,7 @@
 	  home-manager.nixosModules.home-manager {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.radioaddition = import ./hosts/aspirem/home.nix;
+	    home-manager.users.radioaddition = [ import ./hosts/aspirem/home.nix;
         ];
       };
       galith = nixpkgs.lib.nixosSystem {
