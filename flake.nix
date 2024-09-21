@@ -58,13 +58,6 @@
           ./hosts/aspirem/home.nix
         ];
       };
-     "deck" = home-manager.lib.homeManagerConfiguration {
-        extraSpecialArgs = {inherit inputs;};
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        modules = [
-          ./hosts/deck/home.nix
-        ];
-      };
       "aspirem-secureblue" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
