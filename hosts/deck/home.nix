@@ -11,8 +11,8 @@
   imports = [
   ];
   news.display = "silent";
-  home.username = "radioaddition";
-  home.homeDirectory = "/home/radioaddition";
+  home.username = "deck";
+  home.homeDirectory = "/home/deck";
   nixpkgs.config.allowUnfree = true;
   home.sessionPath = [ "$HOME/.local/bin" "/usr/local/bin" ];
   home.sessionVariables = {
@@ -34,14 +34,6 @@
   # ZSH
   programs.zsh = {
     enable = true;
-    shellAliases = {
-      clearls = "clear && ls -A";
-      archive = "tar -czvf archive.tar.gz ";
-      extract = "tar -xzvf ";
-      vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
-      clean = "nix-env --delete-generations old && nix-collect-garbage -d";
-      cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
-    };
     zplug = {
       enable = true;
       plugins = [
@@ -106,13 +98,14 @@
     iosevka
     jamesdsp
     librewolf
-    llama-cpp
+    lumafly
     lutris
     meslo-lgs-nf
     mindustry-wayland
     monophony
     mpv
     neovim
+    ollama
     onionshare-gui
     openrazer-daemon
     pavucontrol
@@ -124,6 +117,7 @@
     protonvpn-gui
     python3
     redis
+    r2modman
     sassc
     shattered-pixel-dungeon
     topgrade
@@ -132,6 +126,7 @@
     wl-clipboard
     wlrctl
     xmrig-mo
+  ]);
   #home.enableNixpkgsReleaseCheck = false; # If using a package from the unstable branch uncomment this
   home.stateVersion = "24.05";
 }
