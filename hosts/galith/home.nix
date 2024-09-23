@@ -14,6 +14,7 @@
   home.username = "radioaddition";
   home.homeDirectory = "/home/radioaddition";
   nixpkgs.config.allowUnfree = true;
+  nix.settings.warn-dirty = false;
   home.sessionPath = [ "$HOME/.local/bin" "/usr/local/bin" ];
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -84,6 +85,7 @@
     collision
     curl
     direnv
+    discover-overlay
     distrobox
     docker-compose
     eza
