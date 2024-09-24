@@ -127,6 +127,7 @@
     mpv
     neovim
     neovim-gtk
+    nix-search-cli
     nodePackages_latest.pnpm
     nodejs-slim
     onionshare-gui
