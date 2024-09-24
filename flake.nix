@@ -22,11 +22,11 @@
 	  lanzaboote.nixosModules.lanzaboote
           ./hosts/aspirem/configuration.nix
           ./hosts/aspirem/hardware-configuration.nix
-#	  home-manager.nixosModules.home-manager {
-#	    home-manager.useGlobalPkgs = true;
-#	    home-manager.useUserPackages = true;
-#	    home-manager.users.radioaddition = [ import ./hosts/aspirem/home.nix ];
-#          }
+	  home-manager.nixosModules.home-manager {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.radioaddition = [ import ./hosts/aspirem/home.nix ];
+          }
 	];
       };
       galith = nixpkgs.lib.nixosSystem {
