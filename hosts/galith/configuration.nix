@@ -279,6 +279,115 @@
     description = "RadioAddition";
     extraGroups = [ "adbusers" "docker" "kvm" "libvirt" "libvirtd" "lxd" "networkmanager" "openrazer" "wheel" ];
     hashedPassword = "$y$j9T$gMRIRcus7uO1X6zrPTfVn/$0iOFINi8HZPH5b0QpXXCQbanUwYe9lpzjD17NbitD39";
+    packages = (with pkgs; [
+
+      # Packages
+  
+      adwsteamgtk
+      atuin
+      bat
+      bottles
+      boxbuddy
+      btop
+      cartridges
+      collision
+      curl
+      direnv
+      discover-overlay
+      distrobox
+      docker-compose
+      eza
+      feather
+      firefox
+      fragments
+      freshfetch
+      gcc
+      gettext
+      git
+      git-repo
+      github-desktop
+      glas
+      gleam
+      glib
+      gnome.dconf-editor
+      gnome-extension-manager
+      gnome.gnome-boxes
+      gnome.gnome-tweaks
+      gnome.polari
+      gnome.seahorse
+      gnumake
+      goofcord
+      gparted
+      guake
+      helvum
+      home-manager
+      hyfetch
+      impression
+      iosevka
+      jamesdsp
+      keepassxc
+      librewolf
+      llama-cpp
+      lutris
+      meslo-lgs-nf
+      mindustry-wayland
+      monophony
+      mpv
+      neovim
+      neovim-gtk
+      nix-search-cli
+      nodePackages_latest.pnpm
+      nodejs-slim
+      onionshare-gui
+      openrazer-daemon
+      pavucontrol
+      perl
+      picard
+      pika-backup
+      pinentry-gnome3
+      pipx
+      pnpm-shell-completion
+      polychromatic
+      protonmail-bridge
+      protonmail-bridge-gui
+      protonplus
+      protonvpn-gui
+      ptyxis
+      python3
+      redis
+      sassc
+      shattered-pixel-dungeon
+      simplex-chat-desktop
+      topgrade
+      tor-browser
+      tuckr
+      usbtop
+      ventoy-full
+      wget
+      wl-clipboard
+      wlrctl
+      xmrig-mo
+  
+    # Gnome Extensions
+    ]) ++ (with pkgs.gnomeExtensions; [
+        alphabetical-app-grid
+        appindicator
+        blur-my-shell
+        burn-my-windows
+        caffeine
+        dash2dock-lite
+        gsconnect
+        logo-menu
+        night-theme-switcher
+        pop-shell
+        quick-settings-audio-devices-renamer
+        search-light
+        wifi-qrcode
+        wiggle
+        window-title-is-back
+        xwayland-indicator
+        zen
+      ]);
   };
   services.vsftpd.localUsers = true;
 
