@@ -304,10 +304,12 @@
   disabledModules = 
   [
     "services/misc/ollama.nix"
+    "services/web-apps/nextjs-ollama-llm-ui.nix"
   ];
   imports = 
   [
     "${inputs.unstable}/nixos/modules/services/misc/ollama.nix"
+    "${inputs.unstable}/nixos/modules/services/web-apps/nextjs-ollama-llm-ui.nix"
   ];
 
   environment.systemPackages = with pkgs; [
