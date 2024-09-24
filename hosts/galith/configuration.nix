@@ -8,7 +8,6 @@
   # System
   #### Set nix version to latest
   nix.package = pkgs.nixVersions.latest;
-  nix.settings.warn-dirty = false;
 
   ## Security
 
@@ -258,6 +257,7 @@
   nix = {
     settings = {
       auto-optimise-store = true;
+      warn-dirty = false;
     };
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -304,10 +304,12 @@
   disabledModules = 
   [
     "services/misc/ollama.nix"
+    "services/web-apps/nextjs-ollama-llm-ui.nix"
   ];
   imports = 
   [
     "${inputs.unstable}/nixos/modules/services/misc/ollama.nix"
+    "${inputs.unstable}/nixos/modules/services/web-apps/nextjs-ollama-llm-ui.nix"
   ];
 
   environment.systemPackages = with pkgs; [
