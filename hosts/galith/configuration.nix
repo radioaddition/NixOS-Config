@@ -79,9 +79,6 @@
 
   ## Misc
   hardware.enableAllFirmware = true;
-  boot.extraModprobeConfig = ''
-  options snd-intel-dspcfg dsp_driver=1
-'';
 
   ## Bootloader
 
@@ -121,11 +118,14 @@
         efiSupport = true;
         device = "nodev";
         useOSProber = true;
-        timeoutStyle = "hidden";
+        timeoutStyle = "menu";
       };
       efi.canTouchEfiVariables = true;
     };
     kernelModules = [ "ecryptfs" ];
+    extraModprobeConfig = ''
+      options snd-intel-dspcfg dsp_driver=1
+    '';
   };
 
   #' Make sure to copy luks configuration from your current file if applicable
