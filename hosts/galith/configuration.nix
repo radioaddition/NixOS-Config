@@ -112,14 +112,14 @@
   ### Misc bootloader config
     loader = {
       timeout = 0;
-      #systemd-boot.enable = true;
-      grub = {
-	enable = true;
-        efiSupport = true;
-        device = "nodev";
-        useOSProber = true;
-        timeoutStyle = "menu";
-      };
+      systemd-boot.enable = true;
+#      grub = {
+#	enable = true;
+#        efiSupport = true;
+#        device = "nodev";
+#        useOSProber = true;
+#        timeoutStyle = "menu";
+#      };
       efi.canTouchEfiVariables = true;
     };
     kernelModules = [ "ecryptfs" ];
