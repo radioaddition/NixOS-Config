@@ -428,6 +428,7 @@
     gcc
     git
     libvirt
+    lsof
     mcron
     neovim
     pinentry-gnome3
@@ -437,7 +438,7 @@
     sbctl
     steam-tui
     steamcmd
-    ];
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
