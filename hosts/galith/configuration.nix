@@ -6,7 +6,7 @@
 
 {
   # System
-  #### Set nix version to latest
+  ### Set nix version to latest
   nix.package = pkgs.nixVersions.latest;
 
   ## Security
