@@ -286,6 +286,7 @@
       adwsteamgtk
       atuin
       bat
+      batman
       bottles
       boxbuddy
       btop
@@ -355,6 +356,7 @@
       ptyxis
       python3
       redis
+      ripgrep
       sassc
       shattered-pixel-dungeon
       simplex-chat-desktop
@@ -367,7 +369,8 @@
       wl-clipboard
       wlrctl
       xmrig-mo
-  
+      zoxide
+
     # Gnome Extensions
     ]) ++ (with pkgs.gnomeExtensions; [
         alphabetical-app-grid
