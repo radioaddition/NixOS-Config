@@ -286,7 +286,7 @@
       adwsteamgtk
       atuin
       bat
-      batman
+      bat-extras.batman
       bottles
       boxbuddy
       btop
