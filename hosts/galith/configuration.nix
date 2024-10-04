@@ -428,6 +428,7 @@
     btrfs-progs
     busybox
     ecryptfs
+    exfatprogs
     gcc
     git
     libvirt
