@@ -152,8 +152,8 @@
   };
 
   ### Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 51413 9052 9053 9080 ];
-  networking.firewall.allowedUDPPorts = [ 65530 51413 9052 9053 9080 ];
+  networking.firewall.allowedTCPPorts = [ 65530 51413 9052 9053 9080 53317 ];
+  networking.firewall.allowedUDPPorts = [ 65530 51413 9052 9053 9080 53317 ];
   networking.firewall.allowedTCPPortRanges = [ 
       { from = 1714; to = 1764; } # KDE Connect
     ];  
