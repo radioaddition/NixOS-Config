@@ -329,6 +329,7 @@
       keepassxc
       librewolf
       llama-cpp
+      localsend
       lutris
       meslo-lgs-nf
       mindustry-wayland
