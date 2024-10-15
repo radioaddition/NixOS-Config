@@ -30,6 +30,13 @@
     enable = true;
     tray.enable = true;
   };
+  # Direnv
+  programs = {
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+  };
 
   # ZSH
   programs.zsh = {
