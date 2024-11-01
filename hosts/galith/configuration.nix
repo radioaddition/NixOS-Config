@@ -286,6 +286,7 @@
       freshfetch
       gcc
       gettext
+      gh
       git
       git-repo
       github-desktop
