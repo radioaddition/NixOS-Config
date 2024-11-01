@@ -313,6 +313,7 @@
       llama-cpp
       localsend
       lutris
+      magic-wormhole
       meslo-lgs-nf
       mindustry-wayland
       monophony
@@ -351,6 +352,7 @@
       wget
       wl-clipboard
       wlrctl
+      wormhole-william
       xmrig-mo
       zoxide
 
