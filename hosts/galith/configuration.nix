@@ -58,25 +58,6 @@
   ### Filesystem Encryption
   security.pam.enableEcryptfs = true;
 
-  ### Firejail
-  programs.firejail = {
-    enable = true;
-    wrappedBinaries = {
-    librewolf = {
-      executable = "${pkgs.librewolf}/bin/librewolf";
-      profile = "${pkgs.firejail}/etc/firejail/librewolf.profile";
-      extraArgs = [
-        # Required for U2F USB stick
-        "--ignore=private-dev"
-        # Enforce dark mode
-        "--env=GTK_THEME=Adwaita:dark"
-        # Enable system notifications
-        "--dbus-user.talk=org.freedesktop.Notifications"
-      ];
-      };
-    };
-  };
-
   ## Misc
   hardware.enableAllFirmware = true;
 
@@ -289,6 +270,7 @@
       bat-extras.batman
       bottles
       boxbuddy
+      brave
       btop
       cartridges
       collision
@@ -310,8 +292,8 @@
       glas
       gleam
       glib
-      gnome.dconf-editor
       gnome-extension-manager
+      gnome.dconf-editor
       gnome.gnome-boxes
       gnome.gnome-tweaks
       gnome.polari
@@ -327,7 +309,6 @@
       iosevka
       jamesdsp
       keepassxc
-      librewolf
       llama-cpp
       localsend
       lutris
