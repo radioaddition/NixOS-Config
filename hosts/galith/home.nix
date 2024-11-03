@@ -81,7 +81,7 @@
     warn-dirty = false;
   };
   nix.package = pkgs.nixFlakes;
-#  home.packages = (with pkgs; [
+  home.packages = (with pkgs; [
 #
 #  # Packages
 #
@@ -189,7 +189,7 @@
 #      window-title-is-back
 #      xwayland-indicator
 #      zen
-#    ]);
+    ]);
   #home.enableNixpkgsReleaseCheck = false; # If using a package from the unstable branch uncomment this
   home.stateVersion = "24.05";
 }
