@@ -29,6 +29,19 @@
           }
 	];
       };
+      framework = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/framework/configuration.nix
+          ./hosts/framework/hardware-configuration.nix
+#	  home-manager.nixosModules.home-manager {
+#	    home-manager.useGlobalPkgs = true;
+#	    home-manager.useUserPackages = true;
+#	    home-manager.users.radioaddition = [ import ./hosts/framework/home.nix ];
+#	  }
+        ];
+      };
       galith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
