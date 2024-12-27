@@ -25,11 +25,6 @@
     pinentryPackage = pkgs.pinentry-gnome3;
   };
 
-  # Syncthing
-  services.syncthing = {
-    enable = true;
-    tray.enable = true;
-  };
   # Direnv
   programs = {
     direnv = {
@@ -39,42 +34,32 @@
   };
 
   # ZSH
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      clearls = "clear && ls -A";
-      archive = "tar -czvf archive.tar.gz ";
-      extract = "tar -xzvf ";
-      vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
-      clean = "nix-env --delete-generations old && nix-collect-garbage -d";
-      cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
-    };
-    zplug = {
-      enable = true;
-      plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; }
-        { name = "zsh-users/zsh-syntax-highlighting"; }
-        { name = "jeffreytse/zsh-vi-mode"; }
-        { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
-      ];
-    };
-    initExtraFirst = ''
-      # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-      # Initialization code that may require console input (password prompts, [y/n]
-      # confirmations, etc.) must go above this block; everything else may go below.
-      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-      fi
-    '';
-    initExtra = ''
-. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-
-. ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source "$HOME/NixOS-Config/.p10k.zsh"
-      eval "$(atuin init zsh)"
-      eval "$(direnv hook zsh)"
-'';
-  };
+#  programs.zsh = {
+#    enable = true;
+#    shellAliases = {
+#      clearls = "clear && ls -A";
+#      archive = "tar -czvf archive.tar.gz ";
+#      extract = "tar -xzvf ";
+#      vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
+#      clean = "nix-env --delete-generations old && nix-collect-garbage -d";
+#      cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
+#    };
+#    zplug = {
+#      enable = true;
+#      plugins = [
+#        { name = "zsh-users/zsh-autosuggestions"; }
+#        { name = "zsh-users/zsh-syntax-highlighting"; }
+#        { name = "jeffreytse/zsh-vi-mode"; }
+#      ];
+#    };
+#    initExtra = ''
+#. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+#
+#      eval "$(atuin init zsh)"
+#      eval "$(starship init zsh)"
+#      eval "$(direnv hook zsh)"
+#'';
+#  };
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -89,7 +74,7 @@
     atuin
     bat
 #    bottles
-    boxbuddy
+#    boxbuddy
     btop
 #    cartridges
 #    collision
@@ -108,7 +93,7 @@
     gh
 #    git
     git-repo
-    github-desktop
+#    github-desktop
     glas
     gleam
 #    glib
@@ -119,15 +104,15 @@
 #    gnome.polari
 #    gnome.seahorse
 #    gnumake
-    goofcord
+#    goofcord
 #    gparted
-    guake
+#    guake
 #    helvum
     home-manager
     hyfetch
 #    impression
     iosevka
-    jamesdsp
+#    jamesdsp
 #    keepassxc
 #    librewolf
 #    llama-cpp
@@ -140,31 +125,32 @@
 #    neovim-gtk
     nodePackages_latest.pnpm
 #    nodejs-slim
-    onionshare-gui
+#    onionshare-gui
 #    openrazer-daemon
 #    pavucontrol
 #    perl
 #    picard
-    pika-backup
+#    pika-backup
 #    pinentry-gnome3
     pipx
     pnpm-shell-completion
 #    polychromatic
-    protonmail-bridge
-    protonmail-bridge-gui
-    protonplus
-    protonvpn-gui
+#    protonmail-bridge
+#    protonmail-bridge-gui
+#    protonplus
+#    protonvpn-gui
 #    ptyxis
     python3
 #    redis
 #    sassc
 #    shattered-pixel-dungeon
-    simplex-chat-desktop
+#    simplex-chat-desktop
+    starship
     topgrade
-    tor-browser
+#    tor-browser
     tuckr
     usbtop
-    ventoy-full
+#    ventoy-full
 #    wget
 #    wl-clipboard
 #    wlrctl

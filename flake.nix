@@ -77,6 +77,7 @@
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./hosts/framework/home.nix
+          ./hosts/framework/nushell.nix
         ];
       };
       "galith" = home-manager.lib.homeManagerConfiguration {
