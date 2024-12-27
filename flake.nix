@@ -29,19 +29,6 @@
           }
 	];
       };
-      framework = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/framework/configuration.nix
-          ./hosts/framework/hardware-configuration.nix
-#	  home-manager.nixosModules.home-manager {
-#	    home-manager.useGlobalPkgs = true;
-#	    home-manager.useUserPackages = true;
-#	    home-manager.users.radioaddition = [ import ./hosts/framework/home.nix ];
-#	  }
-        ];
-      };
       galith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
@@ -83,6 +70,13 @@
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
         modules = [
           ./hosts/oriole/home.nix
+        ];
+      };
+      "framework" = home-manager.lib.homeManagerConfiguration {
+  	extraSpecialArgs = {inherit inputs;};
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        modules = [
+          ./hosts/framework/home.nix
         ];
       };
       "galith" = home-manager.lib.homeManagerConfiguration {
