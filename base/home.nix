@@ -11,8 +11,10 @@
   imports = [
   ];
   #news.display = "silent";
-  home.username = "radioaddition";
-  home.homeDirectory = "/home/radioaddition";
+  # Commented out because this can occasionally be different (ie some of my hosts have multiple users, and some are on Fedora/RHEL based (which uses /var/home)) but I need to be reminded to set it per host
+  #home.username = "radioaddition";
+  #home.homeDirectory = "/home/radioaddition";
+
   nixpkgs.config.allowUnfree = true;
   home.sessionPath = [ "$HOME/.local/bin" "/usr/local/bin" ];
   home.sessionVariables = {
@@ -34,6 +36,7 @@
   };
 
   # ZSH
+  # Commented out because I need to migrate my existing .zshrc
 #  programs.zsh = {
 #    enable = true;
 #    shellAliases = {
@@ -42,7 +45,7 @@
 #      extract = "tar -xzvf ";
 #      vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
 #      clean = "nix-env --delete-generations old && nix-collect-garbage -d";
-#      cleanr = "sudo nix-env --delete-generations old && sudo nix-collect-garbage -d";
+#      cleanr = "run0 nix-env --delete-generations old && run0 nix-collect-garbage -d";
 #    };
 #    zplug = {
 #      enable = true;
@@ -70,23 +73,13 @@
 #
 #  # Packages
 #
-#    adwsteamgtk
     atuin
     bat
-#    bottles
-#    boxbuddy
     btop
-#    cartridges
-#    collision
     curl
     direnv
-#    discover-overlay
-#    distrobox
 #    docker-compose
     eza
-#    feather
-#    firefox
-#    fragments
     freshfetch
 #    gcc
 #    gettext
@@ -97,26 +90,14 @@
     glas
     gleam
 #    glib
-#    gnome.dconf-editor
-#    gnome-extension-manager
-#    gnome.gnome-boxes
-#    gnome.gnome-tweaks
-#    gnome.polari
-#    gnome.seahorse
 #    gnumake
-#    goofcord
 #    gparted
 #    guake
-#    helvum
     home-manager
     hyfetch
-#    impression
     iosevka
 #    jamesdsp
-#    keepassxc
-#    librewolf
 #    llama-cpp
-#    lutris
     meslo-lgs-nf
 #    mindustry-wayland
 #    monophony
@@ -129,28 +110,18 @@
 #    openrazer-daemon
 #    pavucontrol
 #    perl
-#    picard
-#    pika-backup
 #    pinentry-gnome3
     pipx
     pnpm-shell-completion
 #    polychromatic
-#    protonmail-bridge
-#    protonmail-bridge-gui
-#    protonplus
 #    protonvpn-gui
-#    ptyxis
     python3
 #    redis
-#    sassc
 #    shattered-pixel-dungeon
-#    simplex-chat-desktop
     starship
     topgrade
-#    tor-browser
     tuckr
     usbtop
-#    ventoy-full
 #    wget
 #    wl-clipboard
 #    wlrctl

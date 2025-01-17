@@ -2,6 +2,7 @@
   description = "NixOS Config";
 
   inputs = {
+    nix-flatpak.url = "https://flakehub.com/f/gmodena/nix-flatpak/0.5.2.tar.gz";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -13,7 +14,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, fh, ... }: {
+  outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, fh, nix-flatpak, ... }: {
     nixosConfigurations = {
       galith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -41,6 +42,9 @@
   	extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
+	  {
+	    home.packages = [ fh.packages.x86_64-linux.default ];
+	  }
           ./hosts/framework/home.nix
         ];
       };

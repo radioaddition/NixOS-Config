@@ -67,12 +67,13 @@
   };
   nix.package = pkgs.nixFlakes;
   home.packages = (with pkgs; [
-#
+
 #  # Packages
 #
 #    adwsteamgtk
     atuin
     bat
+
 #    bottles
 #    boxbuddy
     btop
