@@ -7,13 +7,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-on-droid.url = "github:t184256/nix-on-droid/release-24.05";
+    fh.url = "https://flakehub.com/f/DeterminateSystems/fh/0.1.21.tar.gz";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, nix-on-droid, ... }: {
+  outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, nix-on-droid, fh, ... }: {
     nixosConfigurations = {
       aspirem = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
