@@ -1,4 +1,3 @@
-
 #    adwsteamgtk
 #    bottles
 #    cartridges
@@ -30,3 +29,161 @@
 #    protonmail-bridge-gui
 #    protonplus
 #    boxbuddy
+# Warp, a wormhole client
+app.drey.Warp
+
+# Fotema, a photo viewer
+app.fotema.Fotema
+
+# Dconf Editor
+ca.desrt.dconf-editor
+
+# SimpleX Chat
+chat.simplex.simplex
+
+# GPU Screen recorder
+com.dec05eba.gpu_screen_recorder
+
+# Protontricks
+com.github.Matoking.protontricks
+
+# Pods, a podman manager
+com.github.marhkb.Pods
+
+# Flatseal, a flatpak permissions manager
+com.github.tchx84.Flatseal
+
+# EasyEffects
+com.github.wwmm.easyeffects
+
+# Bottles, a wine prefix manager
+com.usebottles.bottles
+
+# Steam
+com.valvesoftware.Steam
+
+# Steam Proton Manager
+com.vysp3r.ProtonPlus
+
+# Fragments, a GTK+ torrent client
+de.haeckerfelix.Fragments
+
+# Snoop, search through file contents (rather than just names)
+de.philippun1.Snoop
+
+# Metadata cleaner
+fr.romainvigier.MetadataCleaner
+
+# Ente Auth, 2FA app
+io.ente.auth
+
+# Steam Adwaita Theme
+io.github.Foldex.AdwSteamGtk
+
+# BoxBuddy, graphical distrobox manager
+io.github.dvlv.boxbuddyrs
+
+# Ignition, startup process manager
+io.github.flattool.Ignition
+
+# Warehouse, flatpak manager
+io.github.flattool.Warehouse
+
+# Flatsweep, flatpak remnant cleaner
+io.github.giantpinkrobots.flatsweep
+
+# Video wallpaper
+io.github.jeffshee.Hidamari
+
+# Discord client
+io.github.milkshiift.GoofCord
+
+# LLM app
+io.github.qwersyk.Newelle
+
+# GDM Settings
+io.github.realmazharhussain.GdmSettings
+
+# WiVRn, SteamVR alternative
+io.github.wivrn.wivrn
+
+# Bootable media creator
+io.gitlab.adhami3310.Impression
+
+# Minecraft Bedrock Launcher
+io.mrarm.mcpelauncher
+
+# Fedora Media Writer
+org.fedoraproject.MediaWriter
+
+# GNOME VM manager
+#org.gnome.Boxes
+
+# GNOME Boxes OS info extension
+#org.gnome.Boxes.Extension.OsinfoDb
+
+# GNOME Calculator
+org.gnome.Calculator
+
+# GNOME Calendar
+org.gnome.Calendar
+
+# GNOME Connection manager
+org.gnome.Connections
+
+# GNOME Contacts
+org.gnome.Contacts
+
+# Document viewer
+org.gnome.Evince
+
+# GNOME Logs
+org.gnome.Logs
+
+# Image Viewer
+org.gnome.Loupe
+
+# GNOME Screenshot
+org.gnome.Snapshot
+
+# GNOME Text Editor
+org.gnome.TextEditor
+
+# Pika Backup
+org.gnome.World.PikaBackup
+
+# Gnome Keepass client
+org.gnome.World.Secrets
+
+# Disk usage analyzer
+org.gnome.baobab
+
+# GNOME Clock
+org.gnome.clocks
+
+# GNOME Font Viewer
+org.gnome.font-viewer
+
+# Markdown text editor
+org.gnome.gitlab.somas.Apostrophe
+
+# KeePassXC
+org.keepassxc.KeePassXC
+
+# LocalSend
+org.localsend.localsend_app
+
+# Parabolic
+org.nickvision.tubeconverter
+
+# Helvum
+org.pipewire.Helvum
+
+# PrismLauncher, minecraft launcher
+org.prismlauncher.PrismLauncher
+
+# Signal
+org.signal.Signal
+
+# Menu item editor
+page.codeberg.libre_menu_editor.LibreMenuEditor
