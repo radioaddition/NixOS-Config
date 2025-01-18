@@ -7,7 +7,6 @@
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    fh.url = "github:DeterminateSystems/fh/0.1.21";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,7 +41,6 @@
   	extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
-	  { home.packages = [ fh.packages.x86_64-linux.default ]; }
           ./hosts/framework/home.nix
 	  ./base/base-home.nix
 	  ./base/base-gnome.nix
