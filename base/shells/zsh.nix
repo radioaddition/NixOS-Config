@@ -51,11 +51,6 @@
       ctrl_n_shortcuts = false;
       enter_accept = true;
       keymap_mode = "vim-insert";
-      keymap_cursor = {
-        emacs = "blink-block";
-	vim_insert = "blink-line";
-	vim_normal = "steady-block";
-      };
     };
   };
 }
