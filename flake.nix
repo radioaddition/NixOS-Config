@@ -42,10 +42,12 @@
   	extraSpecialArgs = {inherit inputs;};
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
-	  {
-	    home.packages = [ fh.packages.x86_64-linux.default ];
-	  }
+	  { home.packages = [ fh.packages.x86_64-linux.default ]; }
           ./hosts/framework/home.nix
+	  ./base/base-home.nix
+	  ./base/base-gnome.nix
+	  ./base/base-flatpak.nix
+	  ./base/shells/zsh.nix
         ];
       };
       "galith" = home-manager.lib.homeManagerConfiguration {
