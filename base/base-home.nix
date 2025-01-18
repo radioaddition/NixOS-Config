@@ -20,19 +20,12 @@
     EDITOR = "nvim";
     DBX_CONTAINER_MANAGER = "podman";
   };
-  # GPG
-  services.gpg-agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-gnome3;
-  };
 
   # Direnv
   programs.direnv = {
       enable = true;
       nix-direnv.enable = true;
     };
-
-  # ZSH
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
