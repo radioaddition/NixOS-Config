@@ -1,6 +1,5 @@
-{ lib, config, pkgs, nix-flatpak, ... }: {
-  # Import nix-flatpak module
-  nix-flatpak.services.flatpak = {
+{ lib, config, pkgs, ... }: {
+  services.flatpak = {
     enable = true;
     uninstallUnmanaged = true;
     update.auto = {

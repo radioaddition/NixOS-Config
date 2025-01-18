@@ -2,7 +2,7 @@
   description = "NixOS Config";
 
   inputs = {
-    nix-flatpak.url = "github:gmodena/nix-flatpak/0.5.2";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
