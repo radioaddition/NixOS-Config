@@ -12,7 +12,7 @@
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d && nix profile wipe-history";
       cleanr = "run0 sh -c 'nix-env --delete-generations old && nix-collect-garbage -d && nix profile wipe-history'";
-      so = "source ~/.zshrc";
+      so = "exec zsh";
     };
     zplug = {
       enable = true;
