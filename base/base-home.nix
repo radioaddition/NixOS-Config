@@ -27,12 +27,10 @@
   };
 
   # Direnv
-  programs = {
-    direnv = {
+  programs.direnv = {
       enable = true;
       nix-direnv.enable = true;
     };
-  };
 
   # ZSH
 
@@ -56,11 +54,13 @@
     git-repo
     glas
     gleam
+    gparted
     home-manager
     hyfetch
     iosevka
     just
     meslo-lgs-nf
+    monophony
     mpv
     neovim
     nodePackages_latest.pnpm
@@ -77,12 +77,10 @@
 #    github-desktop
 #    glib
 #    gnumake
-#    gparted
 #    guake
 #    jamesdsp
 #    llama-cpp
 #    mindustry-wayland
-#    monophony
 #    neovim-gtk
 #    nodejs-slim
 #    onionshare-gui

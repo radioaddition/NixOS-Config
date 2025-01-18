@@ -1,189 +1,124 @@
-#    adwsteamgtk
-#    bottles
-#    cartridges
-#    collision
-#    discover-overlay
-#    feather
-#    fragments
-#    gnome.dconf-editor
-#    gnome-extension-manager
-#    gnome.gnome-boxes
-#    gnome.gnome-tweaks
-#    gnome.polari
-#    gnome.seahorse
-#    goofcord
-#    gparted
-#    helvum
-#    impression
-#    keepassxc
-#    lutris
-#    mindustry-wayland
-#    monophony
-#    neovim-gtk
-#    onionshare-gui
-#    picard
-#    pika-backup
-#    protonmail-bridge
-#    simplex-chat-desktop
-#    tor-browser
-#    protonmail-bridge-gui
-#    protonplus
-#    boxbuddy
+# Cartridges, gnome-styled version of lutris
+{ appID = "page.kramo.Cartridges"; origin = "flathub-verified"; };
+# Collision, a hash checker
+{ appID = "dev.geopjr.Collision"; origin = "flathub-verified"; };
+# Discover-Overlay
+{ appID = "io.github.trigg.discover_overlay"; origin = "flathub-verified"; };
+# IRC Client
+{ appID = "org.gnome.Polari"; origin = "flathub-verified"; };
+# Gnome passwords, keys, gpg manager
+{ appID = "org.gnome.seahorse.Application"; origin = "flathub-verified"; };
+#helvum
+{ appID = "org.pipewire.Helvum"; origin = "flathub-verified"; };
+#lutris
+{ appID = "net.lutris.Lutris"; origin = "flathub-verified"; };
+#onionshare-gui
+{ appID = "org.onionshare.OnionShare"; origin = "flathub-verified"; };
+#picard
+{ appID = "org.musicbrainz.Picard"; origin = "flathub-verified"; };
+#protonmail-bridge
+{ appID = "ch.protonmail.protonmail-bridge"; origin = "flathub-verified"; };
+#tor-browser
+{ appID = "org.torproject.torbrowser-launcher"; origin = "flathub-verified"; };
 # Warp, a wormhole client
-app.drey.Warp
-
+{ appID = "app.drey.Warp"; origin = "flathub-verified"; };
 # Fotema, a photo viewer
-app.fotema.Fotema
-
+{ appID = "app.fotema.Fotema"; origin = "flathub-verified"; };
 # Dconf Editor
-ca.desrt.dconf-editor
-
+{ appID = "ca.desrt.dconf-editor"; origin = "flathub-verified"; };
 # SimpleX Chat
-chat.simplex.simplex
-
+{ appID = "chat.simplex.simplex"; origin = "flathub-verified"; };
 # GPU Screen recorder
-com.dec05eba.gpu_screen_recorder
-
+{ appID = "com.dec05eba.gpu_screen_recorder"; origin = "flathub-verified"; };
 # Protontricks
-com.github.Matoking.protontricks
-
+{ appID = "com.github.Matoking.protontricks"; origin = "flathub-verified"; };
 # Pods, a podman manager
-com.github.marhkb.Pods
-
+{ appID = "com.github.marhkb.Pods"; origin = "flathub-verified"; };
 # Flatseal, a flatpak permissions manager
-com.github.tchx84.Flatseal
-
+{ appID = "com.github.tchx84.Flatseal"; origin = "flathub-verified"; };
 # EasyEffects
-com.github.wwmm.easyeffects
-
+{ appID = "com.github.wwmm.easyeffects"; origin = "flathub-verified"; };
 # Bottles, a wine prefix manager
-com.usebottles.bottles
-
+{ appID = "com.usebottles.bottles"; origin = "flathub-verified"; };
 # Steam
-com.valvesoftware.Steam
-
+{ appID = "com.valvesoftware.Steam"; origin = "flathub"; };
 # Steam Proton Manager
-com.vysp3r.ProtonPlus
-
+{ appID = "com.vysp3r.ProtonPlus"; origin = "flathub-verified"; };
 # Fragments, a GTK+ torrent client
-de.haeckerfelix.Fragments
-
+{ appID = "de.haeckerfelix.Fragments"; origin = "flathub-verified"; };
 # Snoop, search through file contents (rather than just names)
-de.philippun1.Snoop
-
+{ appID = "de.philippun1.Snoop"; origin = "flathub-verified"; };
 # Metadata cleaner
-fr.romainvigier.MetadataCleaner
-
+{ appID = "fr.romainvigier.MetadataCleaner"; origin = "flathub-verified"; };
 # Ente Auth, 2FA app
-io.ente.auth
-
+{ appID = "io.ente.auth"; origin = "flathub-verified"; };
 # Steam Adwaita Theme
-io.github.Foldex.AdwSteamGtk
-
+{ appID = "io.github.Foldex.AdwSteamGtk"; origin = "flathub-verified"; };
 # BoxBuddy, graphical distrobox manager
-io.github.dvlv.boxbuddyrs
-
+{ appID = "io.github.dvlv.boxbuddyrs"; origin = "flathub-verified"; };
 # Ignition, startup process manager
-io.github.flattool.Ignition
-
+{ appID = "io.github.flattool.Ignition"; origin = "flathub-verified"; };
 # Warehouse, flatpak manager
-io.github.flattool.Warehouse
-
+{ appID = "io.github.flattool.Warehouse"; origin = "flathub-verified"; };
 # Flatsweep, flatpak remnant cleaner
-io.github.giantpinkrobots.flatsweep
-
+{ appID = "io.github.giantpinkrobots.flatsweep"; origin = "flathub-verified"; };
 # Video wallpaper
-io.github.jeffshee.Hidamari
-
+{ appID = "io.github.jeffshee.Hidamari"; origin = "flathub-verified"; };
 # Discord client
-io.github.milkshiift.GoofCord
-
+{ appID = "io.github.milkshiift.GoofCord"; origin = "flathub-verified"; };
 # LLM app
-io.github.qwersyk.Newelle
-
+{ appID = "io.github.qwersyk.Newelle"; origin = "flathub-verified"; };
 # GDM Settings
-io.github.realmazharhussain.GdmSettings
-
+{ appID = "io.github.realmazharhussain.GdmSettings"; origin = "flathub-verified"; };
 # WiVRn, SteamVR alternative
-io.github.wivrn.wivrn
-
+{ appID = "io.github.wivrn.wivrn"; origin = "flathub-verified"; };
 # Bootable media creator
-io.gitlab.adhami3310.Impression
-
+{ appID = "io.gitlab.adhami3310.Impression"; origin = "flathub-verified"; };
 # Minecraft Bedrock Launcher
-io.mrarm.mcpelauncher
-
+{ appID = "io.mrarm.mcpelauncher"; origin = "flathub-verified"; };
 # Fedora Media Writer
-org.fedoraproject.MediaWriter
-
-# GNOME VM manager
-#org.gnome.Boxes
-
-# GNOME Boxes OS info extension
-#org.gnome.Boxes.Extension.OsinfoDb
-
+{ appID = "org.fedoraproject.MediaWriter"; origin = "flathub-verified"; };
 # GNOME Calculator
-org.gnome.Calculator
-
+{ appID = "org.gnome.Calculator"; origin = "flathub-verified"; };
 # GNOME Calendar
-org.gnome.Calendar
-
+{ appID = "org.gnome.Calendar"; origin = "flathub-verified"; };
 # GNOME Connection manager
-org.gnome.Connections
-
+{ appID = "org.gnome.Connections"; origin = "flathub-verified"; };
 # GNOME Contacts
-org.gnome.Contacts
-
+{ appID = "org.gnome.Contacts"; origin = "flathub-verified"; };
 # Document viewer
-org.gnome.Evince
-
+{ appID = "org.gnome.Evince"; origin = "flathub-verified"; };
 # GNOME Logs
-org.gnome.Logs
-
+{ appID = "org.gnome.Logs"; origin = "flathub-verified"; };
 # Image Viewer
-org.gnome.Loupe
-
+{ appID = "org.gnome.Loupe"; origin = "flathub-verified"; };
 # GNOME Screenshot
-org.gnome.Snapshot
-
+{ appID = "org.gnome.Snapshot"; origin = "flathub-verified"; };
 # GNOME Text Editor
-org.gnome.TextEditor
-
+{ appID = "org.gnome.TextEditor"; origin = "flathub-verified"; };
 # Pika Backup
-org.gnome.World.PikaBackup
-
+{ appID = "org.gnome.World.PikaBackup"; origin = "flathub-verified"; };
 # Gnome Keepass client
-org.gnome.World.Secrets
-
+{ appID = "org.gnome.World.Secrets"; origin = "flathub-verified"; };
 # Disk usage analyzer
-org.gnome.baobab
-
+{ appID = "org.gnome.baobab"; origin = "flathub-verified"; };
 # GNOME Clock
-org.gnome.clocks
-
+{ appID = "org.gnome.clocks"; origin = "flathub-verified"; };
 # GNOME Font Viewer
-org.gnome.font-viewer
-
+{ appID = "org.gnome.font-viewer"; origin = "flathub-verified"; };
 # Markdown text editor
-org.gnome.gitlab.somas.Apostrophe
-
+{ appID = "org.gnome.gitlab.somas.Apostrophe"; origin = "flathub-verified"; };
 # KeePassXC
-org.keepassxc.KeePassXC
-
+{ appID = "org.keepassxc.KeePassXC"; origin = "flathub-verified"; };
 # LocalSend
-org.localsend.localsend_app
-
+{ appID = "org.localsend.localsend_app"; origin = "flathub-verified"; };
 # Parabolic
-org.nickvision.tubeconverter
-
+{ appID = "org.nickvision.tubeconverter"; origin = "flathub-verified"; };
 # Helvum
-org.pipewire.Helvum
-
+{ appID = "org.pipewire.Helvum"; origin = "flathub-verified"; };
 # PrismLauncher, minecraft launcher
-org.prismlauncher.PrismLauncher
-
+{ appID = "org.prismlauncher.PrismLauncher"; origin = "flathub-verified"; };
 # Signal
-org.signal.Signal
-
+{ appID = "org.signal.Signal"; origin = "flathub-verified"; };
 # Menu item editor
-page.codeberg.libre_menu_editor.LibreMenuEditor
+{ appID = "page.codeberg.libre_menu_editor.LibreMenuEditor"; origin = "flathub-verified"; };

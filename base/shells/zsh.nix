@@ -35,6 +35,8 @@
       eval "$(just --completions zsh)"
 '';
   };
+  programs.zoxide.enable = true;
+  programs.starship.enable = true;
 
   # Atuin
   programs.atuin = {
@@ -56,8 +58,4 @@
       };
     };
   };
-  # Direnv
-  # Zoxide
-  # Starship
-  # Chezmoi?
 }
