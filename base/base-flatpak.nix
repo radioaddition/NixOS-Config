@@ -1,7 +1,6 @@
-{ lib, config, pkgs, flake-inputs, ... }: {
+{ lib, config, pkgs, nix-flatpak, ... }: {
   # Import nix-flatpak module
-  imports = [ flake-inputs.flatpaks.homeManagerModules.nix-flatpak ];
-  services.flatpak = {
+  nix-flatpak.services.flatpak = {
     enable = true;
     uninstallUnmanaged = true;
     update.auto = {

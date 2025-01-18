@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, fh, nix-flatpak, ... }: {
+  outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, nix-flatpak, ... }: {
     nixosConfigurations = {
       galith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -31,16 +31,17 @@
     };
     homeConfigurations = {
       "aspirem" = home-manager.lib.homeManagerConfiguration {
-        extraSpecialArgs = {inherit inputs;};
+        extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./hosts/aspirem/home.nix
         ];
       };
       "framework" = home-manager.lib.homeManagerConfiguration {
-  	extraSpecialArgs = {inherit inputs;};
+  	extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
+	  nix-flatpak.homeManagerModules.nix-flatpak
           ./hosts/framework/home.nix
 	  ./base/base-home.nix
 	  ./base/base-gnome.nix
@@ -49,14 +50,14 @@
         ];
       };
       "galith" = home-manager.lib.homeManagerConfiguration {
-  	extraSpecialArgs = {inherit inputs;};
+  	extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./hosts/galith/home.nix
         ];
       };
       "deck" = home-manager.lib.homeManagerConfiguration {
-  	extraSpecialArgs = {inherit inputs;};
+  	extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           ./hosts/deck/home.nix
