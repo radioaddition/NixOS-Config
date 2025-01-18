@@ -3,7 +3,7 @@
     uninstallUnmanaged = true;
     update.auto = {
       enable = true;
-      onCalendar = "daily";
+      onCalendar = "hourly";
     };
     remotes = [
       { name = "flathub-verified"; subset = "verified"; location = "https://flathub.org/repo/flathub.flatpakrepo"; }
