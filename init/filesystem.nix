@@ -39,6 +39,7 @@
 
   fileSystems."/home" = {
     device = "/dev/mapper/crypted";
+    neededForBoot = true;
     fsType = "btrfs";
     options = [ "subvol=home" ];
   };
