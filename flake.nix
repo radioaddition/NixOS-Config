@@ -27,7 +27,7 @@
 	  ./init/impermanence.nix
           ./hosts/framework/configuration.nix
           #./hosts/framework/hardware-configuration.nix # use the auto-generated config for now bc it's easier
-	  ./base/system/base-gnome.nix
+	  ./base/system/gnome.nix
 	  #./base/system/gaming.nix # Disable for vm testing bc I don't have the resources for that
 	  ./base/system/networking.nix
 	  ./base/system/packages.nix
