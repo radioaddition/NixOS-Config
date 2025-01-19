@@ -50,7 +50,7 @@
     options = [ "subvol=swap" ];
   };
   swapDevices = lib.mkForce [
-    { device = "/swap"; label = "swap"; }
+    { device = "/swap"; label = "swap"; size = "32768"; }
   ];
 
   fileSystems."/nix" = {
