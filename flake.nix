@@ -46,7 +46,7 @@
 	  ./base/base-home.nix
 	  ./base/base-gnome-extensions.nix
 	  ./base/base-flatpak.nix
-	  ./base/shells/zsh.nix
+	  ./base/shells/fish.nix
         ];
       };
       "galith" = home-manager.lib.homeManagerConfiguration {
