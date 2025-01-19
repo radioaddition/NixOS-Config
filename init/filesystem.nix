@@ -2,7 +2,7 @@
   fileSystems."/" = {
     device = "/dev/mapper/crypted";
     fsType = "btrfs";
-    options = [ "subvol=root" ];
+    options = [ "subvol=root" "compress=zstd" "noexec" ];
   };
 
   boot.initrd.postResumeCommands = lib.mkAfter ''
@@ -34,29 +34,27 @@
     device = "/dev/mapper/crypted";
     neededForBoot = true;
     fsType = "btrfs";
-    options = [ "subvol=persistent" ];
+    options = [ "subvol=persistent" "compress=zstd" "noexec"];
   };
 
   fileSystems."/home" = {
     device = "/dev/mapper/crypted";
     neededForBoot = true;
     fsType = "btrfs";
-    options = [ "subvol=home" ];
+    options = [ "subvol=home" "compress=zstd" "noexec" ];
   };
 
   fileSystems."/swap" = {
     device = "/dev/mapper/crypted";
     fsType = "btrfs";
-    options = [ "subvol=swap" ];
+    options = [ "subvol=swap" "compress=zstd" "noexec" ];
   };
-  swapDevices = lib.mkForce [
-    { device = "/swap"; label = "swap"; size = "32768"; }
-  ];
+  swapDevices = [{ device = "/swap/swapfile"; label = "swap"; size = "32768"; }];
 
   fileSystems."/nix" = {
     device = "/dev/mapper/crypted";
     fsType = "btrfs";
-    options = [ "subvol=nix" ];
+    options = [ "subvol=nix" "compress=zstd" ];
   };
 
   # be sure to define this in the host-specific configuration
