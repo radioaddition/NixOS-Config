@@ -37,7 +37,20 @@
 '';
   };
   programs.zoxide.enable = true;
-  programs.starship.enable = true;
+  programs.starship = {
+    enable = true;
+    # If I ever decide I don't like the default config
+    #settings = {
+      # add_newline = false;
+
+      # character = {
+      #   success_symbol = "[➜](bold green)";
+      #   error_symbol = "[➜](bold red)";
+      # };
+
+      # package.disabled = true;
+    #};
+  };
 
   # Atuin
   programs.atuin = {
