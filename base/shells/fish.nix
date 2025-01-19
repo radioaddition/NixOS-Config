@@ -10,23 +10,20 @@
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
       clean = "nix-env --delete-generations old && nix-collect-garbage -d && nix profile wipe-history";
       cleanr = "run0 sh -c 'nix-env --delete-generations old && nix-collect-garbage -d && nix profile wipe-history'";
-      so = "exec zsh";
+      so = "exec fish";
     };
-    history = {
-      ignoreAllDups = true;
-      extended = true;
-    };
-    initExtra = ''
+    shellInit = ''
 . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
-      eval "$(atuin init zsh)"
-      eval "$(direnv hook zsh)"
-      eval "$(starship init zsh)"
-      eval "$(chezmoi completion zsh)"
-      eval "$(just --completions zsh)"
+      eval "$(atuin init fish)"
+      eval "$(direnv hook fish)"
+      eval "$(starship init fish)"
+      eval "$(chezmoi completion fish)"
+      eval "$(just --completions fish)"
 '';
   };
   programs.zoxide.enable = true;
+  programs.thefuck.enable = true;
   programs.starship = {
     enable = true;
     # If I ever decide I don't like the default config
