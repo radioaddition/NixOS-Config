@@ -71,7 +71,7 @@
   programs.zoxide.enable = true;
   programs.thefuck.enable = true;
   programs.yazi.enableFishIntegration = true;
-  programs.fish.useBabelfish = true;
+  useBabelfish = true;
   programs.starship = {
     enable = true;
     # If I ever decide I don't like the default config
