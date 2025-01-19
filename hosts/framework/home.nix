@@ -7,5 +7,5 @@
   #manual.json.enable = false;
   home.username = "radioaddition";
   home.homeDirectory = "/home/radioaddition";
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 }

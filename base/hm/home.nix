@@ -93,5 +93,4 @@
     ];
 
   #home.enableNixpkgsReleaseCheck = false; # If using a package from the unstable branch uncomment this
-  home.stateVersion = "24.11";
 }
