@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }
 {
   fileSystems."/" = {
-    device = "/dev/root_vg/root";
+    device = "/dev/mapper/crypted";
     fsType = "btrfs";
     options = [ "subvol=root" ];
   };
@@ -32,14 +32,27 @@
   '';
 
   fileSystems."/persistent" = {
-    device = "/dev/root_vg/root";
+    device = "/dev/mapper/crypted";
     neededForBoot = true;
     fsType = "btrfs";
     options = [ "subvol=persistent" ];
   };
 
+  fileSystems."/home" = {
+    device = "/dev/mapper/crypted";
+    fsType = "btrfs";
+    options = [ "subvol=home" ];
+  };
+
+  fileSystems."/swap" = {
+    device = "/dev/mapper/crypted";
+    fsType = "btrfs";
+    options = [ "subvol=swap" ];
+  };
+  swapDevices = [{ device = "/swap"; label = "swap"; }]
+
   fileSystems."/nix" = {
-    device = "/dev/root_vg/root";
+    device = "/dev/mapper/crypted";
     fsType = "btrfs";
     options = [ "subvol=nix" ];
   };
