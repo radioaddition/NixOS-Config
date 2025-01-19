@@ -68,6 +68,7 @@
   };
   programs.zoxide.enable = true;
   programs.thefuck.enable = true;
+  programs.yazi.enableFishIntegration = true;
   programs.starship = {
     enable = true;
     # If I ever decide I don't like the default config
@@ -98,6 +99,4 @@
       keymap_mode = "vim-insert";
     };
   };
-  programs.yazi.enableFishIntegration = true;
-  programs.thefuck.enable = true;
 }
