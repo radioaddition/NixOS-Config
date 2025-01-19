@@ -4,8 +4,10 @@
   home.packages = [ pkgs.babelfish ];
   programs.fish = {
     enable = true;
-    shellAliases = {
-      clearls = "clear && ls -A";
+    preferAbbrs = true;
+    shellAbbrs = {
+      clearls = "clear && eza -Al";
+      ls = "eza -Al";
       archive = "tar -czvf archive.tar.gz ";
       extract = "tar -xzvf ";
       vivi = "nvim /home/radioaddition/.config/nvim/init.vim";
