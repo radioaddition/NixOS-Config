@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, nix-flatpak, ... }: {
+  outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, nix-flatpak, disko, impermanence, ... }: {
     nixosConfigurations = {
       framework = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
