@@ -15,6 +15,27 @@
 
   outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, nix-flatpak, ... }: {
     nixosConfigurations = {
+      framework = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/framework/configuration.nix
+          ./hosts/framework/hardware-configuration.nix # use the auto-generated config for now bc it's easier
+	  ./base/system/base-gnome.nix
+	  #./base/system/gaming.nix # Disable for vm testing bc I don't have the resources for that
+	  ./base/system/networking.nix
+	  ./base/system/packages.nix
+	  ./base/system/security.nix
+	  ./base/system/system.nix
+	  ./base/system/users.nix
+	  ./base/system/shells/fish.nix
+#	  home-manager.nixosModules.home-manager {
+#	    home-manager.useGlobalPkgs = true;
+#	    home-manager.useUserPackages = true;
+#	    home-manager.users.radioaddition = [ import ./hosts/galith/home.nix ];
+#	  }
+        ];
+      };
       galith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
