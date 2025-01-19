@@ -48,7 +48,7 @@
     fsType = "btrfs";
     options = [ "subvol=swap" ];
   };
-  swapDevices = [{ device = "/swap"; label = "swap"; }]
+  swapDevices = [{ device = "/swap"; label = "swap"; }];
 
   fileSystems."/nix" = {
     device = "/dev/mapper/crypted";
