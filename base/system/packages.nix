@@ -53,11 +53,11 @@
     gleam
     glib
     gnome-extension-manager
-    gnome.dconf-editor
-    gnome.gnome-boxes
-    gnome.gnome-tweaks
-    gnome.polari
-    gnome.seahorse
+    dconf-editor
+    gnome-boxes
+    gnome-tweaks
+    polari
+    seahorse
     gnumake
     goofcord
     gparted

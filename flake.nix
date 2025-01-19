@@ -7,6 +7,8 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    disko.url = "github:nix-community/disko/latest";
+    impermanence.url = "github:nix-community/impermanence";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +21,10 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
+	  disko.nixosModules.disko
+	  impermanence.nixosModules.impermanence
+	  ./init/filesystem.nix
+	  ./init/impermanence.nix
           ./hosts/framework/configuration.nix
           #./hosts/framework/hardware-configuration.nix # use the auto-generated config for now bc it's easier
 	  ./base/system/base-gnome.nix
