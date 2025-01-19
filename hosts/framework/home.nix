@@ -6,6 +6,6 @@
   #manual.manpages.enable = false;
   #manual.json.enable = false;
   home.username = "radioaddition";
-  home.homeDirectory = "/var/home/radioaddition";
+  home.homeDirectory = "/home/radioaddition";
   home.stateVersion = "24.05";
 }
