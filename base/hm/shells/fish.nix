@@ -1,6 +1,7 @@
 { pkgs, config, libs, inputs, ... }: {
 
   home.sessionPath = [ "$HOME/.local/bin" "$HOME/bin" "$HOME/.cargo/bin" "/home/linuxbrew/.linuxbrew/bin" "/home/linuxbrew/.linuxbrew/sbin" "$HOME/.nix-profile/bin" ];
+  home.packages = [ pkgs.babelfish ];
   programs.fish = {
     enable = true;
     shellAliases = {
