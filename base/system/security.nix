@@ -1,6 +1,6 @@
 { config, pkgs, inputs, lib, ... }: {
 
-  ### AppArmor
+  # AppArmor
   services.dbus.apparmor = "enabled";
   security.apparmor = {
     enable = true;
@@ -8,7 +8,7 @@
     enableCache = true;
   };
 
-  ### Enable GnuPG
+  # Enable GnuPG
   services.pcscd.enable = true;
   programs.gnupg.agent = {
    enable = true;
@@ -16,7 +16,13 @@
    enableSSHSupport = true;
   };
 
-  ### Yubikey Support
+  # Restrict Nix access
+  nix.allowedUsers = [ "@nix" ];
+
+  # Disable sudo in favor of run0
+  # security.sudo.enable = false; # disable this setting while testing in kvm due to run0 not working properly in a vm
+
+  # Yubikey Pam login
   security.pam.yubico = {
    enable = true;
    mode = "challenge-response";
@@ -32,7 +38,7 @@
        #RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
   #'';
 
-  # Disable CUPS to print documents.
+  # Disable CUPS
   services.printing.enable = false;
 
 }
