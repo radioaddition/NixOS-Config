@@ -14,6 +14,8 @@
       so = "exec fish";
     };
     interactiveShellInit = ''
+    # Source home.sessionVariables and home.sessionPath if set
+    cat ~/.nix-profile/etc/profile.d/hm-session-vars.sh | babelfish | source
 
     # Colors
     set -Ux fish_initialized 3400
