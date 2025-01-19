@@ -44,7 +44,7 @@
 	  nix-flatpak.homeManagerModules.nix-flatpak
           ./hosts/framework/home.nix
 	  ./base/base-home.nix
-	  ./base/base-gnome.nix
+	  ./base/base-gnome-extensions.nix
 	  ./base/base-flatpak.nix
 	  ./base/shells/zsh.nix
         ];
