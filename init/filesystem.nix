@@ -49,7 +49,7 @@
     fsType = "btrfs";
     options = [ "subvol=swap" ];
   };
-  swapDevices = [{ device = "/swap"; label = "swap"; }];
+  lib.mkForce swapDevices = [{ device = "/swap"; label = "swap"; }];
 
   fileSystems."/nix" = {
     device = "/dev/mapper/crypted";
