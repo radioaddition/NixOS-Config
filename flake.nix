@@ -43,9 +43,9 @@
         modules = [
 	  nix-flatpak.homeManagerModules.nix-flatpak
           ./hosts/framework/home.nix
-	  ./base/base-home.nix
-	  ./base/base-gnome-extensions.nix
-	  ./base/base-flatpak.nix
+	  ./base/hm/home.nix
+	  ./base/hm/gnome-extensions.nix
+	  ./base/hm/flatpak.nix
 	  ./base/shells/fish.nix
         ];
       };
