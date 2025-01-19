@@ -13,8 +13,10 @@
       so = "exec fish";
     };
     shellInit = ''
+# Apply home.sessionPath and home.sessionVariables if set
 . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
+      # Colors (copy + pasted from the webui output)
       SETUVAR __fish_initialized:3400
       SETUVAR fish_color_autosuggestion:666
       SETUVAR fish_color_cancel:\x2d\x2dreverse
@@ -55,11 +57,13 @@
       SETUVAR fish_pager_color_selected_completion:\x1d
       SETUVAR fish_pager_color_selected_description:\x1d
       SETUVAR fish_pager_color_selected_prefix:\x1d
-      eval "$(atuin init fish)"
-      eval "$(direnv hook fish)"
-      eval "$(starship init fish)"
-      eval "$(chezmoi completion fish)"
-      eval "$(just --completions fish)"
+
+      # shell inits
+      eval $(atuin init fish)
+      eval $(direnv hook fish)
+      eval $(starship init fish)
+      eval $(chezmoi completion fish)
+      eval $(just --completions fish)
 '';
   };
   programs.zoxide.enable = true;
