@@ -5,8 +5,6 @@
     neovim
     git
     home-manager
-    # Replace coreutils with uutils-coreutils
-    (pkgs.uutils-coreutils.override { prefix = ""; })
   ];
 
   # Swapfile oneshot service
@@ -15,7 +13,7 @@
       serviceConfig.Type = "oneshot";
       wantedBy = [ "swap-swapfile.swap" ];
       script = ''
-        ${pkgs.uutils-coreutils}/bin/truncate -s 0 /swap/swapfile
+        ${pkgs.coreutils}/bin/truncate -s 0 /swap/swapfile
         ${pkgs.e2fsprogs}/bin/chattr +C /swap/swapfile
         ${pkgs.btrfs-progs}/bin/btrfs property set /swap/swapfile compression none
       '';
