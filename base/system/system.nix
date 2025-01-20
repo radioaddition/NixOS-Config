@@ -1,9 +1,9 @@
 { config, pkgs, inputs, lib, ... }: {
 
-  ### Set nix version to latest
+  # Set nix version to latest
   nix.package = pkgs.nixVersions.latest;
 
-  ### Auto Updates
+  # Auto Updates
   system.autoUpgrade = {
     enable = true;
     flake = inputs.self.outPath;
@@ -29,10 +29,11 @@
       '';
     };
   };
-  ## Bootloader
+
+  # Bootloader
   boot = {
 
-  ### Boot animation
+  # Boot animation
     plymouth = {
       enable = true;
       theme = "cuts_alt";
@@ -44,7 +45,7 @@
       ];
     };
 
-  ### Enable silent boot
+  # Enable silent boot
     consoleLogLevel = 0;
     initrd.verbose = false;
     kernelParams = [
@@ -57,7 +58,7 @@
       "udev.log_priority=3"
     ];
 
-  ### Misc bootloader config
+  # Misc bootloader config
     loader = {
       timeout = 0;
       systemd-boot.enable = true;
@@ -78,10 +79,10 @@
 
   hardware.enableAllFirmware = true;
 
-  ## Allow unfree packages
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  ## Enable virtualisation
+  # Enable virtualisation
   virtualisation = {
     kvmgt.enable = true;
     libvirtd.enable = true;
@@ -90,7 +91,7 @@
     podman.enable = true;
   };
 
-  ### Select internationalisation properties.
+  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -104,7 +105,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  ## Enable sound with pipewire.
+  # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -120,7 +121,7 @@
     wireplumber.enable = true;
   };
 
-  ## Enable flake support
+  # Enable flake support
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -130,14 +131,17 @@
       experimental-features = nix-command flakes
     '';
   };
-  ## Enable flatpak
+  # Enable flatpak
   services.flatpak.enable = true;
 
-  ## Enable ADB/Fastboot
+  # Enable ADB/Fastboot
   programs.adb.enable = true;
   services.udev.packages = [
     pkgs.android-udev-rules
   ];
+
+  # Replace coreutils with uutils-coreutils
+  environment.systemPackages = [(pkgs.uutils-coreutils.override { prefix = ""; })];
 
   security.acme.acceptTerms = true;
 
