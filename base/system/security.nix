@@ -45,7 +45,7 @@
   # copied and modified from hardened.nix profile
   boot.kernelPackages = pkgs.linuxPackages_hardened;
 
-  environment.memoryAllocator.provider = "graphene-hardened-malloc";
+  environment.memoryAllocator.provider = "graphene-hardened";
   #environment.variables.SCUDO_OPTIONS = "ZeroContents=1";
 
   security.lockKernelModules = true;
