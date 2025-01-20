@@ -1,4 +1,5 @@
 { config, pkgs, inputs, lib, ... }: {
+# Create a separate wheel user
   users.users.radioadmin = {
     isNormalUser = true;
     description = "RadioAdmin";
