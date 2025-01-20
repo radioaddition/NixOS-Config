@@ -23,19 +23,20 @@
         modules = [
 	  disko.nixosModules.disko
 	  impermanence.nixosModules.impermanence
-	  ./init/disko.nix
-	  ./init/filesystem.nix
-	  ./init/impermanence.nix
-          ./hosts/framework/configuration.nix
-          ./hosts/framework/hardware-configuration.nix
-	  ./base/system/gnome.nix
+	  ./base/system/flatpak.nix
 	  #./base/system/gaming.nix # Disable for vm testing bc I don't have the resources for that
+	  ./base/system/gnome.nix
 	  ./base/system/networking.nix
 	  ./base/system/packages.nix
 	  ./base/system/security.nix
+	  ./base/system/shells/fish.nix
 	  ./base/system/system.nix
 	  ./base/system/users.nix
-	  ./base/system/shells/fish.nix
+          ./hosts/framework/configuration.nix
+          ./hosts/framework/hardware-configuration.nix
+	  ./init/disko.nix
+	  ./init/filesystem.nix
+	  ./init/impermanence.nix
 #	  home-manager.nixosModules.home-manager {
 #	    home-manager.useGlobalPkgs = true;
 #	    home-manager.useUserPackages = true;
