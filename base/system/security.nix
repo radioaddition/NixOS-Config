@@ -42,6 +42,9 @@
   # Disable CUPS
   services.printing.enable = false;
 
+  services.dbus.implementation = "broker";
+  security.sudo.execWheelOnly = true;
+
   # copied and modified from hardened.nix profile
   boot.kernelPackages = pkgs.linuxPackages_hardened;
 
