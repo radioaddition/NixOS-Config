@@ -3,7 +3,6 @@
   environment.systemPackages = with pkgs; [
     btrfs-progs
     busybox
-    ecryptfs
     exfatprogs
     gcc
     git
@@ -11,7 +10,7 @@
     lsof
     mcron
     neovim
-    pinentry-gnome3
+    #pinentry-gnome3
     qemu
     qemu_kvm
     rsync
@@ -32,32 +31,27 @@
     brave
     btop
     cartridges
+    chezmoi
     collision
     curl
+    dconf-editor
     direnv
     discover-overlay
     distrobox
     docker-compose
     eza
-    feather
-    firefox
+    fastfetch
     fragments
-    freshfetch
     gcc
     gettext
-    gh
     git
     git-repo
-    github-desktop
     glas
     gleam
     glib
-    gnome-extension-manager
-    dconf-editor
     gnome-boxes
+    gnome-extension-manager
     gnome-tweaks
-    polari
-    seahorse
     gnumake
     goofcord
     gparted
@@ -68,29 +62,22 @@
     impression
     iosevka
     jamesdsp
-    keepassxc
     llama-cpp
     localsend
     lutris
     magic-wormhole
-    meslo-lgs-nf
     mindustry-wayland
-    monophony
+    miracode
+    monocraft
     mpv
     neovim
-    neovim-gtk
-    nix-search-cli
-    nodePackages_latest.pnpm
-    nodejs-slim
     onionshare-gui
     openrazer-daemon
     pavucontrol
     perl
     picard
     pika-backup
-    pinentry-gnome3
-    pipx
-    pnpm-shell-completion
+    polari
     polychromatic
     protonmail-bridge
     protonmail-bridge-gui
@@ -100,19 +87,16 @@
     python3
     redis
     ripgrep
-    sassc
+    seahorse
     shattered-pixel-dungeon
     simplex-chat-desktop
     topgrade
     tor-browser
-    tuckr
     usbtop
-    ventoy-full
     wget
     wl-clipboard
     wlrctl
     wormhole-william
-    xmrig-mo
     zoxide
   ];
 
