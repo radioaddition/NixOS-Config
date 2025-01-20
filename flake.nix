@@ -52,7 +52,6 @@
         modules = [
 	  disko.nixosModules.disko
 	  impermanence.nixosModules.impermanence
-	  ./base/system/system.nix
 	  ./base/system/users.nix
           ./hosts/installer/configuration.nix
           ./hosts/installer/hardware-configuration.nix
