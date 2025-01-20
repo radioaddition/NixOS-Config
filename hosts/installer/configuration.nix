@@ -2,7 +2,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ xdg-desktop-portal-shana ];
+    extraPortals = [ xdg-desktop-portal-wlr ];
   };
   environment.systemPackages = with pkgs; [
     btrfs-progs
