@@ -49,7 +49,7 @@
     fsType = "btrfs";
     options = [ "subvol=swap" "compress=zstd" "noexec" ];
   };
-  swapDevices = [{ device = "/swap/swapfile"; label = "swap"; size = "32768"; }];
+  swapDevices = [{ device = "/swap/swapfile"; label = "swap"; size = 32768; }];
 
   fileSystems."/nix" = {
     device = "/dev/mapper/crypted";
