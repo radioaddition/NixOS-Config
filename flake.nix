@@ -17,6 +17,7 @@
 
   outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, nix-flatpak, disko, impermanence, ... }: {
     nixosConfigurations = {
+
       framework = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
@@ -44,14 +45,13 @@
 #	  }
         ];
       };
+
       installer = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
 	  disko.nixosModules.disko
 	  impermanence.nixosModules.impermanence
-	  ./base/system/networking.nix
-	  ./base/system/security.nix
 	  ./base/system/system.nix
 	  ./base/system/users.nix
           ./hosts/installer/configuration.nix
@@ -61,6 +61,7 @@
 	  ./init/impermanence.nix
         ];
       };
+
       galith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
@@ -75,7 +76,9 @@
         ];
       };
     };
+
     homeConfigurations = {
+
       "aspirem" = home-manager.lib.homeManagerConfiguration {
         extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
@@ -83,6 +86,7 @@
           ./hosts/aspirem/home.nix
         ];
       };
+
       "framework" = home-manager.lib.homeManagerConfiguration {
   	extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
@@ -95,6 +99,7 @@
 	  ./base/hm/shells/fish.nix
         ];
       };
+
       "galith" = home-manager.lib.homeManagerConfiguration {
   	extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
@@ -102,6 +107,7 @@
           ./hosts/galith/home.nix
         ];
       };
+
       "deck" = home-manager.lib.homeManagerConfiguration {
   	extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."x86_64-linux";

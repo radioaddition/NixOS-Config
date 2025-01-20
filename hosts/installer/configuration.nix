@@ -1,4 +1,6 @@
 { config, pkgs, inputs, lib, ... }: {
+
+  time.timeZone = "America/New_York";
   boot = lib.mkForce {
 
   # Enable silent boot
