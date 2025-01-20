@@ -133,7 +133,6 @@
   };
   # Enable flatpak
   services.flatpak.enable = true;
-  xdg.portal.enable = true;
 
   # Enable ADB/Fastboot
   programs.adb.enable = true;
