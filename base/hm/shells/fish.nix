@@ -78,6 +78,7 @@
   programs.yazi.enableFishIntegration = true;
   programs.starship = {
     enable = true;
+    enableTransience = true;
     # If I ever decide I don't like the default config
     #settings = {
       # add_newline = false;
