@@ -22,8 +22,10 @@
     create-swapfile = {
       serviceConfig.Type = "oneshot";
       wantedBy = [ "swap-swapfile.swap" ];
+	# Replace first line in script with below when uutils builds successfully
+        #${pkgs.uutils-coreutils}/bin/truncate -s 0 /swap/swapfile
       script = ''
-        ${pkgs.uutils-coreutils}/bin/truncate -s 0 /swap/swapfile
+        ${pkgs.coreutils}/bin/truncate -s 0 /swap/swapfile
         ${pkgs.e2fsprogs}/bin/chattr +C /swap/swapfile
         ${pkgs.btrfs-progs}/bin/btrfs property set /swap/swapfile compression none
       '';
@@ -138,7 +140,7 @@
   ];
 
   # Replace coreutils with uutils-coreutils
-  environment.systemPackages = [(pkgs.uutils-coreutils.override { prefix = ""; })];
+  #environment.systemPackages = [(pkgs.uutils-coreutils.override { prefix = ""; })];
 
   security.acme.acceptTerms = true;
 
