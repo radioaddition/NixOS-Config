@@ -43,6 +43,23 @@
 #	  }
         ];
       };
+      installer = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+	  disko.nixosModules.disko
+	  impermanence.nixosModules.impermanence
+	  ./init/disko.nix
+	  ./init/filesystem.nix
+	  ./init/impermanence.nix
+          ./hosts/installer/configuration.nix
+	  ./base/system/networking.nix
+	  ./base/system/security.nix
+	  ./base/system/system.nix
+	  ./base/system/users.nix
+	  ./base/system/shells/fish.nix
+        ];
+      };
       galith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
