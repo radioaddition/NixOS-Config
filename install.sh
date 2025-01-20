@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 if [ "$1" == "" ]; then
-	echo Usage: ./new-install.sh [disk device]
+	echo Usage: ./install.sh [disk device]
 	echo OR
-	echo ./new-install.sh finish [hostname]
+	echo ./install.sh finish [hostname]
 	exit 1
 fi
 if [ "$1" == "finish" ]; then
