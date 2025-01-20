@@ -23,6 +23,7 @@
         modules = [
 	  disko.nixosModules.disko
 	  impermanence.nixosModules.impermanence
+	  ./init/disko.nix
 	  ./init/filesystem.nix
 	  ./init/impermanence.nix
           ./hosts/framework/configuration.nix
