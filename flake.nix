@@ -50,16 +50,15 @@
         modules = [
 	  disko.nixosModules.disko
 	  impermanence.nixosModules.impermanence
-	  ./init/disko.nix
-	  ./init/filesystem.nix
-	  ./init/impermanence.nix
-          ./hosts/installer/configuration.nix
-          ./hosts/installer/hardware-configuration.nix
 	  ./base/system/networking.nix
 	  ./base/system/security.nix
 	  ./base/system/system.nix
 	  ./base/system/users.nix
-	  ./base/system/shells/fish.nix
+          ./hosts/installer/configuration.nix
+          ./hosts/installer/hardware-configuration.nix
+	  ./init/disko.nix
+	  ./init/filesystem.nix
+	  ./init/impermanence.nix
         ];
       };
       galith = nixpkgs.lib.nixosSystem {

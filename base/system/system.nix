@@ -71,7 +71,6 @@
 #      };
       efi.canTouchEfiVariables = true;
     };
-    kernelModules = [ "ecryptfs" ];
     extraModprobeConfig = ''
       options snd-intel-dspcfg dsp_driver=1
     '';
