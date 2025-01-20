@@ -58,7 +58,6 @@
     neovim
     nodePackages_latest.pnpm
     pipx
-    pnpm-shell-completion
     python3
     starship
     topgrade
