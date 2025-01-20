@@ -15,8 +15,6 @@
     qemu_kvm
     rsync
     sbctl
-    steam-tui
-    steamcmd
   ];
 
   users.users.radioaddition.packages = with pkgs; [
