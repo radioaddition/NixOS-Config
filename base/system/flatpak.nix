@@ -2,10 +2,10 @@
 imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
-    (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" "radioaddition" ]) # Let us use hm as shorthand for home-manager config
+    #(lib.mkAliasOptionModule ["hm"] ["home-manager" "users" "radioaddition" ]) # Let us use hm as shorthand for home-manager config
   ];
   services.flatpak.enable = true;
-  hm.services.flatpak = {
+  services.flatpak = {
     uninstallUnmanaged = true;
     update.auto = {
       enable = true;
