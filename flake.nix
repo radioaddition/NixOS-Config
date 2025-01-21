@@ -54,12 +54,7 @@
 	  home-manager.nixosModules.home-manager {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.radioaddition = [
-	      import base/hm/gnome-extensions.nix
-	      import base/hm/shells/fish.nix
-	      import base/hm/home.nix
-	      import hosts/framework/home.nix
-	    ];
+	    home-manager.users.radioaddition = [ import hosts/framework/home.nix ];
 	  }
         ];
       };
