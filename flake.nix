@@ -7,6 +7,10 @@
     disko.url = "github:nix-community/disko/latest";
     impermanence.url = "github:nix-community/impermanence";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    jovian-nixos = {
+      url = "github:Jovian-Experiments/Jovian-NixOS";
+      inputs.nixpkgs.follows = "unstable";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -49,9 +53,10 @@
 	  ./init/filesystem.nix
 	  ./init/impermanence.nix
 	  disko.nixosModules.disko
-	  impermanence.nixosModules.impermanence
-	  #nix-flatpak.nixosModules.nix-flatpak
 	  home-manager.nixosModules.home-manager
+	  impermanence.nixosModules.impermanence
+	  #jovian-nixos.nixosModules.default
+	  nix-flatpak.nixosModules.nix-flatpak
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
