@@ -1,6 +1,7 @@
 { pkgs, lib, config, inputs, ... }: {
   services.flatpak.enable = true;
-  home-manager.services.flatpak = {
+} { pkgs, lib, config, inputs, ... }: {
+  home-manager.users.radioaddition.services.flatpak = {
     uninstallUnmanaged = true;
     update.auto = {
       enable = true;
