@@ -4,7 +4,7 @@
     ./base/hm/gnome-extensions.nix
     ./base/hm/home.nix
     ./base/hm/shells/fish.nix
-  ]
+  ];
   # in case of git.sr.ht outage
   #manual.html.enable = false;
   #manual.manpages.enable = false;
