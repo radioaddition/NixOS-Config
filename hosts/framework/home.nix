@@ -1,6 +1,5 @@
-{ pkgs, config, libs, inputs, ... }:
+{ pkgs, config, libs, inputs, ... }: {
 
-{
   imports = [
     ./base/hm/gnome-extensions.nix
     ./base/hm/home.nix

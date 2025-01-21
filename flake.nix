@@ -55,7 +55,7 @@
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.radioaddition = [ import hosts/framework/home.nix ];
+	    home-manager.users.radioaddition = import hosts/framework/home.nix;
 	  }
         ];
       };
