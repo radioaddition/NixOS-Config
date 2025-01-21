@@ -16,15 +16,38 @@
     };
   };
 
+  # Tailscale
+  services.tailscale = {
+    enable = true;
+  };
   ### Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 65530 51413 9052 9053 9080 53317 ];
-  networking.firewall.allowedUDPPorts = [ 65530 51413 9052 9053 9080 53317 ];
-  networking.firewall.allowedTCPPortRanges = [ 
+  networking.firewall = {
+    allowedTCPPorts = [
+      65530
+      51413
+      9052
+      9053
+      9080
+      53317
+    ];
+    allowedUDPPorts = [
+      65530
+      51413
+      9052
+      9053
+      9080
+      53317
+    ];
+    allowedTCPPortRanges = [ 
       { from = 1714; to = 1764; } # KDE Connect
     ];  
-  networking.firewall.allowedUDPPortRanges = [ 
+    allowedUDPPortRanges = [ 
       { from = 1714; to = 1764; } # KDE Connect
     ];
+    trustedInterfaces = [
+      "tailscale0"
+    ];
+  };
   #' Or disable the firewall altogether.
   #' networking.firewall.enable = false;
 
