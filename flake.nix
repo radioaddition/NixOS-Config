@@ -1,5 +1,5 @@
 {
-  description = "NixOS Config";
+  description = "spaghetti";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -34,8 +34,6 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-	  disko.nixosModules.disko
-	  impermanence.nixosModules.impermanence
 	  ./base/system/flatpak.nix
 	  #./base/system/gaming.nix # Disable for vm testing bc I don't have the resources for that
 	  ./base/system/gnome.nix
@@ -50,11 +48,19 @@
 	  ./init/disko.nix
 	  ./init/filesystem.nix
 	  ./init/impermanence.nix
-#	  home-manager.nixosModules.home-manager {
-#	    home-manager.useGlobalPkgs = true;
-#	    home-manager.useUserPackages = true;
-#	    home-manager.users.radioaddition = [ import ./hosts/galith/home.nix ];
-#	  }
+	  disko.nixosModules.disko
+	  impermanence.nixosModules.impermanence
+	  nix-flatpak.nixosModules.nix-flatpak
+	  home-manager.nixosModules.home-manager {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.radioaddition = [
+	      import base/hm/gnome-extensions.nix
+	      import base/hm/shells/fish.nix
+	      import base/hm/home.nix
+	      import hosts/framework/home.nix
+	    ];
+	  };
         ];
       };
 

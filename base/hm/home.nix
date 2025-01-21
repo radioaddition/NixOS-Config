@@ -27,6 +27,12 @@
       nix-direnv.enable = true;
     };
 
+  programs.git = {
+    enable = true;
+    userName = "RadioAddition";
+    userEmail = "radioaddition@pm.me";
+  };
+
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     warn-dirty = false;
