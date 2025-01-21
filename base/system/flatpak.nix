@@ -1,7 +1,11 @@
-{ pkgs, lib, config, inputs, ... }: {
+{ pkgs, lib, config, inputs, home-manager, ... }: {
   services.flatpak.enable = true;
+<<<<<<< Updated upstream
 } { pkgs, lib, config, inputs, ... }: {
   home-manager.users.radioaddition.services.flatpak = {
+=======
+  services.flatpak = {
+>>>>>>> Stashed changes
     uninstallUnmanaged = true;
     update.auto = {
       enable = true;
