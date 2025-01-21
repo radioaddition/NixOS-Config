@@ -50,12 +50,17 @@
 	  ./init/impermanence.nix
 	  disko.nixosModules.disko
 	  impermanence.nixosModules.impermanence
-	  nix-flatpak.nixosModules.nix-flatpak
+	  #nix-flatpak.nixosModules.nix-flatpak
 	  home-manager.nixosModules.home-manager
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.radioaddition = import hosts/framework/home.nix;
+	    home-manager.users.radioaddition.imports = [
+              ./base/hm/gnome-extensions.nix
+              ./base/hm/shells/fish.nix
+              ./base/hm/home.nix
+              ./hosts/framework/home.nix
+	    ];
 	  }
         ];
       };

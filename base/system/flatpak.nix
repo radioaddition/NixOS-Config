@@ -1,6 +1,7 @@
 { pkgs, lib, config, inputs, home-manager, ... }: {
 imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.nix-flatpak.homeManagerModules.nix-flatpak
     (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" "radioaddition" ]) # Let us use hm as shorthand for home-manager config
   ];
   services.flatpak.enable = true;
