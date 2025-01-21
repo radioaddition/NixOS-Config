@@ -2,20 +2,32 @@
   description = "NixOS Config";
 
   inputs = {
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     disko.url = "github:nix-community/disko/latest";
     impermanence.url = "github:nix-community/impermanence";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, lanzaboote, home-manager, unstable, nix-flatpak, disko, impermanence, ... }: {
+  outputs = inputs@{
+    self,
+    nixpkgs,
+    unstable,
+    home-manager,
+    disko,
+    impermanence,
+    lanzaboote,
+    nix-flatpak,
+    ... }: {
+
     nixosConfigurations = {
 
       framework = nixpkgs.lib.nixosSystem {
