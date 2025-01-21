@@ -60,7 +60,7 @@
 	      import base/hm/home.nix
 	      import hosts/framework/home.nix
 	    ];
-	  };
+	  }
         ];
       };
 
