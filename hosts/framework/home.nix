@@ -1,9 +1,9 @@
 { pkgs, config, libs, inputs, ... }: {
 
   imports = [
-    ./base/hm/gnome-extensions.nix
-    ./base/hm/home.nix
-    ./base/hm/shells/fish.nix
+    ../../base/hm/gnome-extensions.nix
+    ../../base/hm/home.nix
+    ../../base/hm/shells/fish.nix
   ];
   # in case of git.sr.ht outage
   #manual.html.enable = false;
