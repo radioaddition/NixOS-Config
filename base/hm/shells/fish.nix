@@ -71,6 +71,7 @@
       direnv hook fish | source
       chezmoi completion fish | source
       just --completions fish | source
+      any-nix-shell fish --info-right | source
 '';
   };
   programs.zoxide.enable = true;

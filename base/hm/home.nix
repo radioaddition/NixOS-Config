@@ -35,6 +35,7 @@
   home.packages = with pkgs; [
 
   # Packages
+    any-nix-shell
     atuin
     bat
     btop
