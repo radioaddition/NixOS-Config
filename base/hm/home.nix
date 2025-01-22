@@ -82,7 +82,6 @@
 #    neovim-gtk
 #    nodejs-slim
 #    onionshare-gui
-#    openrazer-daemon
 #    pavucontrol
 #    perl
 #    pinentry-gnome3

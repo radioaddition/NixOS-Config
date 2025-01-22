@@ -15,26 +15,26 @@
       #{ file = "/var/keys/secret_file"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
     ];
   };
-  environment.persistence."/home" = {
-    enable = true;
-    hideMounts = true;
-    users.radioaddition = {
-      directories = [
-        "Downloads"
-        "Music"
-        "Pictures"
-        "Documents"
-        "Videos"
-        { directory = ".gnupg"; mode = "0700"; }
-        { directory = ".ssh"; mode = "0700"; }
-        { directory = ".nixops"; mode = "0700"; }
-        { directory = ".local/share/keyrings"; mode = "0700"; }
-        ".local/share/direnv"
-	".config"
-	".local"
-      ];
-      files = [
-      ];
-    };
-  };
+  #environment.persistence."/home" = {
+  #  enable = true;
+  #  hideMounts = true;
+  #  users.radioaddition = {
+  #    directories = [
+  #      "Downloads"
+  #      "Music"
+  #      "Pictures"
+  #      "Documents"
+  #      "Videos"
+  #      { directory = ".gnupg"; mode = "0700"; }
+  #      { directory = ".ssh"; mode = "0700"; }
+  #      { directory = ".nixops"; mode = "0700"; }
+  #      { directory = ".local/share/keyrings"; mode = "0700"; }
+  #      ".local/share/direnv"
+  #      ".config"
+  #      ".local"
+  #    ];
+  #    files = [
+  #    ];
+  #  };
+  #};
 }

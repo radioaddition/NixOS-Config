@@ -1,8 +1,0 @@
-error: A definition for option `home-manager.users.radioaddition' is not of type `Home Manager module'. Definition values:
-       - In `/nix/store/sbnwhhx7zjp45n53bkmnj4whg79aw8pq-source/flake.nix':
-           [
-             <function>
-             /nix/store/25jl7wyc2vc4qx9n2nail0alv0lkbpjs-source/base/hm/gnome-extensions.nix
-             <function>
-             /nix/store/25jl7wyc2vc4qx9n2nail0alv0lkbpjs-source/base/hm/shells/fish.nix
-           ...

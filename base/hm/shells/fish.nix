@@ -16,9 +16,6 @@
       so = "exec fish";
     };
     interactiveShellInit = ''
-    # Source home.sessionVariables and home.sessionPath if set
-    cat ~/.nix-profile/etc/profile.d/hm-session-vars.sh | babelfish | source
-
     # Colors
     set -Ux fish_initialized 3400
     set -Ux fish_color_autosuggestion 666
@@ -71,7 +68,6 @@
       direnv hook fish | source
       chezmoi completion fish | source
       just --completions fish | source
-      any-nix-shell fish --info-right | source
 '';
   };
   programs.zoxide.enable = true;
