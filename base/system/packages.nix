@@ -60,6 +60,7 @@
     impression
     iosevka
     jamesdsp
+    just
     llama-cpp
     localsend
     lutris
@@ -70,13 +71,11 @@
     mpv
     neovim
     onionshare-gui
-    openrazer-daemon
     pavucontrol
     perl
     picard
     pika-backup
     polari
-    polychromatic
     protonmail-bridge
     protonmail-bridge-gui
     protonplus

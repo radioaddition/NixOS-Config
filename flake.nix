@@ -117,15 +117,14 @@
       };
 
       "framework" = home-manager.lib.homeManagerConfiguration {
-  	extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
-	  nix-flatpak.homeManagerModules.nix-flatpak
+          nix-flatpak.homeManagerModules.nix-flatpak
           ./hosts/framework/home.nix
-	  ./base/hm/home.nix
-	  ./base/hm/gnome-extensions.nix
-	  ./base/hm/flatpak.nix
-	  ./base/hm/shells/fish.nix
+          ./base/hm/home.nix
+          ./base/hm/gnome-extensions.nix
+          ./base/hm/shells/fish.nix
         ];
       };
       "oriole" = home-manager.lib.homeManagerConfiguration {
