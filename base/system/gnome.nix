@@ -1,5 +1,4 @@
 { config, pkgs, inputs, lib, ... }: {
-  ### Enable the X11 windowing system.
   services.xserver.enable = true;
 
   ### Enable the GNOME Desktop Environment.
@@ -10,6 +9,10 @@
     cheese
     simple-scan
     totem
+    gnome-tour
+    gnome-software
+    weather
+    epiphany
   ];
 
   ### Configure keymap in X11

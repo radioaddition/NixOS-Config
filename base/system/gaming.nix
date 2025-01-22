@@ -15,6 +15,6 @@
   programs.gamescope.enable = true;
   programs.steam.gamescopeSession.enable = true;
   programs.java.enable = true; 
-  hardware.openrazer.enable = true;
+  #hardware.openrazer.enable = true;
 }
 

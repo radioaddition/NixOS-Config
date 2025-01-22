@@ -37,7 +37,7 @@
     experimental-features = [ "nix-command" "flakes" ];
     warn-dirty = false;
   };
-  nix.package = pkgs.nixVersions.stable;
+  nix.package = lib.mkForce pkgs.nixVersions.stable;
 
   home.packages = with pkgs; [
     # Packages

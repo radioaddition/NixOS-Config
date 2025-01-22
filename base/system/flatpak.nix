@@ -19,8 +19,6 @@ imports = [
 	{ appId = "page.kramo.Cartridges"; origin = "flathub"; }
 	# Collision, a hash checker
 	{ appId = "dev.geopjr.Collision"; origin = "flathub"; }
-	# Discover-Overlay
-	{ appId = "io.github.trigg.discover_overlay"; origin = "flathub"; }
 	# IRC Client
 	{ appId = "org.gnome.Polari"; origin = "flathub"; }
 	# Gnome passwords, keys, gpg manager
