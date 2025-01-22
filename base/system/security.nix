@@ -17,7 +17,7 @@
   };
 
   # Restrict Nix access
-  nix.settings.allowed-users = [ "@nix" ];
+  nix.settings.allowed-users = [ "radioaddition" ];
 
   # Disable sudo in favor of run0
   # security.sudo.enable = false; # disable this setting while testing in kvm due to run0 not working properly in a vm
