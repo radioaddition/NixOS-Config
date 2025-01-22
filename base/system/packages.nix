@@ -94,6 +94,7 @@
     wl-clipboard
     wlrctl
     wormhole-william
+    yazi
     zoxide
   ];
 
