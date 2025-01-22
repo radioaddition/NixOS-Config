@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    oldstable.url = "github:NixOS/nixpkgs/nixos-24.05";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     disko.url = "github:nix-community/disko/latest";
     impermanence.url = "github:nix-community/impermanence";
@@ -18,6 +19,10 @@
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-24.05";
+      inputs.nixpkgs.follows = "oldstable";
     };
   };
 
@@ -120,6 +125,21 @@
 	  ./base/hm/gnome-extensions.nix
 	  ./base/hm/flatpak.nix
 	  ./base/hm/shells/fish.nix
+        ];
+      };
+      "oriole" = home-manager.lib.homeManagerConfiguration {
+  	extraSpecialArgs = { inherit inputs; };
+        pkgs = nixpkgs.legacyPackages."aarch64-linux";
+        modules = [
+	  ./base/hm/home.nix
+	  ./base/hm/shells/fish.nix
+	  {
+	    home = {
+	      stateVersion = "24.05";
+	      username = "nix-on-droid";
+	      homeDirectory = "/data/data/com.termux.nix/files/home/";
+	    };
+	  }
         ];
       };
 
