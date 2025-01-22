@@ -91,9 +91,13 @@
   virtualisation = {
     kvmgt.enable = true;
     libvirtd.enable = true;
-    docker.enable = true;
     waydroid.enable = true;
-    podman.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+
   };
 
   # Select internationalisation properties.
