@@ -37,9 +37,10 @@
     experimental-features = [ "nix-command" "flakes" ];
     warn-dirty = false;
   };
-  home.packages = with pkgs; [
+  nix.package = pkgs.nixVersions.stable;
 
-  # Packages
+  home.packages = with pkgs; [
+    # Packages
     any-nix-shell
     atuin
     bat
