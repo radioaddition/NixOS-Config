@@ -1,9 +1,7 @@
 { pkgs, lib, config, inputs, home-manager, nix-flatpak, ... }: {
-imports = [
-    inputs.home-manager.nixosModules.home-manager
-  ];
-  services.flatpak.enable = true;
-  hm.services.flatpak = {
+  #services.flatpak.enable = true;
+  services.flatpak = {
+    enable = true;
     uninstallUnmanaged = true;
     update.auto = {
       enable = true;
