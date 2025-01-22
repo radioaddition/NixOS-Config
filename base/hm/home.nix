@@ -1,4 +1,4 @@
-{ pkgs, config, libs, inputs, ... }:
+{ pkgs, config, lib, inputs, ... }:
 
 {
   
@@ -37,7 +37,6 @@
     experimental-features = [ "nix-command" "flakes" ];
     warn-dirty = false;
   };
-  nix.package = pkgs.nixVersions.stable;
   home.packages = with pkgs; [
 
   # Packages

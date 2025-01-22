@@ -3,6 +3,10 @@
   # Set nix version to latest
   nix.package = pkgs.nixVersions.latest;
 
+  # Let us use hm as shorthand for home-manager config
+  imports = [
+    (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" "radioaddition" ])
+  ];
   # Auto Updates
   system.autoUpgrade = {
     enable = true;

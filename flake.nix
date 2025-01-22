@@ -70,6 +70,7 @@
               ./base/hm/shells/fish.nix
               ./base/hm/home.nix
               ./hosts/framework/home.nix
+	      nix-flatpak.homeManagerModules.nix-flatpak
 	    ];
 	  }
         ];
