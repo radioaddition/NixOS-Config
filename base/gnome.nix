@@ -14,6 +14,9 @@
     };
   };
 
+  # Force apps to use native wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   environment.gnome.excludePackages = with pkgs; [
     yelp
     cheese

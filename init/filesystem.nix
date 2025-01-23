@@ -2,8 +2,52 @@
   fileSystems."/" = {
     device = "/dev/mapper/crypted";
     fsType = "btrfs";
-    options = [ "subvol=root" "compress=zstd" "noexec" ];
+    options = [
+      "subvol=root"
+      "compress=zstd"
+      #"noexec"
+    ];
   };
+
+  fileSystems."/persistent" = {
+    device = "/dev/mapper/crypted";
+    neededForBoot = true;
+    fsType = "btrfs";
+    options = [
+      "subvol=persistent"
+      "compress=zstd"
+      "noexec"
+    ];
+  };
+
+  fileSystems."/home" = {
+    device = "/dev/mapper/crypted";
+    neededForBoot = true;
+    fsType = "btrfs";
+    options = [
+      "subvol=home"
+      "compress=zstd"
+      "noexec"
+    ];
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/mapper/crypted";
+    fsType = "btrfs";
+    options = [ "subvol=nix" "compress=zstd" ];
+  };
+
+  fileSystems."/swap" = {
+    device = "/dev/mapper/crypted";
+    fsType = "btrfs";
+    options = [
+      "subvol=swap"
+      "compress=zstd"
+      "noexec"
+    ];
+  };
+  # swapDevices = [{ device = lib.mkForce "/swap/swapfile"; label = "swap"; size = 32768; }]; # Shrunk for the VM
+  swapDevices = [{ device = lib.mkForce "/swap/swapfile"; label = "swap"; size = 2048; }];
 
   boot.initrd.postResumeCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
@@ -29,34 +73,6 @@
     btrfs subvolume create /btrfs_tmp/root
     umount /btrfs_tmp
   '';
-
-  fileSystems."/persistent" = {
-    device = "/dev/mapper/crypted";
-    neededForBoot = true;
-    fsType = "btrfs";
-    options = [ "subvol=persistent" "compress=zstd" "noexec"];
-  };
-
-  fileSystems."/home" = {
-    device = "/dev/mapper/crypted";
-    neededForBoot = true;
-    fsType = "btrfs";
-    options = [ "subvol=home" "compress=zstd" "noexec" ];
-  };
-
-  fileSystems."/swap" = {
-    device = "/dev/mapper/crypted";
-    fsType = "btrfs";
-    options = [ "subvol=swap" "compress=zstd" "noexec" ];
-  };
-  # swapDevices = [{ device = lib.mkForce "/swap/swapfile"; label = "swap"; size = 32768; }]; # Shrunk for the VM
-  swapDevices = [{ device = lib.mkForce "/swap/swapfile"; label = "swap"; size = 2048; }];
-
-  fileSystems."/nix" = {
-    device = "/dev/mapper/crypted";
-    fsType = "btrfs";
-    options = [ "subvol=nix" "compress=zstd" ];
-  };
 
   # be sure to define this in the host-specific configuration
   #fileSystems."/boot" = {
