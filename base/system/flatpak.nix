@@ -1,5 +1,4 @@
 { pkgs, lib, config, inputs, home-manager, nix-flatpak, ... }: {
-  #services.flatpak.enable = true;
   services.flatpak = {
     enable = true;
     uninstallUnmanaged = true;
@@ -137,4 +136,6 @@
 	{ appId = "page.codeberg.libre_menu_editor.LibreMenuEditor"; origin = "flathub"; }
     ];
   };
+  # Flatpak requires this functionality
+  security.unprivilegedUsernsClone = config.services.flatpak.enable;
 }

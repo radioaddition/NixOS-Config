@@ -60,16 +60,18 @@
 	  disko.nixosModules.disko
 	  home-manager.nixosModules.home-manager
 	  impermanence.nixosModules.impermanence
+	  lanzaboote.nixosModules.lanzaboote
 	  nix-flatpak.nixosModules.nix-flatpak
+
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.radioaddition.imports = [
               ./base/home.nix
               ./hosts/framework/home.nix
-	      nix-flatpak.homeManagerModules.nix-flatpak
 	    ];
 	  }
+
         ];
       };
 
