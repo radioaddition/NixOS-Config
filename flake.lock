@@ -222,27 +222,6 @@
         "type": "github"
       }
     },
-    "llakaLib": {
-      "inputs": {
-        "nixpkgs": [
-          "rbld",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1737249441,
-        "narHash": "sha256-3gA1k4j/yXiWOuHiTmL+wpOESqgkywkAPelJ0yeCog0=",
-        "owner": "llakala",
-        "repo": "llakaLib",
-        "rev": "1a9f988a013fd71816a5355308de17b796d3de39",
-        "type": "github"
-      },
-      "original": {
-        "owner": "llakala",
-        "repo": "llakaLib",
-        "type": "github"
-      }
-    },
     "nix-flatpak": {
       "locked": {
         "lastModified": 1734128415,
@@ -410,19 +389,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1736916166,
-        "narHash": "sha256-puPDoVKxkuNmYIGMpMQiK8bEjaACcCksolsG36gdaNQ=",
-        "path": "/nix/store/awsvw44jla0idziiks2zwgzslfd2dczn-source",
-        "rev": "e24b4c09e963677b1beea49d411cd315a024ad3a",
-        "type": "path"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
     "nmd": {
       "flake": false,
       "locked": {
@@ -520,25 +486,6 @@
         "type": "github"
       }
     },
-    "rbld": {
-      "inputs": {
-        "llakaLib": "llakaLib",
-        "nixpkgs": "nixpkgs_3"
-      },
-      "locked": {
-        "lastModified": 1737577702,
-        "narHash": "sha256-lq+PGo9h1nz3STrgVMvQ7P8wyI/41w493p8z4bMscWk=",
-        "owner": "llakala",
-        "repo": "rebuild-but-less-dumb",
-        "rev": "05feb746d97a350001613d36d0636ac136192dca",
-        "type": "github"
-      },
-      "original": {
-        "owner": "llakala",
-        "repo": "rebuild-but-less-dumb",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "disko": "disko",
@@ -550,7 +497,6 @@
         "nix-on-droid": "nix-on-droid",
         "nixpkgs": "nixpkgs_2",
         "oldstable": "oldstable",
-        "rbld": "rbld",
         "unstable": "unstable"
       }
     },

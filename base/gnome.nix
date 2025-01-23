@@ -58,7 +58,6 @@
     #valent
     wifi-qrcode
     wiggle
-    window-desaturation
     window-title-is-back
     xwayland-indicator
     zen

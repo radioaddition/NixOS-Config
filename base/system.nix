@@ -45,6 +45,18 @@
     };
   };
 
+  # System-wide environment variables
+  environment.sessionVariables = {
+    EDITOR = "nvim";
+    DBX_CONTAINER_MANAGER = "podman";
+  };
+
+  # Base system packages not included
+  environment.systemPackages = with pkgs; [
+    git
+    neovim
+  ];
+
   # Bootloader
   boot = {
 

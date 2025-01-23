@@ -56,6 +56,14 @@
     pkiBundle = "/etc/secureboot";
   };
 
+  # Enable tpm unlock
+  environment.systemPackages = [ pkgs.tpm2-tools ];
+  security.tpm2 = {
+    enable = true;
+    pkcs11.enable = true;
+    tctiEnvironment.enable = true;
+  };
+
   # Disable CUPS
   services.printing.enable = false;
 

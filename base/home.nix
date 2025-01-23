@@ -15,12 +15,6 @@
   #home.username = "radioaddition";
   #home.homeDirectory = "/home/radioaddition";
 
-  nixpkgs.config.allowUnfree = true;
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    DBX_CONTAINER_MANAGER = "podman";
-  };
-
   # Direnv
   programs.direnv = {
       enable = true;

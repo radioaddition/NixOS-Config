@@ -13,7 +13,6 @@
     fastfetch
     gcc
     gettext
-    git
     git-repo
     glas
     gleam
@@ -30,7 +29,6 @@
     miracode
     monocraft
     mpv
-    neovim
     perl
     python3
     qemu
