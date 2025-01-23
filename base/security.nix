@@ -17,10 +17,10 @@
   };
 
   # Restrict Nix access
-  nix.settings.allowed-users = [ "radioaddition" ];
+#  nix.settings.allowed-users = [ "radioaddition" ];
 
   # Disable sudo in favor of run0
-  # security.sudo.enable = false; # disable this setting while testing in kvm due to run0 not working properly in a vm
+  # security.sudo.enable = false; # disabled while run0 is broken
 
   # Yubikey Pam login
   security.pam.yubico = {
@@ -61,6 +61,11 @@
 
   # Use dbus-broker instead of dbus
   services.dbus.implementation = "broker";
+
+
+  # Temporary options
+  security.allowUserNamespaces = true;
+  security.unprivilegedUsernsClone  = true;
 
   # copied and modified from hardened.nix profile
   boot.kernelPackages = pkgs.linuxPackages_hardened;
