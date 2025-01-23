@@ -4,9 +4,11 @@
   programs.fish.useBabelfish = true;
   users.defaultUserShell = pkgs.fish;
   environment.shells = [ pkgs.fish ];
+
   hm = {
     home.sessionPath = [ "$HOME/.local/bin" "$HOME/bin" "$HOME/.cargo/bin" "/home/linuxbrew/.linuxbrew/bin" "/home/linuxbrew/.linuxbrew/sbin" "$HOME/.nix-profile/bin" ];
     home.packages = [ pkgs.babelfish ];
+
     programs.fish = {
       enable = true;
       preferAbbrs = true;
@@ -19,7 +21,13 @@
         clean = "nix-env --delete-generations old && nix-collect-garbage -d && nix profile wipe-history";
         cleanr = "run0 sh -c 'nix-env --delete-generations old && nix-collect-garbage -d && nix profile wipe-history'";
         so = "exec fish";
+	"--numerical-perms" = {
+	  position = "anywhere";
+	  expansion = "| awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/) \
+                                           *2^(8-i));if(k)printf(\"%0o \",k);print}'";
+	};
       };
+
       interactiveShellInit = ''
       # Colors
       set -Ux fish_initialized 3400
@@ -80,9 +88,11 @@
       set -Ux FLAKE $HOME/NixOS-Config
 ''  ;
     };
+
     programs.zoxide.enable = true;
     programs.thefuck.enable = true;
     programs.yazi.enableFishIntegration = true;
+
     programs.starship = {
       enable = true;
       enableTransience = true;
@@ -114,5 +124,6 @@
         keymap_mode = "vim-insert";
       };
     };
+
   };
 }
