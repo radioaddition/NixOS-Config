@@ -182,11 +182,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1737307080,
-        "narHash": "sha256-YKQbvo0758a1P3pjWh75qZDPIC/18ttDtPk9PD4S4lQ=",
+        "lastModified": 1737617533,
+        "narHash": "sha256-9hHaUxeRDZ5PTk7TqBbHPAjgKuBl67asaMdyehYLqFs=",
         "owner": "Jovian-Experiments",
         "repo": "Jovian-NixOS",
-        "rev": "e26d456e9d9a33f66e1985ab4c06e1940352ef40",
+        "rev": "2dd65c3c92a4b8b1bf653657ae8648b883a4d427",
         "type": "github"
       },
       "original": {
@@ -219,6 +219,27 @@
         "owner": "nix-community",
         "ref": "v0.4.1",
         "repo": "lanzaboote",
+        "type": "github"
+      }
+    },
+    "llakaLib": {
+      "inputs": {
+        "nixpkgs": [
+          "rbld",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1737249441,
+        "narHash": "sha256-3gA1k4j/yXiWOuHiTmL+wpOESqgkywkAPelJ0yeCog0=",
+        "owner": "llakala",
+        "repo": "llakaLib",
+        "rev": "1a9f988a013fd71816a5355308de17b796d3de39",
+        "type": "github"
+      },
+      "original": {
+        "owner": "llakala",
+        "repo": "llakaLib",
         "type": "github"
       }
     },
@@ -375,11 +396,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1737404927,
-        "narHash": "sha256-e1WgPJpIYbOuokjgylcsuoEUCB4Jl2rQXa2LUD6XAG8=",
+        "lastModified": 1737569578,
+        "narHash": "sha256-6qY0pk2QmUtBT9Mywdvif0i/CLVgpCjMUn6g9vB+f3M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ae584d90cbd0396a422289ee3efb1f1c9d141dc3",
+        "rev": "47addd76727f42d351590c905d9d1905ca895b82",
         "type": "github"
       },
       "original": {
@@ -387,6 +408,19 @@
         "ref": "nixos-24.11",
         "repo": "nixpkgs",
         "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1736916166,
+        "narHash": "sha256-puPDoVKxkuNmYIGMpMQiK8bEjaACcCksolsG36gdaNQ=",
+        "path": "/nix/store/awsvw44jla0idziiks2zwgzslfd2dczn-source",
+        "rev": "e24b4c09e963677b1beea49d411cd315a024ad3a",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
       }
     },
     "nmd": {
@@ -486,6 +520,25 @@
         "type": "github"
       }
     },
+    "rbld": {
+      "inputs": {
+        "llakaLib": "llakaLib",
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1737577702,
+        "narHash": "sha256-lq+PGo9h1nz3STrgVMvQ7P8wyI/41w493p8z4bMscWk=",
+        "owner": "llakala",
+        "repo": "rebuild-but-less-dumb",
+        "rev": "05feb746d97a350001613d36d0636ac136192dca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "llakala",
+        "repo": "rebuild-but-less-dumb",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "disko": "disko",
@@ -497,6 +550,7 @@
         "nix-on-droid": "nix-on-droid",
         "nixpkgs": "nixpkgs_2",
         "oldstable": "oldstable",
+        "rbld": "rbld",
         "unstable": "unstable"
       }
     },
