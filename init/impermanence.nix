@@ -12,6 +12,7 @@
     ];
     files = [
       "/var/lib/usbguard/rules.conf"
+      "/etc/secureboot"
       #{ file = "/var/keys/secret_file"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
     ];
   };
