@@ -13,6 +13,7 @@
       '';
     };
   };
+
   environment.gnome.excludePackages = with pkgs; [
     yelp
     cheese
@@ -31,7 +32,8 @@
       variant = "";
     };
   };
-    # GNOME Extensions
+
+  # GNOME Extensions
   users.users.radioaddition.packages = (with pkgs.gnomeExtensions; [
     alphabetical-app-grid
     #appindicator
@@ -61,8 +63,10 @@
     window-title-is-back
     xwayland-indicator
     zen
+
   ]) ++ (with pkgs; [
     pop-launcher
+
   ]);
 }
 
