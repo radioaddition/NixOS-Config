@@ -39,24 +39,20 @@
   # GNOME Extensions
   users.users.radioaddition.packages = (with pkgs.gnomeExtensions; [
     alphabetical-app-grid
-    #appindicator
+    appindicator
     blur-my-shell
     caffeine
     dash-to-dock
     gsconnect
     logo-menu
-    night-theme-switcher
     pop-shell
     quick-settings-audio-devices-renamer
     reboottouefi
     reorder-workspaces
     resolution-and-refresh-rate-in-quick-settings
-    respect-do-not-disturb
     search-light
-    space-bar
     systemd-manager
     tailscale-qs
-    tray-icons-reloaded
     trimmer
     unpanel
     #valent
