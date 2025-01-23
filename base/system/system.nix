@@ -26,7 +26,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep 3";
-    flake = "/home/radioadditiob/NixOS-Config/";
+    flake = "/home/radioaddition/NixOS-Config/";
   };
 
   # Swapfile oneshot service
