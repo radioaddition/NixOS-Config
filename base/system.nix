@@ -49,16 +49,16 @@
   boot = {
 
     # Boot animation
-    #plymouth = {
-    #  enable = true;
-    #  theme = "cuts_alt";
-    #  themePackages = with pkgs; [
-    #    # By default we would install all themes
-    #    (adi1090x-plymouth-themes.override {
-    #      selected_themes = [ "cuts_alt" ];
-    #    })
-    #  ];
-    #};
+    plymouth = {
+      enable = true;
+      theme = "cuts_alt";
+      themePackages = with pkgs; [
+        # By default we would install all themes
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [ "cuts_alt" ];
+        })
+      ];
+    };
 
   # Enable silent boot
     consoleLogLevel = 0;
