@@ -45,8 +45,7 @@
                     };
                     "swap" = {
                       mountpoint = "/swap";
-                      #swap.swapfile.size = "32G"; # Shrunk for the vm
-                      swap.swapfile.size = "2G";
+                      swap.swapfile.size = "32G";
                     };
                   };
                 };
