@@ -21,6 +21,14 @@
     randomizedDelaySec = "45min";
   };
 
+  # Nix Helper cli
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep 3";
+    flake = "/home/radioadditiob/NixOS-Config";
+  };
+
   # Swapfile oneshot service
   systemd.services = {
     create-swapfile = {
