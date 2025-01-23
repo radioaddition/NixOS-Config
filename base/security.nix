@@ -74,10 +74,10 @@
   # copied and modified from hardened.nix profile
   boot.kernelPackages = pkgs.linuxPackages_hardened;
 
-  #environment.memoryAllocator.provider = "graphene-hardened";
+  environment.memoryAllocator.provider = "graphene-hardened";
   # Use the options if the graphene hardened_malloc is too strict
-  environment.memoryAllocator.provider = "scudo";
-  environment.variables.SCUDO_OPTIONS = "ZeroContents=1";
+  #environment.memoryAllocator.provider = "scudo";
+  #environment.variables.SCUDO_OPTIONS = "ZeroContents=1";
 
   security = {
     sudo.execWheelOnly = true;
