@@ -55,7 +55,6 @@
 #    glas
 #    gleam
 #    gparted
-#    home-manager
 #    hyfetch
 #    iosevka
 #    just
@@ -96,5 +95,6 @@
 #    xmrig-mo
 #    ];
 
+  programs.home-manager.enable = true;
   #home.enableNixpkgsReleaseCheck = false; # If using a package from the unstable branch uncomment this
 }
