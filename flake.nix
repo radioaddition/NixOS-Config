@@ -44,7 +44,7 @@
         specialArgs = { inherit inputs; };
         modules = [
 	  ./base/system/flatpak.nix
-	  #./base/system/gaming.nix # Disable for vm testing bc I don't have the resources for that
+	  #./base/system/gaming.nix # Disable unless I'm using it
 	  ./base/system/gnome.nix
 	  ./base/system/networking.nix
 	  ./base/system/packages.nix
@@ -60,7 +60,6 @@
 	  disko.nixosModules.disko
 	  home-manager.nixosModules.home-manager
 	  impermanence.nixosModules.impermanence
-	  #jovian-nixos.nixosModules.default
 	  nix-flatpak.nixosModules.nix-flatpak
 	  {
 	    home-manager.useGlobalPkgs = true;

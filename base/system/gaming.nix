@@ -1,4 +1,8 @@
 { config, pkgs, inputs, lib, ... }: {
+  # Jovian
+  imports = [
+    jovian-nixos.nixosModules.default
+  ];
   ## Steam
   programs.steam = {
     enable = true;
