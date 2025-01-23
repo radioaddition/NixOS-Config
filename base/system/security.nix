@@ -38,12 +38,22 @@
        #RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
   #'';
 
+  # USBGuard
+  #environment.systemPackages = [ pkgs.usbguard ];
+  users.users.radioaddition.packages = [ pkgs.usbguard-notifier ];
+  services.usbguard = {
+    enable = true;
+    presentControllerPolicy = "apply-policy";
+    IPCAllowedUsers = [
+      "root"
+      "radioaddition"
+    ];
+  };
 
   # Disable CUPS
   services.printing.enable = false;
 
   services.dbus.implementation = "broker";
-  security.sudo.execWheelOnly = true;
 
   # copied and modified from hardened.nix profile
   boot.kernelPackages = pkgs.linuxPackages_hardened;
@@ -51,188 +61,194 @@
   environment.memoryAllocator.provider = "graphene-hardened";
   #environment.variables.SCUDO_OPTIONS = "ZeroContents=1";
 
-  security.lockKernelModules = true;
+  security = {
+    sudo.execWheelOnly = true;
 
-  security.protectKernelImage = true;
+    lockKernelModules = true;
 
-  security.allowSimultaneousMultithreading = true;
+    protectKernelImage = true;
 
-  security.forcePageTableIsolation = true;
+    allowSimultaneousMultithreading = true;
 
-  # This is required by podman to run containers in rootless mode.
-  security.unprivilegedUsernsClone = config.virtualisation.containers.enable;
+    forcePageTableIsolation = true;
 
-  security.virtualisation.flushL1DataCache = "always";
+    # This is required by podman to run containers in rootless mode.
+    unprivilegedUsernsClone = config.virtualisation.containers.enable;
 
-  boot.kernelParams = [
-    # Don't merge slabs
-    "slab_nomerge"
+    virtualisation.flushL1DataCache = "always";
+  };
 
-    # Overwrite free'd pages
-    "page_poison=1"
+  boot = {
+    kernelParams = [
+      # Don't merge slabs
+      "slab_nomerge"
 
-    # Enable page allocator randomization
-    "page_alloc.shuffle=1"
+      # Overwrite free'd pages
+      "page_poison=1"
 
-    # Disable debugfs
-    "debugfs=off"
-  ];
+      # Enable page allocator randomization
+      "page_alloc.shuffle=1"
 
-  boot.blacklistedKernelModules = [
-    # Obscure network protocols
-    "af_802154"
-    "appletalk"
-    "atm"
-    "ax25"
-    "can"
-    "dccp"
-    "decnet"
-    "econet"
-    "ipx"
-    "n-hdlc"
-    "netrom"
-    "p8022"
-    "p8023"
-    "psnap"
-    "rds"
-    "rose"
-    "sctp"
-    "tipc"
-    "x25"
+      # Disable debugfs
+      "debugfs=off"
+    ];
 
-    # firewire and thunderbolt
-    "firewire-core"
-    "firewire_core"
-    "firewire-ohci"
-    "firewire_ohci"
-    "firewire_sbp2"
-    "firewire-sbp2"
-    "firewire-net"
-    "thunderbolt"
-    "ohci1394"
-    "sbp2"
-    "dv1394"
-    "raw1394"
-    "video1394"
+    blacklistedKernelModules = [
+      # Obscure network protocols
+      "af_802154"
+      "appletalk"
+      "atm"
+      "ax25"
+      "can"
+      "dccp"
+      "decnet"
+      "econet"
+      "ipx"
+      "n-hdlc"
+      "netrom"
+      "p8022"
+      "p8023"
+      "psnap"
+      "rds"
+      "rose"
+      "sctp"
+      "tipc"
+      "x25"
 
-    # Old or rare or insufficiently audited filesystems
-    "9p"
-    "adfs"
-    "affs"
-    "afs"
-    "befs"
-    "bfs"
-    "ceph"
-    "cifs"
-    "coda"
-    "cramfs"
-    "ecryptfs"
-    "efs"
-    "erofs"
-    "exofs"
-    "f2fs"
-    "freevxfs"
-    "gfs2"
-    "hfs"
-    "hfsplus"
-    "hpfs"
-    "jffs2"
-    "jfs"
-    "kafs"
-    "ksmbd"
-    "minix"
-    "netfs"
-    "nfs"
-    "nfsv3"
-    "nfsv4"
-    "nilfs2"
-    "nilfs2"
-    "ntfs"
-    "ocfs2"
-    "omfs"
-    "orangefs"
-    "qnx4"
-    "qnx6"
-    "reiserfs"
-    "romfs"
-    "squashfs"
-    "sysv"
-    "sysv"
-    "ubifs"
-    "udf"
-    "ufs"
-    "ufs"
-    "zonefs"
-    
-    # disable vivid
-    "vivid"
-    
-    # disable GNSS
-    "gnss"
-    "gnss-mtk"
-    "gnss-serial"
-    "gnss-sirf"
-    "gnss-usb"
-    "gnss-ubx"
-    
-    # blacklist ath_pci
-    "ath_pci"
-    
-    # blacklist cdrom
-    "cdrom"
-    "sr_mod"
-    
-    # blacklist framebuffer drivers
-    # source, ubuntu: https://git.launchpad.net/ubuntu/+source/kmod/tree/debian/modprobe.d/blacklist-framebuffer.conf
-    "cyber2000fb"
-    "cyblafb"
-    "gx1fb"
-    "hgafb"
-    "kyrofb"
-    "lxfb"
-    "matroxfb_base"
-    "neofb"
-    "nvidiafb"
-    "pm2fb"
-    "s1d13xxxfb"
-    "sisfb"
-    "tdfxfb"
-    "vesafb"
-    "vfb"
-    "vt8623fb"
-    "udlfb"
-  ];
+      # firewire and thunderbolt
+      "firewire-core"
+      "firewire_core"
+      "firewire-ohci"
+      "firewire_ohci"
+      "firewire_sbp2"
+      "firewire-sbp2"
+      "firewire-net"
+      "thunderbolt"
+      "ohci1394"
+      "sbp2"
+      "dv1394"
+      "raw1394"
+      "video1394"
 
-  # Hide kptrs even for processes with CAP_SYSLOG
-  boot.kernel.sysctl."kernel.kptr_restrict" = lib.mkOverride 500 2;
+      # Old or rare or insufficiently audited filesystems
+      "9p"
+      "adfs"
+      "affs"
+      "afs"
+      "befs"
+      "bfs"
+      "ceph"
+      "cifs"
+      "coda"
+      "cramfs"
+      "ecryptfs"
+      "efs"
+      "erofs"
+      "exofs"
+      "f2fs"
+      "freevxfs"
+      "gfs2"
+      "hfs"
+      "hfsplus"
+      "hpfs"
+      "jffs2"
+      "jfs"
+      "kafs"
+      "ksmbd"
+      "minix"
+      "netfs"
+      "nfs"
+      "nfsv3"
+      "nfsv4"
+      "nilfs2"
+      "nilfs2"
+      "ntfs"
+      "ocfs2"
+      "omfs"
+      "orangefs"
+      "qnx4"
+      "qnx6"
+      "reiserfs"
+      "romfs"
+      "squashfs"
+      "sysv"
+      "sysv"
+      "ubifs"
+      "udf"
+      "ufs"
+      "ufs"
+      "zonefs"
+      
+      # disable vivid
+      "vivid"
+      
+      # disable GNSS
+      "gnss"
+      "gnss-mtk"
+      "gnss-serial"
+      "gnss-sirf"
+      "gnss-usb"
+      "gnss-ubx"
+      
+      # blacklist ath_pci
+      "ath_pci"
+      
+      # blacklist cdrom
+      "cdrom"
+      "sr_mod"
+      
+      # blacklist framebuffer drivers
+      # source, ubuntu: https://git.launchpad.net/ubuntu/+source/kmod/tree/debian/modprobe.d/blacklist-framebuffer.conf
+      "cyber2000fb"
+      "cyblafb"
+      "gx1fb"
+      "hgafb"
+      "kyrofb"
+      "lxfb"
+      "matroxfb_base"
+      "neofb"
+      "nvidiafb"
+      "pm2fb"
+      "s1d13xxxfb"
+      "sisfb"
+      "tdfxfb"
+      "vesafb"
+      "vfb"
+      "vt8623fb"
+      "udlfb"
+    ];
 
-  # Disable bpf() JIT (to eliminate spray attacks)
-  boot.kernel.sysctl."net.core.bpf_jit_enable" = false;
+    # Hide kptrs even for processes with CAP_SYSLOG
+    kernel.sysctl."kernel.kptr_restrict" = lib.mkOverride 500 2;
 
-  # Disable ftrace debugging
-  boot.kernel.sysctl."kernel.ftrace_enabled" = false;
+    # Disable bpf() JIT (to eliminate spray attacks)
+    kernel.sysctl."net.core.bpf_jit_enable" = false;
 
-  # Enable strict reverse path filtering (that is, do not attempt to route
-  # packets that "obviously" do not belong to the iface's network; dropped
-  # packets are logged as martians).
-  boot.kernel.sysctl."net.ipv4.conf.all.log_martians" = true;
-  boot.kernel.sysctl."net.ipv4.conf.all.rp_filter" = "1";
-  boot.kernel.sysctl."net.ipv4.conf.default.log_martians" = true;
-  boot.kernel.sysctl."net.ipv4.conf.default.rp_filter" = "1";
+    # Disable ftrace debugging
+    kernel.sysctl."kernel.ftrace_enabled" = false;
 
-  # Ignore broadcast ICMP (mitigate SMURF)
-  boot.kernel.sysctl."net.ipv4.icmp_echo_ignore_broadcasts" = true;
+    # Enable strict reverse path filtering (that is, do not attempt to route
+    # packets that "obviously" do not belong to the iface's network; dropped
+    # packets are logged as martians).
+    kernel.sysctl."net.ipv4.conf.all.log_martians" = true;
+    kernel.sysctl."net.ipv4.conf.all.rp_filter" = "1";
+    kernel.sysctl."net.ipv4.conf.default.log_martians" = true;
+    kernel.sysctl."net.ipv4.conf.default.rp_filter" = "1";
 
-  # Ignore incoming ICMP redirects (note: default is needed to ensure that the
-  # setting is applied to interfaces added after the sysctls are set)
-  boot.kernel.sysctl."net.ipv4.conf.all.accept_redirects" = false;
-  boot.kernel.sysctl."net.ipv4.conf.all.secure_redirects" = false;
-  boot.kernel.sysctl."net.ipv4.conf.default.accept_redirects" = false;
-  boot.kernel.sysctl."net.ipv4.conf.default.secure_redirects" = false;
-  boot.kernel.sysctl."net.ipv6.conf.all.accept_redirects" = false;
-  boot.kernel.sysctl."net.ipv6.conf.default.accept_redirects" = false;
+    # Ignore broadcast ICMP (mitigate SMURF)
+    kernel.sysctl."net.ipv4.icmp_echo_ignore_broadcasts" = true;
 
-  # Ignore outgoing ICMP redirects (this is ipv4 only)
-  boot.kernel.sysctl."net.ipv4.conf.all.send_redirects" = false;
-  boot.kernel.sysctl."net.ipv4.conf.default.send_redirects" = false;
+    # Ignore incoming ICMP redirects (note: default is needed to ensure that the
+    # setting is applied to interfaces added after the sysctls are set)
+    kernel.sysctl."net.ipv4.conf.all.accept_redirects" = false;
+    kernel.sysctl."net.ipv4.conf.all.secure_redirects" = false;
+    kernel.sysctl."net.ipv4.conf.default.accept_redirects" = false;
+    kernel.sysctl."net.ipv4.conf.default.secure_redirects" = false;
+    kernel.sysctl."net.ipv6.conf.all.accept_redirects" = false;
+    kernel.sysctl."net.ipv6.conf.default.accept_redirects" = false;
+
+    # Ignore outgoing ICMP redirects (this is ipv4 only)
+    kernel.sysctl."net.ipv4.conf.all.send_redirects" = false;
+    kernel.sysctl."net.ipv4.conf.default.send_redirects" = false;
+  };
 }
