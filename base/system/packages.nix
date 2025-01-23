@@ -1,45 +1,16 @@
 { config, pkgs, inputs, lib, ... }: {
 
   environment.systemPackages = with pkgs; [
-    btrfs-progs
-    busybox
-    exfatprogs
-    gcc
-    git
-    libvirt
-    lsof
-    mcron
-    neovim
-    #pinentry-gnome3
-    qemu
-    qemu_kvm
-    rsync
-    sbctl
-  ];
-
-  users.users.radioaddition.packages = with pkgs; [
-
-    # Packages
-    adwsteamgtk
     atuin
     bat
     bat-extras.batman
-    bottles
-    boxbuddy
-    brave
     btop
-    cartridges
-    chezmoi
-    collision
+    btrfs-progs
+    busybox
     curl
-    dconf-editor
-    direnv
-    discover-overlay
-    distrobox
-    docker-compose
+    exfatprogs
     eza
     fastfetch
-    fragments
     gcc
     gettext
     git
@@ -47,32 +18,66 @@
     glas
     gleam
     glib
-    gnome-boxes
-    gnome-extension-manager
-    gnome-tweaks
     gnumake
-    goofcord
-    gparted
-    guake
-    helvum
     home-manager
     hyfetch
-    impression
     iosevka
-    jamesdsp
     just
-    llama-cpp
-    localsend
-    lutris
+    libvirt
+    lsof
     magic-wormhole
-    mindustry-wayland
+    mcron
     miracode
     monocraft
     mpv
     neovim
+    perl
+    python3
+    qemu
+    qemu_kvm
+    redis
+    ripgrep
+    rsync
+    sbctl
+    topgrade
+    usbtop
+    wget
+    wl-clipboard
+    wlrctl
+    yazi
+    zoxide
+  ];
+
+  users.users.radioaddition.packages = with pkgs; [
+
+    # Packages
+    adwsteamgtk
+    bottles
+    boxbuddy
+    brave
+    cartridges
+    chezmoi
+    collision
+    dconf-editor
+    direnv
+    discover-overlay
+    distrobox
+    fragments
+    gnome-boxes
+    gnome-extension-manager
+    gnome-tweaks
+    goofcord
+    gparted
+    guake
+    helvum
+    impression
+    jamesdsp
+    llama-cpp
+    localsend
+    lutris
+    mindustry-wayland
     onionshare-gui
     pavucontrol
-    perl
     picard
     pika-backup
     polari
@@ -81,21 +86,11 @@
     protonplus
     protonvpn-gui
     ptyxis
-    python3
-    redis
-    ripgrep
     seahorse
     shattered-pixel-dungeon
     simplex-chat-desktop
-    topgrade
     tor-browser
-    usbtop
-    wget
-    wl-clipboard
-    wlrctl
     wormhole-william
-    yazi
-    zoxide
   ];
 
   # Ollama
