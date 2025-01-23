@@ -43,9 +43,9 @@
     blur-my-shell
     caffeine
     dash-to-dock
+    forge
     gsconnect
     logo-menu
-    pop-shell
     quick-settings-audio-devices-renamer
     reboottouefi
     reorder-workspaces
