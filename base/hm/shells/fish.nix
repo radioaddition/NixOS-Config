@@ -68,7 +68,7 @@
     direnv hook fish | source
     chezmoi completion fish | source
     just --completions fish | source
-    nh completions | source
+    nh completions --shell fish | source
     
     # Misc variables
     set -Ux HOSTNAME $(hostname)
