@@ -6,10 +6,10 @@
 
   services.coredns.enable = true;
 
-  ### Configure NetworkManager
-
+  # NetworkManager
   networking.networkmanager = {
     enable = true;
+    #dns = "systemd-resolved";
     wifi = {
       macAddress = "random";
       powersave = true;
@@ -18,11 +18,20 @@
     };
   };
 
+  # systemd-resolved
+  services.resolved = {
+    enable = true;
+    dnssec = "allow-downgrade";
+    dnsovertls = "opportunistic";
+    llmnr = "true";
+  };
+
   # Tailscale
   services.tailscale = {
     enable = true;
   };
-  ### Open ports in the firewall.
+
+  # Open ports in the firewall.
   networking.firewall = {
     allowedTCPPorts = [
       65530
