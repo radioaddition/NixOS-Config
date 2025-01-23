@@ -51,8 +51,8 @@
     # Boot animation
     plymouth = {
       enable = true;
-      theme = "nixos-bgrt";
-    #  theme = "cuts_alt";
+      #theme = "nixos-bgrt";
+      theme = "cuts";
       themePackages = with pkgs; [
         adi1090x-plymouth-themes
 	nixos-bgrt-plymouth
