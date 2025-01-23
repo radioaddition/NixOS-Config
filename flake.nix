@@ -43,15 +43,15 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-	  ./base/system/flatpak.nix
-	  #./base/system/gaming.nix # Disable unless I'm using it
-	  ./base/system/gnome.nix
-	  ./base/system/networking.nix
-	  ./base/system/packages.nix
-	  ./base/system/security.nix
-	  ./base/system/shells/fish.nix
-	  ./base/system/system.nix
-	  ./base/system/users.nix
+	  ./base/flatpak.nix
+	  #./base/gaming.nix # Disable unless I'm using it
+	  ./base/gnome.nix
+	  ./base/networking.nix
+	  ./base/packages.nix
+	  ./base/security.nix
+	  ./base/shells/fish.nix
+	  ./base/system.nix
+	  ./base/users.nix
           ./hosts/framework/configuration.nix
           ./hosts/framework/hardware-configuration.nix
 	  ./init/disko.nix
@@ -66,6 +66,7 @@
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "bak";
 	    home-manager.users.radioaddition.imports = [
               ./base/home.nix
               ./hosts/framework/home.nix
@@ -81,7 +82,7 @@
         modules = [
 	  disko.nixosModules.disko
 	  impermanence.nixosModules.impermanence
-	  ./base/system/users.nix
+	  ./base/users.nix
           ./hosts/installer/configuration.nix
           ./hosts/installer/hardware-configuration.nix
 	  ./init/disko.nix
