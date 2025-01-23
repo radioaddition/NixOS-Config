@@ -31,6 +31,7 @@
     monocraft
     mpv
     neovim
+    niv
     perl
     python3
     qemu
