@@ -39,62 +39,6 @@
   };
   nix.package = lib.mkForce pkgs.nixVersions.stable;
 
-#  home.packages = with pkgs; [
-#    # Packages
-#    any-nix-shell
-#    atuin
-#    bat
-#    btop
-#    chezmoi
-#    curl
-#    direnv
-#    eza
-#    freshfetch
-#    gh
-#    git-repo
-#    glas
-#    gleam
-#    gparted
-#    hyfetch
-#    iosevka
-#    just
-#    meslo-lgs-nf
-#    monophony
-#    mpv
-#    neovim
-#    nodePackages_latest.pnpm
-#    pipx
-#    python3
-#    starship
-#    topgrade
-#    usbtop
-#    docker-compose
-#    gcc
-#    gettext
-#    git
-#    github-desktop
-#    glib
-#    gnumake
-#    guake
-#    jamesdsp
-#    llama-cpp
-#    mindustry-wayland
-#    neovim-gtk
-#    nodejs-slim
-#    onionshare-gui
-#    pavucontrol
-#    perl
-#    pinentry-gnome3
-#    polychromatic
-#    protonvpn-gui
-#    redis
-#    shattered-pixel-dungeon
-#    wget
-#    wl-clipboard
-#    wlrctl
-#    xmrig-mo
-#    ];
-
   programs.home-manager.enable = true;
   #home.enableNixpkgsReleaseCheck = false; # If using a package from the unstable branch uncomment this
 }

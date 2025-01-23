@@ -65,9 +65,7 @@
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.radioaddition.imports = [
-              ./base/hm/gnome-extensions.nix
-              ./base/hm/shells/fish.nix
-              ./base/hm/home.nix
+              ./base/home.nix
               ./hosts/framework/home.nix
 	      nix-flatpak.homeManagerModules.nix-flatpak
 	    ];
@@ -121,17 +119,14 @@
         modules = [
           nix-flatpak.homeManagerModules.nix-flatpak
           ./hosts/framework/home.nix
-          ./base/hm/home.nix
-          ./base/hm/gnome-extensions.nix
-          ./base/hm/shells/fish.nix
+          ./base/home.nix
         ];
       };
       "oriole" = home-manager.lib.homeManagerConfiguration {
   	extraSpecialArgs = { inherit inputs; };
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
         modules = [
-	  ./base/hm/home.nix
-	  ./base/hm/shells/fish.nix
+	  ./base/home.nix
 	  {
 	    home = {
 	      stateVersion = "24.05";
