@@ -58,17 +58,20 @@
     set -Ux fish_pager_color_selected_description \x1d
     set -Ux fish_pager_color_selected_prefix \x1d
 
-      # shell inits
-      function starship_transient_prompt_func
-        starship module character
-      end
-      starship init fish | source
-      enable_transience
-      atuin init fish | source
-      direnv hook fish | source
-      chezmoi completion fish | source
-      just --completions fish | source
-      nh completions | source
+    # shell inits
+    function starship_transient_prompt_func
+      starship module character
+    end
+    starship init fish | source
+    enable_transience
+    atuin init fish | source
+    direnv hook fish | source
+    chezmoi completion fish | source
+    just --completions fish | source
+    nh completions | source
+    
+    # Misc variables
+    set -Ux HOSTNAME $(hostname)
 '';
   };
   programs.zoxide.enable = true;
