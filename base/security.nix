@@ -63,10 +63,6 @@
   services.dbus.implementation = "broker";
 
 
-  # Temporary options
-  security.allowUserNamespaces = true;
-  security.unprivilegedUsernsClone  = true;
-
   # copied and modified from hardened.nix profile
   boot.kernelPackages = pkgs.linuxPackages_hardened;
 
