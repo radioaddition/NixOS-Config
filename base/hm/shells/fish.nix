@@ -72,6 +72,7 @@
     
     # Misc variables
     set -Ux HOSTNAME $(hostname)
+    set -Ux $FLAKE $HOME/NixOS-Config
 '';
   };
   programs.zoxide.enable = true;
