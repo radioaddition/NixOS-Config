@@ -8,7 +8,6 @@
     disko.url = "github:nix-community/disko/latest";
     impermanence.url = "github:nix-community/impermanence";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-    rbld.url = "github:llakala/rebuild-but-less-dumb";
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
       inputs.nixpkgs.follows = "unstable";
