@@ -64,7 +64,7 @@
     plymouth = {
       enable = true;
       #theme = "nixos-bgrt";
-      theme = "cuts";
+      theme = "cuts_alt";
       themePackages = with pkgs; [
         adi1090x-plymouth-themes
 	nixos-bgrt-plymouth
