@@ -68,6 +68,7 @@
       direnv hook fish | source
       chezmoi completion fish | source
       just --completions fish | source
+      nh completions | source
 '';
   };
   programs.zoxide.enable = true;
