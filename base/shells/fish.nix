@@ -29,9 +29,6 @@
       };
 
       interactiveShellInit = ''
-      # Source hm-session-vars
-      .   "$HOME/.nix-profile/etc/profile.d/hm-session-vars.fish"
-
       # Colors
       set -Ux fish_initialized 3400
       set -Ux fish_color_autosuggestion 666
