@@ -1,11 +1,15 @@
 { lib, config, pkgs, ... }: {
+  boot.initrd.luks.devices."crypted" = {
+    device = "/dev/disk/by-partlabel/disk-main-luks";
+    crypttabExtraOpts = [ "tpm2-device=auto" "tpm2-measure-pcr=yes" ];
+  };
+
   fileSystems."/" = {
     device = "/dev/mapper/crypted";
     fsType = "btrfs";
     options = [
       "subvol=root"
       "compress=zstd"
-      #"noexec"
     ];
   };
 
@@ -46,8 +50,7 @@
       "noexec"
     ];
   };
-  # swapDevices = [{ device = lib.mkForce "/swap/swapfile"; label = "swap"; size = 32768; }]; # Shrunk for the VM
-  swapDevices = [{ device = lib.mkForce "/swap/swapfile"; label = "swap"; size = 2048; }];
+  swapDevices = [{ device = lib.mkForce "/swap/swapfile"; label = "swap"; size = 32768; }];
 
   boot.initrd.postResumeCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
