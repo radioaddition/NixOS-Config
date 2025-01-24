@@ -16,18 +16,6 @@
     ];
   };
 
-  fileSystems."/persistent" = {
-    device = "/dev/mapper/crypted";
-    neededForBoot = true;
-    fsType = "btrfs";
-    options = [
-      "subvol=persistent"
-      "compress=zstd"
-      "noexec"
-      "nosuid"
-    ];
-  };
-
   fileSystems."/home" = {
     device = "/dev/mapper/crypted";
     neededForBoot = true;

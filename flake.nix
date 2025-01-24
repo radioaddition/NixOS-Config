@@ -8,7 +8,6 @@
     unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Mainly needed for jovian
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     disko.url = "github:nix-community/disko/latest";
-    impermanence.url = "github:nix-community/impermanence";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     programsdb = {
@@ -40,7 +39,6 @@
     nixos-hardware,
     home-manager,
     disko,
-    impermanence,
     lanzaboote,
     nix-flatpak,
     ... }: {
@@ -68,7 +66,6 @@
           nixos-hardware.nixosModules.framework-13-7040-amd
 	  disko.nixosModules.disko
 	  home-manager.nixosModules.home-manager
-	  impermanence.nixosModules.impermanence
 	  lanzaboote.nixosModules.lanzaboote
 	  nix-flatpak.nixosModules.nix-flatpak
 

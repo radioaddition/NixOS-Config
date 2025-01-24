@@ -3,12 +3,12 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/some-disk"; # When using disko-install, this will be overwritten from the commandline
+        #device = "/dev/some-disk"; # Make sure to specify this if not using disko-install
         content = {
           type = "gpt";
           partitions = {
             ESP = {
-              size = "5G";
+              size = "10G";
               type = "EF00";
               content = {
                 type = "filesystem";
@@ -29,23 +29,22 @@
                   subvolumes = {
                     "root" = {
                       mountpoint = "/";
-                      mountOptions = [ "compress=zstd" "noatime" "noexec" ];
-                    };
-                    "persistent" = {
-                      mountpoint = "/";
-                      mountOptions = [ "compress=zstd" "noatime" "noexec" ];
+                      mountOptions = [ "compress=zstd" "relatime" "nosuid" ];
                     };
                     "home" = {
                       mountpoint = "/home";
-                      mountOptions = [ "compress=zstd" "noatime" "noexec" ];
+                      mountOptions = [ "compress=zstd" "relatime" "noexec" "nosuid" ];
                     };
                     "nix" = {
                       mountpoint = "/nix";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [ "compress=zstd" "relatime" ];
                     };
                     "swap" = {
                       mountpoint = "/swap";
-                      swap.swapfile.size = "32G";
+                      swap = {
+		        swapfile.size = "32G";
+			swapfile.path = "/swap/swapfile";
+		      };
                     };
                   };
                 };
