@@ -1,4 +1,5 @@
 { lib, config, pkgs, ... }: {
+
   boot.initrd.luks.devices."crypted" = {
     device = "/dev/disk/by-partlabel/disk-main-luks";
     crypttabExtraOpts = [ "tpm2-device=auto" "tpm2-measure-pcr=yes" ];
@@ -6,10 +7,13 @@
 
   fileSystems."/" = {
     device = "/dev/mapper/crypted";
+    neededForBoot = true;
     fsType = "btrfs";
     options = [
       "subvol=root"
       "compress=zstd"
+      "exec"
+      "nosuid"
     ];
   };
 
@@ -20,6 +24,8 @@
     options = [
       "subvol=persistent"
       "compress=zstd"
+      "noexec"
+      "nosuid"
     ];
   };
 
@@ -30,6 +36,8 @@
     options = [
       "subvol=home"
       "compress=zstd"
+      "noexec"
+      "nosuid"
     ];
   };
 
@@ -39,6 +47,7 @@
     options = [
       "subvol=nix"
       "compress=zstd"
+      "exec"
     ];
   };
 
@@ -49,6 +58,7 @@
       "subvol=swap"
       "compress=zstd"
       "noexec"
+      "nosuid"
     ];
   };
   swapDevices = [{ device = lib.mkForce "/swap/swapfile"; label = "swap"; size = 32768; }];
