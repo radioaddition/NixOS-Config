@@ -2,13 +2,19 @@
   description = "spaghetti";
 
   inputs = {
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    oldstable.url = "github:NixOS/nixpkgs/nixos-24.05";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    oldstable.url = "github:NixOS/nixpkgs/nixos-24.05"; # Needed for nix-on-droid
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Mainly needed for jovian
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     disko.url = "github:nix-community/disko/latest";
     impermanence.url = "github:nix-community/impermanence";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    programsdb = {
+      url = "github:wamserma/flake-programs-sqlite";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
       inputs.nixpkgs.follows = "unstable";
@@ -18,7 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
+      url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-on-droid = {

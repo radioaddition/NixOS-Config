@@ -57,6 +57,10 @@
     neovim
   ];
 
+  # command-not-found flake compatability
+  environment.etc."programs.sqlite".source = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
+  programs.command-not-found.dbPath = "/etc/programs.sqlite";
+
   # Bootloader
   boot = {
 
