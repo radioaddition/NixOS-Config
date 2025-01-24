@@ -49,12 +49,10 @@
     quick-settings-audio-devices-renamer
     reboottouefi
     reorder-workspaces
-    resolution-and-refresh-rate-in-quick-settings
     search-light
     systemd-manager
     tailscale-qs
     trimmer
-    unpanel
     #valent
     wifi-qrcode
     wiggle
