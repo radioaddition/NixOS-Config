@@ -12,7 +12,6 @@
     options = [
       "subvol=root"
       "compress=zstd"
-      "exec"
       "nosuid"
     ];
   };
@@ -47,7 +46,6 @@
     options = [
       "subvol=nix"
       "compress=zstd"
-      "exec"
     ];
   };
 
