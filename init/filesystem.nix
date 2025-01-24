@@ -20,7 +20,6 @@
     options = [
       "subvol=persistent"
       "compress=zstd"
-      "noexec"
     ];
   };
 
@@ -31,14 +30,16 @@
     options = [
       "subvol=home"
       "compress=zstd"
-      "noexec"
     ];
   };
 
   fileSystems."/nix" = {
     device = "/dev/mapper/crypted";
     fsType = "btrfs";
-    options = [ "subvol=nix" "compress=zstd" ];
+    options = [
+      "subvol=nix"
+      "compress=zstd"
+    ];
   };
 
   fileSystems."/swap" = {
