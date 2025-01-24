@@ -59,7 +59,7 @@
 	  ./init/disko.nix
 	  ./init/filesystem.nix
 	  ./init/impermanence.nix
-          nixos-hardware.nixosModules.framework-13-inch-7040-amd
+          nixos-hardware.nixosModules.framework-13-7040-amd
 	  disko.nixosModules.disko
 	  home-manager.nixosModules.home-manager
 	  impermanence.nixosModules.impermanence
