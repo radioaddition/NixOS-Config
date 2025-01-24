@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     oldstable.url = "github:NixOS/nixpkgs/nixos-24.05";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     disko.url = "github:nix-community/disko/latest";
     impermanence.url = "github:nix-community/impermanence";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
@@ -30,6 +31,7 @@
     self,
     nixpkgs,
     unstable,
+    nixos-hardware,
     home-manager,
     disko,
     impermanence,
@@ -57,6 +59,7 @@
 	  ./init/disko.nix
 	  ./init/filesystem.nix
 	  ./init/impermanence.nix
+          nixos-hardware.nixosModules.framework-13-inch-7040-amd
 	  disko.nixosModules.disko
 	  home-manager.nixosModules.home-manager
 	  impermanence.nixosModules.impermanence

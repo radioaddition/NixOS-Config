@@ -4,8 +4,6 @@
   #- networking.proxy.default = "http://user:password@proxy:port/";
   #- networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  services.coredns.enable = true;
-
   # NetworkManager
   networking.networkmanager = {
     enable = true;
@@ -17,6 +15,15 @@
       backend = "iwd";
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    #dhcpcd
+    iwgtk
+  ];
+
+  # systemd-networkd
+  networking.dhcpcd.enable = false;
+  systemd.network.enable = true;
 
   # systemd-resolved
   services.resolved = {
