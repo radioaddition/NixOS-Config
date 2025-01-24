@@ -100,9 +100,6 @@
     extraModprobeConfig = ''
       options snd-intel-dspcfg dsp_driver=1
     '';
-
-    # This is required for tpm2 unlock to function
-    initrd.systemd.enable = true;
   };
 
   hardware.enableAllFirmware = true;
