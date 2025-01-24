@@ -72,7 +72,7 @@
 
 
   # copied and modified from hardened.nix profile
-  boot.kernelPackages = pkgs.linuxPackages_hardened;
+  #boot.kernelPackages = pkgs.linuxPackages_hardened;
 
   environment.memoryAllocator.provider = "graphene-hardened";
   # Use the options if the graphene hardened_malloc is too strict
