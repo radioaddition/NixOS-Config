@@ -2,9 +2,11 @@
 
   environment.systemPackages = with pkgs; [
     btrfs-progs
-    neovim
     git
     home-manager
+    neovim
+    networkmanager
+    zfs
   ];
 
   # Swapfile oneshot service
