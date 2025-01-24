@@ -29,6 +29,7 @@
     miracode
     monocraft
     mpv
+    nixd
     perl
     python3
     qemu
