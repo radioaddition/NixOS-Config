@@ -62,7 +62,6 @@
     discover-overlay
     distrobox
     fragments
-    gnome-boxes
     gnome-extension-manager
     gnome-tweaks
     goofcord
@@ -89,6 +88,8 @@
     shattered-pixel-dungeon
     simplex-chat-desktop
     tor-browser
+    virt-manager
+    virt-viewer
     wormhole-william
   ];
 
