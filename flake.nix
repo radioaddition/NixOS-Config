@@ -111,18 +111,6 @@
           ./base/users.nix
           ./hosts/installer/configuration.nix
           ./hosts/installer/hardware-configuration.nix
-          ./hosts/installer/disko.nix
-          ./hosts/installer/filesystem.nix
-        ];
-      };
-      install_target = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          disko.nixosModules.disko
-          ./base/users.nix
-          ./hosts/install_target/configuration.nix
-          ./hosts/install_target/hardware-configuration.nix
           ./init/disko.nix
           ./init/filesystem.nix
         ];

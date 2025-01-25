@@ -45,18 +45,13 @@ install action argument:
 		sudo nixos-rebuild switch --flake ".#{{argument}}"
 		home-manager switch --flake ".#{{argument}}"
 	else
-		if [ "$(hostname)" == "installer" ]; then
-			hostname="install_target"
-		else
-			hostname="installer"
-		fi
 		nixos-generate-config --no-filesystems --root /tmp
-		mv /tmp/etc/nixos/hardware-configuration.nix ./hosts/$hostname/
+		mv /tmp/etc/nixos/hardware-configuration.nix ./hosts/installer/
 		rm -rf /tmp/etc
 		if [ -d ".git" ]; then
-			git add ./hosts/$hostname/hardware-configuration.nix
+			git add ./hosts/installer/hardware-configuration.nix
 		fi
-		sudo disko-install --flake ".#$hostname" --disk main "{{argument}}"
+		sudo disko-install --flake ".#installer" --disk main "{{argument}}"
 	fi
 alias fmt := format
 
