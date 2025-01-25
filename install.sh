@@ -12,9 +12,9 @@ fi
 if [ "${1,,}" == "finish" ]; then
 	echo "This assumes you are on the #installer flake, CD'd into your nix config directory and have the remote authentication set up"
 	if [ "$2" == "" ]; then
-		hostname = "$(hostname)"
+		hostname="$(hostname)"
 	else
-		hostname = "$2"
+		hostname="$2"
 	fi
 	nixos-generate-config --no-filesystems --root /tmp
 	mv /tmp/etc/nixos/hardware-configuration.nix ./hosts/"$hostname"/
@@ -28,9 +28,9 @@ if [ "${1,,}" == "finish" ]; then
 	home-manager switch --flake ".#$hostname"
 else
 	if [ "$(hostname)" == "installer" ]; then
-		$hostname = "install_target"
+		hostname="install_target"
 	else
-		$hostname = "installer"
+		hostname="installer"
 	fi
 	nixos-generate-config --no-filesystems --root /tmp
 	mv /tmp/etc/nixos/hardware-configuration.nix ./hosts/$hostname/
