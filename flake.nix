@@ -52,16 +52,19 @@
 
       packages = with nixpkgs.legacyPackages.x86_64-linux; [
 	age
-	fzf
-	glow
-	gum
-	nh
         alejandra
         deadnix
+	fastfetch
         fish
+	fzf
         git
+	glow
+	gum
+	hyfetch
         just
         neovim
+        nh
+	sbctl
         statix
 	inputs.disko.packages.x86_64-linux.default
       ];
