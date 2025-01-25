@@ -14,7 +14,7 @@
   };
 
   # Define system hostname
-  networking.hostName = "installer";
+  networking.hostName = "install_target";
 
   # Swapfile oneshot service
   systemd.services = {

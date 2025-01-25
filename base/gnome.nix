@@ -52,7 +52,6 @@
     search-light
     systemd-manager
     tailscale-qs
-    trimmer
     #valent
     wifi-qrcode
     wiggle
