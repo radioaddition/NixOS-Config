@@ -62,6 +62,7 @@
         just
         neovim
         statix
+	inputs.disko.packages.x86_64-linux.default
       ];
     };
 

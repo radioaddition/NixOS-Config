@@ -47,7 +47,7 @@ install action argument:
 		if [ -d ".git" ]; then
 			git add ./hosts/$hostname/hardware-configuration.nix
 		fi
-		sudo nix --extra-experimental-features "nix-command flakes" run 'github:nix-community/disko/latest#disko-install' -- --flake ".#$hostname" --disk main "{{argument}}"
+		sudo disko-install --flake ".#$hostname" --disk main "{{argument}}"
 	fi
 alias fmt := format
 
