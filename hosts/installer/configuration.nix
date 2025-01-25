@@ -5,7 +5,6 @@
     fish
     git
     neovim
-    networkmanager
   ];
 
   environment.sessionVariables = {
@@ -15,6 +14,9 @@
 
   # Define system hostname
   networking.hostName = "installer";
+
+  # Enable networking
+  networking.networkmanager.enable = true;
 
   # Swapfile oneshot service
   systemd.services = {
