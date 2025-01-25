@@ -12,7 +12,7 @@
   };
 
   fileSystems."/nix" = {
-    device = "/dev/mapper/crypted";
+    device = "/dev/disk/by-partlabel/disk-main-root";
     fsType = "btrfs";
     options = [
       "subvol=nix"
