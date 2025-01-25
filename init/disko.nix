@@ -22,6 +22,7 @@
               content = {
                 type = "luks";
                 name = "crypted";
+	        #passwordFile = "/tmp/passwordfile";
                 settings.allowDiscards = true;
                 content = {
                   type = "btrfs";
@@ -43,7 +44,7 @@
                       mountpoint = "/swap";
                       swap = {
 		        swapfile.size = "32G";
-			swapfile.path = "swap/swapfile";
+			swapfile.path = "/swapfile";
 		      };
                     };
                   };
