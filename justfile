@@ -61,3 +61,8 @@ clean:
 	nix-collect-garbage -d
 	nix profile wipe-history
 	nh clean all
+
+# Sets up using these commands from the home directory
+[no-cd]
+setup:
+	@echo "import $PWD/justfile" >> "$HOME"/justfile
