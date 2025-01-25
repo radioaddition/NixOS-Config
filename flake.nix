@@ -51,6 +51,10 @@
       NIX_CONFIG = "extra-experimental-features = nix-command flakes";
 
       packages = with nixpkgs.legacyPackages.x86_64-linux; [
+	fzf
+	glow
+	gum
+	nh
         alejandra
         deadnix
         fish
