@@ -16,14 +16,14 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    #dhcpcd
-    iwgtk
-  ];
+  #environment.systemPackages = with pkgs; [
+  #  #dhcpcd
+  #  iwgtk
+  #];
 
-  # systemd-networkd
-  networking.dhcpcd.enable = false;
-  systemd.network.enable = true;
+  ## systemd-networkd
+  #networking.dhcpcd.enable = false;
+  #systemd.network.enable = true;
 
   # systemd-resolved
   services.resolved = {
