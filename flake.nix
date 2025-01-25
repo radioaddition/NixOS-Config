@@ -107,7 +107,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           disko.nixosModules.disko
-          lanzaboote.nixosModules.lanzaboote
           ./base/users.nix
           ./hosts/installer/configuration.nix
           ./hosts/installer/hardware-configuration.nix
@@ -120,7 +119,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           disko.nixosModules.disko
-          lanzaboote.nixosModules.lanzaboote
           ./base/users.nix
           ./hosts/install_target/configuration.nix
           ./hosts/install_target/hardware-configuration.nix

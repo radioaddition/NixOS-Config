@@ -38,11 +38,7 @@
       options snd-intel-dspcfg dsp_driver=1
     '';
 
-    loader.systemd-boot.enable = lib.mkForce false;
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/etc/secureboot";
-    };
+    loader.systemd-boot.enable = true;
   };
 
   # command-not-found flake compatability

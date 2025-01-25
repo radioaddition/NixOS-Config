@@ -1,4 +1,5 @@
 argument := `hostname`
+keys := "microsoft"
 _default:
 	@echo Available commands:
 	@echo just install ACTION ARGUMENT
@@ -18,6 +19,12 @@ _default:
 	@echo ""
 	@echo "just clean"
 	@echo clean out your nix store
+	@echo ""
+	@echo just secureboot-start
+	@echo "start the setup for secureboot (this requires a reboot in between so two scripts are required)"
+	@echo ""
+	@echo just secureboot-finish KEYS
+	@echo "finish setting up secureboot, where KEYS is one of \"microsoft\" or \"tpm-eventlog\" ({{keys}} is recommended and the default)"
 
 # just install ACTION ARGUMENT
 install action argument:
@@ -66,3 +73,8 @@ clean:
 [no-cd]
 setup:
 	@ln -s "$PWD"/justfile "$HOME"/justfile
+secureboot-start:
+	sudo sbctl create-keys
+	sudo sbctl verify
+secureboot-finish keys:
+	sudo sbctl enroll-keys --{{keys}}
