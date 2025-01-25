@@ -43,7 +43,7 @@
                       mountpoint = "/swap";
                       swap = {
 		        swapfile.size = "32G";
-			swapfile.path = "/swap/swapfile";
+			swapfile.path = "swap/swapfile";
 		      };
                     };
                   };
