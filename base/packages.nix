@@ -1,6 +1,7 @@
 { config, pkgs, inputs, lib, ... }: {
 
   environment.systemPackages = with pkgs; [
+
     atuin
     bat
     bat-extras.batman
@@ -11,13 +12,16 @@
     exfatprogs
     eza
     fastfetch
+    fzf
     gcc
     gettext
     git-repo
     glas
     gleam
     glib
+    glow
     gnumake
+    gum
     home-manager
     hyfetch
     iosevka
@@ -45,6 +49,7 @@
     wlrctl
     yazi
     zoxide
+
   ];
 
   users.users.radioaddition.packages = with pkgs; [
