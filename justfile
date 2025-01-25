@@ -65,4 +65,4 @@ clean:
 # Sets up using these commands from the home directory
 [no-cd]
 setup:
-	@echo "import $PWD/justfile" >> "$HOME"/justfile
+	@ln -s "$PWD"/justfile "$HOME"/justfile
