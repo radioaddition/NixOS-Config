@@ -51,6 +51,7 @@
       NIX_CONFIG = "extra-experimental-features = nix-command flakes";
 
       packages = with nixpkgs.legacyPackages.x86_64-linux; [
+	age
 	fzf
 	glow
 	gum
