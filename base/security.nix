@@ -49,14 +49,14 @@
     ];
   };
 
-   Enable secure boot
+  # Enable secure boot
   boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.lanzaboote = {
     enable = true;
     pkiBundle = "/etc/secureboot";
   };
 
-   Enable tpm unlock
+  # Enable tpm unlock
   environment.systemPackages = [ pkgs.tpm2-tools ];
   security.tpm2 = {
     enable = true;
