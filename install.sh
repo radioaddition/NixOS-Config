@@ -37,5 +37,6 @@ else
 	rm -rf /tmp/etc
 	if [ -d ".git" ]; then
 		git add ./hosts/$hostname/hardware-configuration.nix
-	sudo nix --extra-experimental-features "nix-command flakes" run 'github:nix-community/disko/latest#disko-install' -- --flake '.#installer' --disk main "$1"
+	fi
+	sudo nix --extra-experimental-features "nix-command flakes" run 'github:nix-community/disko/latest#disko-install' -- --flake ".#$hostname" --disk main "$1"
 fi
