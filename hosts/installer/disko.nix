@@ -23,7 +23,7 @@
               content = {
                 type = "btrfs";
                 extraArgs = [ "-f" ]; # Override existing partition
-		subVolumes = {
+		subvolumes = {
 		  "root" = {
 		    mountpoint = "/";
 		    mountOptions = [
