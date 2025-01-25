@@ -30,6 +30,8 @@ _default:
 install action argument:
 	#!/usr/bin/env bash
 	set -euo pipefail
+	# make annoying error shut up
+	sudo mkdir -p /nix/var/nix/profiles/per-user/root/channels
 	if [ "{{action}}" == "finish" ]; then
 		echo "This assumes you are on the #installer flake, CD'd into your nix config directory and have the remote authentication set up"
 		nixos-generate-config --no-filesystems --root /tmp
