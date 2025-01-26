@@ -81,8 +81,7 @@
     ".ssh/config".text = ''
     Host host.local
         User root
-        # We use `run/host/run` instead of `/run` to transparently work in and out of containers
-        ProxyCommand socat - UNIX-CLIENT:/run/host/run/sshd.sock
+        ProxyCommand socat - UNIX-CLIENT:/run/sshd.sock
         # Path to your SSH key. See: https://tim.siosm.fr/blog/2023/01/13/openssh-key-management/
         IdentityFile ~/.ssh/keys/id_ecdsa
         # Force TTY allocation to always get an interactive shell
