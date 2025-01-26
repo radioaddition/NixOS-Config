@@ -29,33 +29,9 @@
   # security.sudo.enable = false; # disabled while run0 is broken
 
   # Enable root access via unix socket as an alternative to sudo
+  services.openssh.enable = true;
+  services.openssh.openFirewall = false;
   # First the socket
-  systemd.sockets."sshd-unix" = {
-    unitConfig = {
-      Description = "OpenSSH Server Unix Socket";
-      Documentation = "man:sshd(8) man:sshd_config(5)";
-    };
-    socketConfig = {
-      ListenStream = "/run/sshd.sock";
-      SocketUser = "radioaddition";
-      SocketMode = "0660";
-      Accept = true;
-    };
-    wantedBy = [ "sockets.target" ];
-  };
-  # Then the ssh service
-  systemd.services."sshd-unix@" = {
-    unitConfig = {
-      Description = "OpenSSH per-connection server daemon (Unix socket)";
-      Documentation = "man:sshd(8) man:sshd_config(5)";
-      Wants = "sshd-keygen.target";
-      After = "sshd-keygen.target";
-    };
-    serviceConfig = {
-      ExecStart = "-${pkgs.openssh}/bin/sshd -i -f /etc/ssh/sshd_config_unix";
-      StandardInput = "socket";
-    };
-  };
   # Create a config file
   environment.etc.sshd_config_unix = {
     target = "/ssh/sshd_config_unix";
@@ -75,19 +51,6 @@
     
     # override default of no subsystems
     Subsystem sftp /usr/libexec/openssh/sftp-server
-    '';
-  };
-  hj.files = {
-    ".ssh/config".text = ''
-    Host host.local
-        User root
-        ProxyCommand socat - UNIX-CLIENT:/run/sshd.sock
-        # Path to your SSH key. See: https://tim.siosm.fr/blog/2023/01/13/openssh-key-management/
-        IdentityFile ~/.ssh/keys/id_ecdsa
-        # Force TTY allocation to always get an interactive shell
-        RequestTTY yes
-        # Minimize log output
-        LogLevel QUIET
     '';
   };
 
