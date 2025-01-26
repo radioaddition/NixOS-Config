@@ -1,5 +1,11 @@
 { config, pkgs, inputs, lib, ... }: {
 
+  # Required packages
+  environment.systemPackages = with pkgs; [
+    socat
+    tpm2-tools
+  ];
+
   # AppArmor
   services.dbus.apparmor = "enabled";
   security.apparmor = {
@@ -21,6 +27,70 @@
 
   # Disable sudo in favor of run0
   # security.sudo.enable = false; # disabled while run0 is broken
+
+  # Enable root access via unix socket as an alternative to sudo
+  # First the socket
+  systemd.sockets."sshd-unix" = {
+    unitConfig = {
+      Description = "OpenSSH Server Unix Socket";
+      Documentation = "man:sshd(8) man:sshd_config(5)";
+    };
+    socketConfig = {
+      ListenStream = "/run/sshd.sock";
+      SocketUser = "radioaddition";
+      SocketMode = "0660";
+      Accept = true;
+    };
+    wantedBy = [ "sockets.target" ];
+  };
+  # Then the ssh service
+  systemd.services."sshd-unix@" = {
+    unitConfig = {
+      Description = "OpenSSH per-connection server daemon (Unix socket)";
+      Documentation = "man:sshd(8) man:sshd_config(5)";
+      Wants = "sshd-keygen.target";
+      After = "sshd-keygen.target";
+    };
+    serviceConfig = {
+      ExecStart = "-${pkgs.openssh}/bin/sshd -i -f /etc/ssh/sshd_config_unix";
+      StandardInput = "socket";
+    };
+  };
+  # Create a config file
+  environment.etc.sshd_config_unix = {
+    target = "/ssh/sshd_config_unix";
+    text = ''
+    # Deny all non key based authentication methods
+    PermitRootLogin prohibit-password
+    PasswordAuthentication no
+    PermitEmptyPasswords no
+    GSSAPIAuthentication no
+    
+    # Only allow access for specific users
+    AllowUsers root radioaddition
+    
+    # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
+    # but this is overridden so installations will only check .ssh/authorized_keys
+    AuthorizedKeysFile .ssh/authorized_keys
+    
+    # override default of no subsystems
+    Subsystem sftp /usr/libexec/openssh/sftp-server
+    '';
+  };
+  hj.files = {
+    ".ssh/config".text = ''
+    Host host.local
+        User root
+        # We use `run/host/run` instead of `/run` to transparently work in and out of containers
+        ProxyCommand socat - UNIX-CLIENT:/run/host/run/sshd.sock
+        # Path to your SSH key. See: https://tim.siosm.fr/blog/2023/01/13/openssh-key-management/
+        IdentityFile ~/.ssh/keys/id_ecdsa
+        # Force TTY allocation to always get an interactive shell
+        RequestTTY yes
+        # Minimize log output
+        LogLevel QUIET
+    '';
+  };
 
   # Yubikey Pam login
   security.pam.yubico = {
@@ -57,7 +127,6 @@
   };
 
   # Enable tpm unlock
-  environment.systemPackages = [ pkgs.tpm2-tools ];
   security.tpm2 = {
     enable = true;
     pkcs11.enable = true;

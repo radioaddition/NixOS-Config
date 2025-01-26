@@ -6,6 +6,7 @@
   # Let us use hm as shorthand for home-manager config
   imports = [
     (lib.mkAliasOptionModule ["hm"] ["home-manager" "users" "radioaddition" ])
+    (lib.mkAliasOptionModule ["hj"] ["hjem" "users" "radioaddition" ])
   ];
 
   # Auto Updates

@@ -4,22 +4,22 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     oldstable.url = "github:NixOS/nixpkgs/nixos-24.05"; # Needed for nix-on-droid
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Mainly needed for jovian
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     disko.url = "github:nix-community/disko/latest";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    programsdb = {
-      url = "github:wamserma/flake-programs-sqlite";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    jovian-nixos = {
-      url = "github:Jovian-Experiments/Jovian-NixOS";
+    hjem = {
+      url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "unstable";
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    jovian-nixos = {
+      url = "github:Jovian-Experiments/Jovian-NixOS";
+      inputs.nixpkgs.follows = "unstable";
     };
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
@@ -28,6 +28,10 @@
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid/release-24.05";
       inputs.nixpkgs.follows = "oldstable";
+    };
+    programsdb = {
+      url = "github:wamserma/flake-programs-sqlite";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
