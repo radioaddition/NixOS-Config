@@ -6,22 +6,50 @@
 
   # NetworkManager
   networking.networkmanager = {
-    enable = true;
-    dns = "systemd-resolved";
-    wifi = {
-      macAddress = "random";
-      #powersave = true;
-      #backend = "iwd";
-    };
+    enable = false;
+    #dns = "systemd-resolved";
+    #wifi = {
+    #  macAddress = "random";
+    #  backend = "iwd";
+    #};
   };
 
   #environment.systemPackages = with pkgs; [
-  #  #dhcpcd
   #  iwgtk
   #];
 
+  # iwd
+  networking.wireless.iwd = {
+    enable = true;
+    settings = {
+      General = {
+        EnableNetworkConfiguration = true;
+	#AddressRandomization = "network";
+	#AddressRandomizationRange = "full";
+	ManagementFrameProtection = "1";
+      };
+      Network = {
+        NameResolvingService = "systemd";
+      };
+      #Scan = {
+      #  DisablePeriodicScan = true;
+      #  DisableRoamingScan = true;
+      #};
+    };
+  };
+
+  # systemd-networkd
+  boot.initrd.systemd.network.enable = true;
+  services.networkd-dispatcher.enable = true;
+  networking.useNetworkd = true;
+  systemd.network.enable = true;
+
   # systemd-resolved
   networking.nameservers = [
+    "2a07:e340::3"
+    "2a07:e340::2"
+    "194.242.2.3"
+    "194.242.2.2"
     "1.1.1.1"
     "1.0.0.1"
   ];
@@ -32,6 +60,10 @@
     domains = [ "~." ];
     #llmnr = "true";
     fallbackDns = [
+      "2a07:e340::3"
+      "2a07:e340::2"
+      "194.242.2.3"
+      "194.242.2.2"
       "1.1.1.1"
       "1.0.0.1"
     ];
