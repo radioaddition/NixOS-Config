@@ -55,6 +55,7 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
+    (pkgs.uutils-coreutils.override { prefix = ""; })
   ];
 
   # command-not-found flake compatability
@@ -92,18 +93,13 @@
     loader = {
       timeout = 0;
       systemd-boot.enable = true;
-#      grub = {
-#	enable = true;
-#        efiSupport = true;
-#        device = "nodev";
-#        useOSProber = true;
-#        timeoutStyle = "menu";
-#      };
       efi.canTouchEfiVariables = true;
     };
     extraModprobeConfig = ''
       options snd-intel-dspcfg dsp_driver=1
     '';
+    # This is required for tpm2 unlock to function
+    initrd.systemd.enable = true;
   };
 
   hardware.enableAllFirmware = true;
@@ -146,11 +142,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    #' If you want to use JACK applications, uncomment this
     jack.enable = true;
-
-    #' use the example session manager (no others are packaged yet so this is enabled by default,
-    #' no need to redefine it in your config for now)
     wireplumber.enable = true;
   };
 
@@ -172,7 +164,6 @@
   ];
 
   # Replace coreutils with uutils-coreutils
-  #environment.systemPackages = [(pkgs.uutils-coreutils.override { prefix = ""; })];
 
   security.acme.acceptTerms = true;
 

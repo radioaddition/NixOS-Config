@@ -10,9 +10,8 @@
     dns = "systemd-resolved";
     wifi = {
       macAddress = "random";
-      powersave = true;
-      scanRandMacAddress = true;
-      backend = "iwd";
+      #powersave = true;
+      #backend = "iwd";
     };
   };
 
@@ -21,16 +20,21 @@
   #  iwgtk
   #];
 
-  ## systemd-networkd
-  #networking.dhcpcd.enable = false;
-  #systemd.network.enable = true;
-
   # systemd-resolved
+  networking.nameservers = [
+    "1.1.1.1"
+    "1.0.0.1"
+  ];
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade";
-    dnsovertls = "opportunistic";
-    llmnr = "true";
+    dnssec = "true";
+    dnsovertls = "true";
+    domains = [ "~." ];
+    #llmnr = "true";
+    fallbackDns = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
   };
 
   # Tailscale
