@@ -93,6 +93,26 @@
         "type": "github"
       }
     },
+    "hjem": {
+      "inputs": {
+        "nixpkgs": [
+          "unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1737619027,
+        "narHash": "sha256-jEzZs9dHdmVP5X9HCC/7jrv08aWFfqZV5cZ+cZWYGA4=",
+        "owner": "feel-co",
+        "repo": "hjem",
+        "rev": "48cfa21987672a31a358b7e4d582fc174556e633",
+        "type": "github"
+      },
+      "original": {
+        "owner": "feel-co",
+        "repo": "hjem",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -484,6 +504,7 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "hjem": "hjem",
         "home-manager": "home-manager",
         "jovian-nixos": "jovian-nixos",
         "lanzaboote": "lanzaboote",

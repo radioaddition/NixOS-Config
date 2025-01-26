@@ -42,6 +42,7 @@
     disko,
     lanzaboote,
     nix-flatpak,
+    hjem,
     ...
   }: let
     inherit (nixpkgs.lib) nixosSystem;
@@ -94,6 +95,7 @@
           ./init/filesystem.nix
           nixos-hardware.nixosModules.framework-13-7040-amd
           disko.nixosModules.disko
+          hjem.nixosModules.hjem
           home-manager.nixosModules.home-manager
           lanzaboote.nixosModules.lanzaboote
           nix-flatpak.nixosModules.nix-flatpak
