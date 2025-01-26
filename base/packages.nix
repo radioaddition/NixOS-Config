@@ -43,6 +43,7 @@
     rsync
     sbctl
     topgrade
+    up
     usbtop
     wget
     wl-clipboard
