@@ -5,18 +5,11 @@
   #- networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # NetworkManager
-  networking.networkmanager = {
-    enable = false;
-    #dns = "systemd-resolved";
-    #wifi = {
-    #  macAddress = "random";
-    #  backend = "iwd";
-    #};
-  };
+  networking.networkmanager.enable = false;
 
-  #environment.systemPackages = with pkgs; [
-  #  iwgtk
-  #];
+  environment.systemPackages = with pkgs; [
+    iwgtk
+  ];
 
   # iwd
   networking.wireless.iwd = {
