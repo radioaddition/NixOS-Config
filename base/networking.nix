@@ -11,14 +11,20 @@
     iwgtk
   ];
 
+  # CaptivePortal logins
+  programs.captive-browser = {
+    enable = true;
+    interface = "wlan0";
+  };
+
   # iwd
   networking.wireless.iwd = {
     enable = true;
     settings = {
       General = {
         EnableNetworkConfiguration = true;
-	#AddressRandomization = "network";
-	#AddressRandomizationRange = "full";
+	AddressRandomization = "network";
+	AddressRandomizationRange = "full";
 	ManagementFrameProtection = "1";
       };
       Network = {
