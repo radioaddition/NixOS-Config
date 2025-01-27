@@ -11,7 +11,6 @@
       { name = "flathub"; location = "https://flathub.org/repo/flathub.flatpakrepo"; }
     ];
     packages = [
-    # Set either with just the appId in quotes ("com.app.app") or with the app/remote/etc in {} ({ appId = "com.app.app"; origin = "remote";  })
 	# Cartridges, gnome-styled version of lutris
 	{ appId = "page.kramo.Cartridges"; origin = "flathub"; }
 	# Collision, a hash checker
@@ -30,8 +29,6 @@
 	{ appId = "org.musicbrainz.Picard"; origin = "flathub"; }
 	#protonmail-bridge
 	{ appId = "ch.protonmail.protonmail-bridge"; origin = "flathub"; }
-	#tor-browser
-	{ appId = "org.torproject.torbrowser-launcher"; origin = "flathub"; }
 	# Warp, a wormhole client
 	{ appId = "app.drey.Warp"; origin = "flathub"; }
 	# Fotema, a photo viewer

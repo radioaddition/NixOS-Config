@@ -77,7 +77,6 @@
     impression
     jamesdsp
     llama-cpp
-    localsend
     lutris
     mindustry-wayland
     onionshare-gui
@@ -85,14 +84,10 @@
     picard
     pika-backup
     polari
-    protonmail-bridge
-    protonmail-bridge-gui
-    protonplus
     protonvpn-gui
     ptyxis
     seahorse
     shattered-pixel-dungeon
-    simplex-chat-desktop
     tor-browser
     virt-manager
     virt-viewer
