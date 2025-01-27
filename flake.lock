@@ -203,6 +203,48 @@
         "type": "github"
       }
     },
+    "llakaLib": {
+      "inputs": {
+        "nixpkgs": [
+          "menu",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1737249441,
+        "narHash": "sha256-3gA1k4j/yXiWOuHiTmL+wpOESqgkywkAPelJ0yeCog0=",
+        "owner": "llakala",
+        "repo": "llakaLib",
+        "rev": "1a9f988a013fd71816a5355308de17b796d3de39",
+        "type": "github"
+      },
+      "original": {
+        "owner": "llakala",
+        "repo": "llakaLib",
+        "type": "github"
+      }
+    },
+    "menu": {
+      "inputs": {
+        "llakaLib": "llakaLib",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1737949243,
+        "narHash": "sha256-lARkwsbzVGJhcE+l9w+E9NK/JHMzb/pN8/2CNcutmLU=",
+        "owner": "llakala",
+        "repo": "menu",
+        "rev": "caf1fd835dbb1cd4c8bb67fbe20dfbaf4474ced5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "llakala",
+        "repo": "menu",
+        "type": "github"
+      }
+    },
     "nix-flatpak": {
       "locked": {
         "lastModified": 1737806078,
@@ -494,6 +536,7 @@
         "home-manager": "home-manager",
         "jovian-nixos": "jovian-nixos",
         "lanzaboote": "lanzaboote",
+        "menu": "menu",
         "nix-flatpak": "nix-flatpak",
         "nix-on-droid": "nix-on-droid",
         "nixos-hardware": "nixos-hardware",
