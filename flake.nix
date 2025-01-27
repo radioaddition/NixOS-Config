@@ -10,9 +10,14 @@
     # Extra inputs
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    llakaLib = {
+      url = "github:/llakala/llakaLib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     menu = {
       url = "github:/llakala/menu";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.llakaLib.follows = "llakaLib";
     };
     disko = {
       url = "github:nix-community/disko/latest";
