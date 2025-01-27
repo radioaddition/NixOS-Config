@@ -59,7 +59,6 @@
     adwsteamgtk
     bottles
     boxbuddy
-    brave
     cartridges
     chezmoi
     collision
@@ -89,6 +88,7 @@
     seahorse
     shattered-pixel-dungeon
     tor-browser
+    ungoogled-chromium
     virt-manager
     virt-viewer
     wormhole-william
