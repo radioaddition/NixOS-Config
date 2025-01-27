@@ -206,7 +206,6 @@
     "llakaLib": {
       "inputs": {
         "nixpkgs": [
-          "menu",
           "nixpkgs"
         ]
       },
@@ -226,7 +225,9 @@
     },
     "menu": {
       "inputs": {
-        "llakaLib": "llakaLib",
+        "llakaLib": [
+          "llakaLib"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -536,6 +537,7 @@
         "home-manager": "home-manager",
         "jovian-nixos": "jovian-nixos",
         "lanzaboote": "lanzaboote",
+        "llakaLib": "llakaLib",
         "menu": "menu",
         "nix-flatpak": "nix-flatpak",
         "nix-on-droid": "nix-on-droid",

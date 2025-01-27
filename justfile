@@ -75,3 +75,5 @@ secureboot-start:
 	sudo sbctl verify
 secureboot-finish keys:
 	sudo sbctl enroll-keys --{{keys}}
+test:
+	nixos-rebuild dry-build --flake .#$(hostname)

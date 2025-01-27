@@ -1,4 +1,8 @@
-{ config, pkgs, inputs, lib, ... }: {
+{ config, pkgs, inputs, lib, ... }:
+let
+  menu = inputs.menu.legacyPackages.${pkgs.system};
+in
+{
 
   environment.systemPackages = with pkgs; [
 
@@ -12,6 +16,7 @@
     exfatprogs
     eza
     fastfetch
+    menu.fuiska
     fzf
     gcc
     gettext
@@ -38,11 +43,13 @@
     python3
     qemu
     qemu_kvm
+    menu.rbld
     redis
     ripgrep
     rsync
     sbctl
     topgrade
+    menu.unify
     up
     usbtop
     wget
@@ -100,11 +107,9 @@
     "services/misc/ollama.nix"
     "services/web-apps/nextjs-ollama-llm-ui.nix"
   ];
-  imports = 
-  [
+  imports = [
     "${inputs.unstable}/nixos/modules/services/misc/ollama.nix"
     "${inputs.unstable}/nixos/modules/services/web-apps/nextjs-ollama-llm-ui.nix"
   ];
-
 }
 
