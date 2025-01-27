@@ -1,7 +1,6 @@
 { config, pkgs, inputs, lib, ... }: {
-  # Jovian
   imports = [
-    jovian-nixos.nixosModules.default
+    inputs.jovian-nixos.nixosModules.default
   ];
   ## Steam
   programs.steam = {
@@ -26,5 +25,20 @@
     openrazer-daemon
     polychromatic
   ];
+
+  # Jovian
+  jovian = {
+    steam = {
+      enable = true;
+      autoStart = true;
+      desktopSession = "gdm";
+      updater.splash = "jovian";
+      user = "radioaddition";
+    };
+    devices.steamdeck.enable = false;
+    decky-loader.enable = true;
+    steamos.useSteamOSConfig = true;
+    hardware.has.amd.gpu = true;
+  };
 }
 
