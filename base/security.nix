@@ -28,32 +28,6 @@
   # Disable sudo in favor of run0
   # security.sudo.enable = false; # disabled while run0 is broken
 
-  # Enable root access via unix socket as an alternative to sudo
-  services.openssh.enable = true;
-  services.openssh.openFirewall = false;
-  # First the socket
-  # Create a config file
-  environment.etc.sshd_config_unix = {
-    target = "/ssh/sshd_config_unix";
-    text = ''
-    # Deny all non key based authentication methods
-    PermitRootLogin prohibit-password
-    PasswordAuthentication no
-    PermitEmptyPasswords no
-    GSSAPIAuthentication no
-    
-    # Only allow access for specific users
-    AllowUsers root radioaddition
-    
-    # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
-    # but this is overridden so installations will only check .ssh/authorized_keys
-    AuthorizedKeysFile .ssh/authorized_keys
-    
-    # override default of no subsystems
-    Subsystem sftp /usr/libexec/openssh/sftp-server
-    '';
-  };
-
   # Yubikey Pam login
   security.pam.yubico = {
    enable = true;
