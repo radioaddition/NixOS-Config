@@ -33,7 +33,7 @@ in
     just
     libvirt
     lsof
-    magic-wormhole
+    magic-wormhole-rs
     mcron
     miracode
     monocraft
