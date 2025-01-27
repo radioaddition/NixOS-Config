@@ -12,11 +12,11 @@ in
     btop
     btrfs-progs
     busybox
-    cinny
     curl
     exfatprogs
     eza
     fastfetch
+    fractal
     menu.fuiska
     fzf
     gcc
