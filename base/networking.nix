@@ -7,9 +7,8 @@
   # NetworkManager
   networking.networkmanager.enable = false;
 
-  environment.systemPackages = with pkgs; [
-    iwgtk
-  ];
+  #environment.systemPackages = with pkgs; [
+  #];
 
   # CaptivePortal logins
   programs.captive-browser = {
