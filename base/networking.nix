@@ -7,8 +7,9 @@
   # NetworkManager
   networking.networkmanager.enable = false;
 
-  #environment.systemPackages = with pkgs; [
-  #];
+  environment.systemPackages = with pkgs; [
+    impala # a tui for iwd
+  ];
 
   # CaptivePortal logins
   programs.captive-browser = {

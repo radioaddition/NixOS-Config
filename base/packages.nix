@@ -12,6 +12,7 @@ in
     btop
     btrfs-progs
     busybox
+    cinny
     curl
     exfatprogs
     eza
