@@ -2,13 +2,18 @@
   description = "spaghetti";
 
   inputs = {
+    # Base inputs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     oldstable.url = "github:NixOS/nixpkgs/nixos-24.05"; # Needed for nix-on-droid
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    disko.url = "github:nix-community/disko/latest";
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
 
+    # Extra inputs
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hjem = {
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "unstable";
